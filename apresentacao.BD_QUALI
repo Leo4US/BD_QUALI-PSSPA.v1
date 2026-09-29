@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apresentação MVP - Plataforma Pesca & Saúde</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .slide { display: none; }
+    .slide.active { display: flex; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between font-sans">
+
+  <!-- CABEÇALHO SIMPLES -->
+  <header class="border-b border-slate-800 p-4 bg-slate-950/80 backdrop-blur">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <span class="text-teal-400 text-xl">⚓</span>
+        <span class="font-bold text-slate-200 tracking-wide">Plataforma Quali/Quanti - Pesca Artesanal</span>
+      </div>
+      <div id="slide-indicator" class="text-xs font-mono text-slate-400 bg-slate-800 px-3 py-1 rounded-full">
+        Slide 1 de 6
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTAINER DE SLIDES (APRESENTAÇÃO) -->
+  <main class="flex-grow max-w-5xl mx-auto w-full p-6 flex items-center justify-center">
+
+    <!-- SLIDE 1: CAPA -->
+    <section class="slide active flex-col items-center text-center space-y-6 max-w-2xl">
+      <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs rounded-full border border-teal-700">Projeto de Pesquisa Acadêmica</span>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight">
+        Apoio à Pesquisa Qualitativa:<br>
+        <span class="text-teal-400">Trabalho, Saúde e Segurança na Pesca Artesanal</span>
+      </h1>
+      <p class="text-sm text-slate-400 leading-relaxed">
+        Plataforma para gestão de entrevistas semiestruturadas, acompanhamento de campo por Agentes Territoriais (ATL) e fluxo de validação pela supervisão.
+      </p>
+      <div class="pt-4 text-xs text-slate-500">
+        Use as setas do teclado (← →) ou os botões abaixo para navegar.
+      </div>
+    </section>
+
+    <!-- SLIDE 2: FLUXO DE TRABALHO E PERFIS -->
+    <section class="slide flex-col space-y-6 w-full">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-xl font-bold text-teal-400">1. Perfis e Fluxo de Estados</h2>
+        <p class="text-xs text-slate-400">Organização das papéis de usuário e ciclo de vida da transcrição</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+        <div class="bg-slate-800/60 p-4 rounded-lg border border-slate-700">
+          <h3 class="font-bold text-teal-300 mb-2">ATL (Agente Territorial)</h3>
+          <ul class="list-disc list-inside space-y-1 text-slate-300">
+            <li>Registra entrevistas e vincula materiais;</li>
+            <li>Realiza conferência textual por turnos de fala;</li>
+            <li>Sinaliza dúvidas e ajusta inaudíveis;</li>
+            <li>Responde pendências da supervisão.</li>
+          </ul>
+        </div>
+        <div class="bg-slate-800/60 p-4 rounded-lg border border-slate-700">
+          <h3 class="font-bold text-amber-300 mb-2">Supervisora (Pesquisadora)</h3>
+          <ul class="list-disc list-inside space-y-1 text-slate-300">
+            <li>Acompanha o progresso por território;</li>
+            <li>Avalia a condução pedagógica da conversa;</li>
+            <li>Devolve para acertos ou valida a transcrição;</li>
+            <li>Garante a conformidade metodológica.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 text-center text-xs text-slate-400 font-mono">
+        Registrada &rarr; Materiais Anexados &rarr; Conferência ATL &rarr; Revisão Supervisão &rarr; [ Pendência OR Validada ]
+      </div>
+    </section>
+
+    <!-- SLIDE 3: PRESERVAÇÃO DA FALA -->
+    <section class="slide flex-col space-y-6 w-full">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-xl font-bold text-teal-400">2. Roteiro e Preservação da Fala</h2>
+        <p class="text-xs text-slate-400">Respeito à entrevista semiestruturada sem enquadramento rígido</p>
+      </div>
+
+      <div class="bg-slate-800/40 p-4 rounded-lg border border-slate-700 text-xs space-y-3">
+        <p class="text-slate-300">
+          A pesquisa aborda <strong>6 eixos temáticos</strong> (Trajetória, Perigos/Saúde, Proteção, Percepção Temporal, Redes de Ajuda e Necessidades Futuras).
+        </p>
+        <div class="p-3 bg-teal-950/40 border-l-2 border-teal-500 text-teal-200">
+          <strong>Princípio Metodológico:</strong> O participante não responde a 6 "caixas fechadas". O discurso é mantido na ordem cronológica em que ocorreu, permitindo que um tema atravesse múltiplos momentos da conversa.
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: MATRIZ DE PERMISSÕES -->
+    <section class="slide flex-col space-y-6 w-full">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-xl font-bold text-teal-400">3. Matriz de Permissões (Demonstração)</h2>
+        <p class="text-xs text-slate-400">Isolamento funcional por atribuição territorial</p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="bg-slate-800 text-slate-300 border-b border-slate-700">
+              <th class="p-2.5">Funcionalidade</th>
+              <th class="p-2.5 text-center">ATL</th>
+              <th class="p-2.5 text-center">Supervisora</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800 text-slate-400">
+            <tr>
+              <td class="p-2.5">Registrar Entrevista e Participante Pseudonimizado</td>
+              <td class="p-2.5 text-center text-teal-400">Sim</td>
+              <td class="p-2.5 text-center text-slate-600">Não</td>
+            </tr>
+            <tr>
+              <td class="p-2.5">Corrigir Turnos de Fala e Sinalizar Dúvidas</td>
+              <td class="p-2.5 text-center text-teal-400">Sim</td>
+              <td class="p-2.5 text-center text-slate-600">Não</td>
+            </tr>
+            <tr>
+              <td class="p-2.5">Registrar Avaliação da Condução (Formulário Separado)</td>
+              <td class="p-2.5 text-center text-slate-600">Não</td>
+              <td class="p-2.5 text-center text-amber-400">Sim</td>
+            </tr>
+            <tr>
+              <td class="p-2.5">Aprovar Transcrição Final / Devolver Pendência</td>
+              <td class="p-2.5 text-center text-slate-600">Não</td>
+              <td class="p-2.5 text-center text-amber-400">Sim</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: ROADMAP FUTURO (QUALI / QUANTI) -->
+    <section class="slide flex-col space-y-6 w-full">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-xl font-bold text-teal-400">4. Plano de Evolução do Produto</h2>
+        <p class="text-xs text-slate-400">Módulos previstos para as etapas posteriores ao MVP</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+        <div class="bg-slate-800/50 p-3 rounded border border-slate-700 space-y-1">
+          <span class="text-teal-400 font-bold">Módulo Qualitativo</span>
+          <p class="text-slate-400 text-micro">Codificação temática, redação de memos e criação de categorias com trechos de evidência.</p>
+        </div>
+        <div class="bg-slate-800/50 p-3 rounded border border-slate-700 space-y-1">
+          <span class="text-amber-400 font-bold">Módulo Quantitativo</span>
+          <p class="text-slate-400 text-micro">Indicadores municipais, cruzamento quali-quanti por localidade mediante governança de dados.</p>
+        </div>
+        <div class="bg-slate-800/50 p-3 rounded border border-slate-700 space-y-1">
+          <span class="text-indigo-400 font-bold">Portal do Pescador</span>
+          <p class="text-slate-400 text-micro">Área informativa com orientações de saúde ocupacional e direitos previdenciários.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: SEGURANÇA E DADOS REAIS -->
+    <section class="slide flex-col space-y-6 w-full">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-xl font-bold text-teal-400">5. Requisitos para Transição para Dados Reais</h2>
+        <p class="text-xs text-slate-400">O que é necessário antes de receber informações de campo</p>
+      </div>
+
+      <div class="bg-amber-950/30 border border-amber-800/50 p-4 rounded-lg text-xs space-y-2 text-amber-200">
+        <p class="font-bold">⚠️ Diretrizes Estritas de Governança:</p>
+        <ul class="list-disc list-inside space-y-1 text-slate-300">
+          <li><strong>Autenticação Forte:</strong> Implementação de login seguro com controle de perfil por JWT/OAuth.</li>
+          <li><strong>Armazenamento Criptografado:</strong> Áudios mantidos fora de repositórios públicos e com acesso restrito via tokens expiráveis.</li>
+          <li><strong>Sem envio para serviços externos:</strong> Garantia de que conteúdos e voz não serão submetidos a ferramentas externas sem governança.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ COM NAVEGAÇÃO DOS SLIDES -->
+  <footer class="border-t border-slate-800 p-4 bg-slate-950">
+    <div class="max-w-5xl mx-auto flex justify-between items-center">
+      <button id="btn-prev" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded text-xs font-semibold disabled:opacity-30">
+        ← Anterior
+      </button>
+
+      <div class="space-x-1" id="dots-container">
+        <!-- Indicadores de bolinhas injetados via JS -->
+      </div>
+
+      <button id="btn-next" class="px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white rounded text-xs font-semibold">
+        Próximo →
+      </button>
+    </div>
+  </footer>
+
+  <!-- LÓGICA DE NAVEGAÇÃO EM JS -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+    const indicator = document.getElementById('slide-indicator');
+    const dotsContainer = document.getElementById('dots-container');
+    let currentSlide = 0;
+
+    // Cria os pontos de navegação
+    slides.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.className = `inline-block w-2 h-2 rounded-full cursor-pointer ${i === 0 ? 'bg-teal-400' : 'bg-slate-700'}`;
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function updateSlides() {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentSlide);
+      });
+      indicator.textContent = `Slide ${currentSlide + 1} de ${slides.length}`;
+      btnPrev.disabled = currentSlide === 0;
+      btnNext.disabled = currentSlide === slides.length - 1;
+
+      // Atualiza os pontos
+      Array.from(dotsContainer.children).forEach((dot, i) => {
+        dot.className = `inline-block w-2 h-2 rounded-full cursor-pointer ${i === currentSlide ? 'bg-teal-400' : 'bg-slate-700'}`;
+      });
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateSlides();
+    }
+
+    btnPrev.addEventListener('click', () => {
+      if (currentSlide > 0) { currentSlide--; updateSlides(); }
+    });
+
+    btnNext.addEventListener('click', () => {
+      if (currentSlide < slides.length - 1) { currentSlide++; updateSlides(); }
+    });
+
+    // Teclas de seta
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' && currentSlide < slides.length - 1) { currentSlide++; updateSlides(); }
+      if (e.key === 'ArrowLeft' && currentSlide > 0) { currentSlide--; updateSlides(); }
+    });
+
+    updateSlides();
+  </script>
+</body>
+</html>
