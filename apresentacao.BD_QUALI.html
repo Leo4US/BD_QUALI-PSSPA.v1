@@ -3,228 +3,282 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apresentação MVP - Plataforma Pesca & Saúde (PTSSPA)</title>
+  <title>apresentação mvp - plataforma pesca e saúde</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .slide { display: none; }
     .slide.active { display: flex; }
-    /* Paleta inspirada na logo oficial */
-    body { background-color: #FDFBF7; color: #1E293B; }
+    body { background-color: #fdfbf7; color: #1e293b; }
+    .text-mini { font-size: 0.65rem; line-height: 0.85rem; }
+    .text-micro { font-size: 0.75rem; line-height: 1rem; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between font-sans selection:bg-amber-200">
 
-  <!-- CABEÇALHO CLEAN -->
-  <header class="border-b border-stone-200 p-4 bg-white/90 backdrop-blur sticky top-0 z-10 shadow-sm">
+  <!-- cabeçalho clean -->
+  <header class="border-b border-stone-200 p-3 bg-white/90 backdrop-blur sticky top-0 z-10 shadow-sm">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <div class="flex items-center space-x-3">
-        <!-- ÍCONE GEOMÉTRICO ESTILIZADO (PEIXE TANGRAM DA LOGO) -->
-        <svg class="w-7 h-7" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="30" y="30" width="40" height="40" fill="#D97706" stroke="#1E1E1E" stroke-width="6"/>
-          <path d="M30 30 L30 10 L10 30 Z" fill="#EAB308" stroke="#1E1E1E" stroke-width="6"/>
-          <path d="M70 30 L90 30 L70 10 Z" fill="#16A34A" stroke="#1E1E1E" stroke-width="6"/>
-          <path d="M30 70 L10 70 L30 90 Z" fill="#2563EB" stroke="#1E1E1E" stroke-width="6"/>
-          <path d="M70 70 L70 90 L90 70 Z" fill="#DC2626" stroke="#1E1E1E" stroke-width="6"/>
+      <div class="flex items-center space-x-2">
+        <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="30" y="30" width="40" height="40" fill="#d97706" stroke="#1e1e1e" stroke-width="6"/>
+          <path d="M30 30 L30 10 L10 30 Z" fill="#eab308" stroke="#1e1e1e" stroke-width="6"/>
+          <path d="M70 30 L90 30 L70 10 Z" fill="#16a34a" stroke="#1e1e1e" stroke-width="6"/>
+          <path d="M30 70 L10 70 L30 90 Z" fill="#2563eb" stroke="#1e1e1e" stroke-width="6"/>
+          <path d="M70 70 L70 90 L90 70 Z" fill="#dc2626" stroke="#1e1e1e" stroke-width="6"/>
         </svg>
-        <span class="font-bold text-stone-800 text-sm tracking-tight">Plataforma Quali/Quanti — Pesca Artesanal (PTSSPA)</span>
+        <span class="font-bold text-stone-800 text-xs">plataforma quali e quanti: pesca artesanal (ptsspa)</span>
       </div>
-      <div id="slide-indicator" class="text-xs font-mono text-stone-600 bg-stone-100 px-3 py-1 rounded-full border border-stone-300">
-        Slide 1 de 7
+      <div id="slide-indicator" class="text-mini font-mono text-stone-500 bg-stone-100 px-2.5 py-0.5 rounded-full border border-stone-300">
+        slide 1 de 8
       </div>
     </div>
   </header>
 
-  <!-- CONTAINER DE SLIDES (APRESENTAÇÃO) -->
+  <!-- container de slides -->
   <main class="flex-grow max-w-5xl mx-auto w-full p-6 flex items-center justify-center">
 
-    <!-- SLIDE 1: CAPA COM IDENTIDADE CLEAN E CRÉDITOS DISCRETOS -->
-    <section class="slide active flex-col items-center text-center space-y-6 max-w-3xl">
+    <!-- slide 1: capa -->
+    <section class="slide active flex-col items-center text-center space-y-4 max-w-4xl">
       
-      <!-- LOGO GEOMÉTRICA EM DESTAQUE -->
-      <div class="flex justify-center items-center space-x-2">
-        <svg class="w-16 h-16" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="30" y="30" width="40" height="40" fill="#D97706" stroke="#1E1E1E" stroke-width="5"/>
-          <path d="M30 30 L30 10 L10 30 Z" fill="#EAB308" stroke="#1E1E1E" stroke-width="5"/>
-          <path d="M70 30 L90 30 L70 10 Z" fill="#16A34A" stroke="#1E1E1E" stroke-width="5"/>
-          <path d="M30 70 L10 70 L30 90 Z" fill="#2563EB" stroke="#1E1E1E" stroke-width="5"/>
-          <path d="M70 70 L70 90 L90 70 Z" fill="#DC2626" stroke="#1E1E1E" stroke-width="5"/>
+      <div class="flex justify-center items-center">
+        <svg class="w-12 h-12" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="30" y="30" width="40" height="40" fill="#d97706" stroke="#1e1e1e" stroke-width="5"/>
+          <path d="M30 30 L30 10 L10 30 Z" fill="#eab308" stroke="#1e1e1e" stroke-width="5"/>
+          <path d="M70 30 L90 30 L70 10 Z" fill="#16a34a" stroke="#1e1e1e" stroke-width="5"/>
+          <path d="M30 70 L10 70 L30 90 Z" fill="#2563eb" stroke="#1e1e1e" stroke-width="5"/>
+          <path d="M70 70 L70 90 L90 70 Z" fill="#dc2626" stroke="#1e1e1e" stroke-width="5"/>
         </svg>
       </div>
 
       <div>
-        <span class="px-3 py-1 bg-amber-100 text-amber-900 text-micro font-bold tracking-wider uppercase rounded-full border border-amber-300">
-          PROJETO TRABALHO SAUDÁVEL E SEGURO NA PESCA ARTESANAL
+        <span class="px-3 py-1 bg-amber-100 text-amber-900 text-mini font-bold tracking-wider rounded-full border border-amber-300">
+          projeto trabalho saudável e seguro na pesca artesanal
         </span>
-        <h1 class="text-2xl md:text-4xl font-extrabold text-stone-900 leading-tight mt-3">
-          Plataforma de Apoio à Pesquisa Qualitativa
+        
+        <!-- titulo em uma linha so e menor -->
+        <h1 class="text-base md:text-xl font-extrabold text-stone-900 mt-2 whitespace-nowrap">
+          plataforma de apoio à pesquisa qualitativa
         </h1>
-        <p class="text-xs md:text-sm text-stone-600 leading-relaxed max-w-2xl mx-auto mt-2">
-          Protótipo operacional (MVP) para gestão de entrevistas semiestruturadas, transcrição assistida por Whisper em Python, validação de campo e tratamento analítico do corpus.
+        
+        <p class="text-xs text-stone-600 leading-relaxed max-w-2xl mx-auto mt-2">
+          protótipo operacional (mvp) para gestão de entrevistas semiestruturadas, transcrição assistida por whisper em python, validação de campo e tratamento analítico do corpus.
         </p>
       </div>
 
-      <!-- BLOCO DE CRÉDITOS INSTITUCIONAIS DISCRETOS (COM FONTES AJUSTADAS) -->
-      <div class="w-full border-t border-stone-200 pt-4 mt-2">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-left bg-white p-3.5 rounded-lg border border-stone-200 text-micro text-stone-600 shadow-sm">
-          <div class="space-y-0.5">
-            <span class="text-stone-400 font-bold uppercase tracking-wider block text-nano">Propriedade dos Dados</span>
-            <p class="font-semibold text-stone-800">Fundacentro</p>
-            <p class="text-stone-400 italic text-nano">(Redação final em confirmação)</p>
+      <!-- nomes reduzidos em 75% posicionados como rodape discreto -->
+      <div class="w-full border-t border-stone-200 pt-3 mt-4">
+        <div class="grid grid-cols-3 gap-2 text-left bg-stone-50/80 p-2 rounded border border-stone-200 text-mini text-stone-500">
+          <div>
+            <span class="font-bold block text-stone-600">propriedade dos dados:</span>
+            <p>fundacentro (redação final em confirmação)</p>
           </div>
-          <div class="space-y-0.5">
-            <span class="text-stone-400 font-bold uppercase tracking-wider block text-nano">Gestão Institucional</span>
-            <p><strong class="text-stone-700">Coordenador PTSSPA:</strong> Marcelo Vasconcellos</p>
-            <p><strong class="text-stone-700">Dir. Pesquisa Aplicada:</strong> Eberval Castro</p>
+          <div>
+            <span class="font-bold block text-stone-600">gestão institucional:</span>
+            <p>coordenador ptsspa: marcelo vasconcellos</p>
+            <p>dir. pesquisa aplicada: eberval castro</p>
           </div>
-          <div class="space-y-0.5">
-            <span class="text-stone-400 font-bold uppercase tracking-wider block text-nano">Autoria e Desenvolvimento</span>
-            <p class="text-stone-700 font-medium">Dra. Luana Bedigaray</p>
-            <p class="text-stone-700 font-medium">Dr. Leandro Oliveira</p>
+          <div>
+            <span class="font-bold block text-stone-600">autoria e desenvolvimento:</span>
+            <p>dra. luana bedigaray</p>
+            <p>dr. leandro oliveira</p>
           </div>
         </div>
       </div>
 
-      <div class="text-nano text-stone-400 font-mono">
-        Navegação: setas do teclado (← →) ou botões no rodapé.
+      <!-- explicacao discreta e infima -->
+      <div class="text-mini text-stone-400 font-mono scale-90">
+        setas do teclado ou botões no rodapé alternam as telas.
       </div>
     </section>
 
-    <!-- SLIDE 2: PERFEIS DE USUÁRIO E CONTROLE DE ACESSO -->
-    <section class="slide flex-col space-y-5 w-full">
+    <!-- slide 2: perfis de usuario -->
+    <section class="slide flex-col space-y-4 w-full">
       <div class="border-b border-stone-200 pb-2 flex justify-between items-end">
         <div>
-          <h2 class="text-xl font-bold text-stone-900">1. Perfis de Usuário e Restrições de Acesso</h2>
-          <p class="text-xs text-stone-500">Atribuição funcional por escopo e proteção por finalidade</p>
+          <h2 class="text-base font-bold text-stone-900">1. perfis de usuário e permissões</h2>
+          <p class="text-xs text-stone-500">atribuição funcional por escopo e proteção por finalidade</p>
         </div>
         <div class="w-8 h-2 bg-amber-600 rounded-full"></div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-        <div class="bg-white p-4 rounded-lg border border-stone-200 shadow-sm space-y-2">
-          <div class="flex justify-between items-center border-b border-stone-100 pb-2">
-            <h3 class="font-bold text-amber-800">ATL (Agente Territorial)</h3>
-            <span class="text-nano bg-amber-50 text-amber-900 font-bold px-1.5 py-0.5 rounded border border-amber-200">Visão Limitada</span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+        <div class="bg-white p-3 rounded-lg border border-stone-200 shadow-sm space-y-1.5">
+          <div class="flex justify-between items-center border-b border-stone-100 pb-1">
+            <h3 class="font-bold text-amber-800">atl (agente territorial)</h3>
+            <span class="text-mini bg-amber-50 text-amber-900 font-bold px-1.5 py-0.5 rounded border border-amber-200">visão limitada</span>
           </div>
-          <p class="text-stone-500 text-micro">Acesso restrito às Telas 1, 2, 3, 7 e 8:</p>
+          <p class="text-stone-500 text-micro">acesso restrito às telas operacionais de campo:</p>
           <ul class="list-disc list-inside space-y-1 text-stone-700 text-micro">
-            <li>Cadastra participante e áudio de campo;</li>
-            <li>Realiza conferência textual por turnos;</li>
-            <li>Sinaliza dúvidas e ajusta inaudíveis;</li>
-            <li>Responde pendências da supervisão.</li>
+            <li>cadastra participante e áudio de campo</li>
+            <li>realiza conferência textual por turnos</li>
+            <li>sinaliza dúvidas e ajusta inaudíveis</li>
+            <li>responde pendências da supervisão</li>
           </ul>
         </div>
 
-        <div class="bg-white p-4 rounded-lg border border-stone-200 shadow-sm space-y-2">
-          <div class="flex justify-between items-center border-b border-stone-100 pb-2">
-            <h3 class="font-bold text-blue-800">Supervisora (Pesquisadora)</h3>
-            <span class="text-nano bg-blue-50 text-blue-900 font-bold px-1.5 py-0.5 rounded border border-blue-200">Visão Completa</span>
+        <div class="bg-white p-3 rounded-lg border border-stone-200 shadow-sm space-y-1.5">
+          <div class="flex justify-between items-center border-b border-stone-100 pb-1">
+            <h3 class="font-bold text-blue-800">supervisora (pesquisadora)</h3>
+            <span class="text-mini bg-blue-50 text-blue-900 font-bold px-1.5 py-0.5 rounded border border-blue-200">visão completa</span>
           </div>
-          <p class="text-stone-500 text-micro">Gestão de qualidade e conformidade:</p>
+          <p class="text-stone-500 text-micro">gestão de qualidade e conformidade:</p>
           <ul class="list-disc list-inside space-y-1 text-stone-700 text-micro">
-            <li>Acompanha tramitação por território;</li>
-            <li>Avalia a condução pedagógica do ATL;</li>
-            <li>Aprova o corpus ou devolve motivado;</li>
-            <li>Garante conformidade ética e LGPD.</li>
+            <li>acompanha tramitação por território</li>
+            <li>avalia a condução pedagógica do atl</li>
+            <li>aprova o corpus ou devolve motivado</li>
+            <li>garante conformidade ética e lgpd</li>
           </ul>
         </div>
 
-        <div class="bg-white p-4 rounded-lg border border-stone-200 shadow-sm space-y-2">
-          <div class="flex justify-between items-center border-b border-stone-100 pb-2">
-            <h3 class="font-bold text-emerald-800">Especialista Analítico</h3>
-            <span class="text-nano bg-emerald-50 text-emerald-900 font-bold px-1.5 py-0.5 rounded border border-emerald-200">Visão Completa</span>
+        <div class="bg-white p-3 rounded-lg border border-stone-200 shadow-sm space-y-1.5">
+          <div class="flex justify-between items-center border-b border-stone-100 pb-1">
+            <h3 class="font-bold text-emerald-800">especialista analítico</h3>
+            <span class="text-mini bg-emerald-50 text-emerald-900 font-bold px-1.5 py-0.5 rounded border border-emerald-200">visão completa</span>
           </div>
-          <p class="text-stone-500 text-micro">Tratamento do corpus validado:</p>
+          <p class="text-stone-500 text-micro">tratamento do corpus validado:</p>
           <ul class="list-disc list-inside space-y-1 text-stone-700 text-micro">
-            <li>Acessa apenas transcrições aprovadas;</li>
-            <li>Gerencia o Codebook versionado (#Tags);</li>
-            <li>Elabora Memos analíticos e notas;</li>
-            <li>Consolida evidências para relatórios.</li>
+            <li>acessa apenas transcrições aprovadas</li>
+            <li>gerencia o codebook versionado</li>
+            <li>elabora memos analíticos e notas</li>
+            <li>consolida evidências para relatórios</li>
           </ul>
         </div>
       </div>
 
-      <div class="bg-stone-100 p-3 rounded-lg border border-stone-200 text-center text-micro text-stone-600">
-        Acesso protegido por autenticação (Login / Cadastro) e restrição de escopo validada no servidor.
+      <div class="bg-stone-100 p-2.5 rounded border border-stone-200 text-center text-micro text-stone-600">
+        acesso protegido por autenticação (login e cadastro) e restrição de escopo validada no servidor.
       </div>
     </section>
 
-    <!-- SLIDE 3: O PERCURSO DA EVIDÊNCIA (12 PASSOS) -->
-    <section class="slide flex-col space-y-5 w-full">
-      <div class="border-b border-stone-200 pb-2 flex justify-between items-end">
+    <!-- slide 3: fluxo qualitativo (esteira quali) -->
+    <section class="slide flex-col space-y-3 w-full">
+      <div class="border-b border-stone-200 pb-1 flex justify-between items-end">
         <div>
-          <h2 class="text-xl font-bold text-stone-900">2. O Percurso da Evidência (12 Passos)</h2>
-          <p class="text-xs text-stone-500">Ciclo de vida auditável desde a gravação até a publicação social</p>
+          <h2 class="text-base font-bold text-stone-900">2. fluxo do processo qualitativo (quali)</h2>
+          <p class="text-xs text-stone-500">esteira de transformação da fala gravada em corpus analítico</p>
+        </div>
+        <div class="w-8 h-2 bg-amber-600 rounded-full"></div>
+      </div>
+
+      <!-- aviso metodologico de separacao didatica -->
+      <div class="p-2 bg-amber-50 border-l-4 border-amber-600 text-micro text-amber-900 rounded-r">
+        <strong>nota de apresentação:</strong> os fluxos qualitativo e quantitativo são apresentados de forma separada nesta demonstração para facilitar o entendimento didático de cada esteira metodológica.
+      </div>
+
+      <!-- diagrama grafico vetorial do fluxo quali -->
+      <div class="bg-white p-4 rounded-lg border border-stone-200 shadow-sm space-y-3">
+        <svg class="w-full h-24" viewBox="0 0 800 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Bloco 1 -->
+          <rect x="10" y="20" width="160" height="60" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+          <text x="90" y="48" fill="#92400e" font-size="11" font-weight="bold" text-anchor="middle">1. coleta em campo</text>
+          <text x="90" y="64" fill="#78350f" font-size="9" text-anchor="middle">áudio e cadastro tcle</text>
+          
+          <!-- Seta 1 -->
+          <path d="M180 50 L200 50" stroke="#78350f" stroke-width="2" marker-end="url(#arrow)"/>
+
+          <!-- Bloco 2 -->
+          <rect x="210" y="20" width="160" height="60" rx="6" fill="#fe200e" fill-opacity="0.1" stroke="#d97706" stroke-width="2"/>
+          <text x="290" y="48" fill="#92400e" font-size="11" font-weight="bold" text-anchor="middle">2. transcrição whisper</text>
+          <text x="290" y="64" fill="#78350f" font-size="9" text-anchor="middle">processamento em python</text>
+
+          <!-- Seta 2 -->
+          <path d="M380 50 L400 50" stroke="#78350f" stroke-width="2"/>
+
+          <!-- Bloco 3 -->
+          <rect x="410" y="20" width="160" height="60" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="490" y="48" fill="#1e40af" font-size="11" font-weight="bold" text-anchor="middle">3. conferência atl</text>
+          <text x="490" y="64" fill="#1e3a8a" font-size="9" text-anchor="middle">revisão por turnos de fala</text>
+
+          <!-- Seta 3 -->
+          <path d="M580 50 L600 50" stroke="#1e40af" stroke-width="2"/>
+
+          <!-- Bloco 4 -->
+          <rect x="610" y="20" width="180" height="60" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+          <text x="700" y="48" fill="#166534" font-size="11" font-weight="bold" text-anchor="middle">4. validação e codebook</text>
+          <text x="700" y="64" fill="#14532d" font-size="9" text-anchor="middle">corpus e memos analíticos</text>
+        </svg>
+
+        <div class="grid grid-cols-2 gap-2 text-micro text-stone-600 pt-1">
+          <p>• preservação imutável do áudio original e do cadastro inicial em cofre separado.</p>
+          <p>• validação por especialista com geração de histórico de revisões sem sobrescrever dados.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- slide 4: fluxo quantitativo (esteira quanti) -->
+    <section class="slide flex-col space-y-3 w-full">
+      <div class="border-b border-stone-200 pb-1 flex justify-between items-end">
+        <div>
+          <h2 class="text-base font-bold text-stone-900">3. fluxo do processo quantitativo (quanti)</h2>
+          <p class="text-xs text-stone-500">esteira de indicadores operacionais e triangulação territorial</p>
         </div>
         <div class="w-8 h-2 bg-blue-600 rounded-full"></div>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 text-micro">
-        <div class="bg-white p-2.5 rounded border border-stone-200 shadow-sm space-y-1">
-          <span class="text-amber-800 font-bold block">1. Coleta & Ingestão</span>
-          <span class="text-stone-500">Validação de SHA-256 e TCLE em cofre separado.</span>
-        </div>
-        <div class="bg-white p-2.5 rounded border border-stone-200 shadow-sm space-y-1">
-          <span class="text-amber-800 font-bold block">2. Transcrição Whisper</span>
-          <span class="text-stone-500">Processamento Python mantendo original imutável.</span>
-        </div>
-        <div class="bg-white p-2.5 rounded border border-stone-200 shadow-sm space-y-1">
-          <span class="text-amber-800 font-bold block">3. Conferência ATL</span>
-          <span class="text-stone-500">Ajustes por turnos com dúvidas sinalizadas.</span>
-        </div>
-        <div class="bg-white p-2.5 rounded border border-stone-200 shadow-sm space-y-1">
-          <span class="text-amber-800 font-bold block">4. Validação Supervisão</span>
-          <span class="text-stone-500">Aprovação do corpus ou devolução motivada.</span>
-        </div>
-        <div class="bg-white p-2.5 rounded border border-stone-200 shadow-sm space-y-1">
-          <span class="text-blue-800 font-bold block">5. Segmentação Roteiro</span>
-          <span class="text-stone-500">Mapeamento das falas pelas 6 perguntas.</span>
-        </div>
-        <div class="bg-white p-2.5 rounded border border-stone-200 shadow-sm space-y-1">
-          <span class="text-blue-800 font-bold block">6. Codebook & Memos</span>
-          <span class="text-stone-500">Codificação temática e notas de interpretação.</span>
-        </div>
-        <div class="bg-white p-2.5 rounded border border-stone-200 shadow-sm space-y-1">
-          <span class="text-blue-800 font-bold block">7. Condução Pedagógica</span>
-          <span class="text-stone-500">Registro separado de orientação ao entrevistador.</span>
-        </div>
-        <div class="bg-white p-2.5 rounded border border-stone-200 shadow-sm space-y-1">
-          <span class="text-emerald-800 font-bold block">8. Relatórios & Publicação</span>
-          <span class="text-stone-500">Produtos agregados sem risco de reidentificação.</span>
-        </div>
+      <!-- aviso metodologico de separacao didatica -->
+      <div class="p-2 bg-blue-50 border-l-4 border-blue-600 text-micro text-blue-900 rounded-r">
+        <strong>nota de apresentação:</strong> os dados quantitativos mantêm fonte e estrutura independentes. a união entre as esteiras ocorre exclusivamente por agregadores territoriais e governança autorizada.
       </div>
 
-      <div class="p-3 bg-amber-50 border-l-4 border-amber-600 text-micro text-amber-900 rounded-r">
-        <strong>Princípio Metodológico de Imutabilidade:</strong> Correções geram novas versões derivadas da transcrição, sem jamais sobrescrever o áudio original ou o texto gerado na ingestão.
+      <!-- diagrama grafico vetorial do fluxo quanti -->
+      <div class="bg-white p-4 rounded-lg border border-stone-200 shadow-sm space-y-3">
+        <svg class="w-full h-24" viewBox="0 0 800 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Bloco 1 -->
+          <rect x="10" y="20" width="220" height="60" rx="6" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+          <text x="120" y="48" fill="#334155" font-size="11" font-weight="bold" text-anchor="middle">1. fontes e registros</text>
+          <text x="120" y="64" fill="#475569" font-size="9" text-anchor="middle">bases quantitativas institucionais</text>
+          
+          <!-- Seta 1 -->
+          <path d="M240 50 L270 50" stroke="#475569" stroke-width="2"/>
+
+          <!-- Bloco 2 -->
+          <rect x="280" y="20" width="230" height="60" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+          <text x="395" y="48" fill="#0369a1" font-size="11" font-weight="bold" text-anchor="middle">2. indicadores operacionais</text>
+          <text x="395" y="64" fill="#075985" font-size="9" text-anchor="middle">denominadores e métricas de amostragem</text>
+
+          <!-- Seta 2 -->
+          <path d="M520 50 L550 50" stroke="#0369a1" stroke-width="2"/>
+
+          <!-- Bloco 3 -->
+          <rect x="560" y="20" width="230" height="60" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+          <text x="675" y="48" fill="#92400e" font-size="11" font-weight="bold" text-anchor="middle">3. triangulação agregada</text>
+          <text x="675" y="64" fill="#78350f" font-size="9" text-anchor="middle">síntese territorial e publicação</text>
+        </svg>
+
+        <div class="grid grid-cols-2 gap-2 text-micro text-stone-600 pt-1">
+          <p>• métricas populacionais e amostrais mantidas sob regras de confidencialidade.</p>
+          <p>• proibição de cruzamento individual automático sem chave única de governança aprovada.</p>
+        </div>
       </div>
     </section>
 
-    <!-- SLIDE 4: PRESERVAÇÃO DA FALA E ROTEIRO -->
-    <section class="slide flex-col space-y-5 w-full">
-      <div class="border-b border-stone-200 pb-2 flex justify-between items-end">
+    <!-- slide 5: preservacao da fala -->
+    <section class="slide flex-col space-y-4 w-full">
+      <div class="border-b border-stone-200 pb-1 flex justify-between items-end">
         <div>
-          <h2 class="text-xl font-bold text-stone-900">3. Roteiro Semiestruturado & Preservação da Fala</h2>
-          <p class="text-xs text-stone-500">Respeito à narrativa cronológica do pescador e da pescadora</p>
+          <h2 class="text-base font-bold text-stone-900">4. roteiro semiestruturado e preservação da fala</h2>
+          <p class="text-xs text-stone-500">respeito à narrativa cronológica do participante</p>
         </div>
         <div class="w-8 h-2 bg-emerald-600 rounded-full"></div>
       </div>
 
-      <div class="bg-white p-5 rounded-lg border border-stone-200 shadow-sm text-xs space-y-3">
+      <div class="bg-white p-4 rounded-lg border border-stone-200 shadow-sm text-xs space-y-2">
         <p class="text-stone-700 leading-relaxed">
-          O instrumento abrange <strong>6 eixos temáticos</strong>: (1) Trajetória e Rotina; (2) Perigos e Acidentes; (3) Proteção e Prevenção; (4) Percepção de Saúde; (5) Enfrentamento/Redes de Ajuda; e (6) Necessidades Futuras.
+          o instrumento abrange <strong>6 eixos temáticos</strong>: (1) trajetória e rotina; (2) perigos e acidentes; (3) proteção e prevenção; (4) percepção de saúde; (5) enfrentamento e redes de ajuda; (6) necessidades futuras.
         </p>
-        <div class="p-3.5 bg-stone-50 border-l-4 border-emerald-600 text-stone-700 text-micro space-y-1 rounded-r">
-          <span class="font-bold block text-emerald-900">Diretriz Metodológica da Pesquisa:</span>
-          <p>O discurso do participante não deve ser forçado a caber rigidamente em 6 caixas fechadas de resposta. Um assunto pode surgir de forma transversal em qualquer momento do depoimento e se relacionar com mais de uma pergunta do roteiro.</p>
+        <div class="p-3 bg-stone-50 border-l-4 border-emerald-600 text-stone-700 text-micro space-y-1 rounded-r">
+          <span class="font-bold block text-emerald-900">diretriz metodológica da pesquisa:</span>
+          <p>o discurso do participante não deve ser forçado a caber rigidamente em 6 caixas fechadas de resposta. um assunto pode surgir de forma transversal em qualquer momento do depoimento e se relacionar com mais de uma pergunta do roteiro.</p>
         </div>
       </div>
     </section>
 
-    <!-- SLIDE 5: MATRIZ DE FUNCIONALIDADES DAS 8 TELAS -->
-    <section class="slide flex-col space-y-5 w-full">
-      <div class="border-b border-stone-200 pb-2 flex justify-between items-end">
+    <!-- slide 6: estrutura dos modulos -->
+    <section class="slide flex-col space-y-4 w-full">
+      <div class="border-b border-stone-200 pb-1 flex justify-between items-end">
         <div>
-          <h2 class="text-xl font-bold text-stone-900">4. Estrutura dos Módulos nas 8 Telas do MVP</h2>
-          <p class="text-xs text-stone-500">Navegação e escopo dos ambientes operacionais e públicos</p>
+          <h2 class="text-base font-bold text-stone-900">5. estrutura dos módulos nas 8 telas do mvp</h2>
+          <p class="text-xs text-stone-500">navegação e escopo dos ambientes operacionais e públicos</p>
         </div>
         <div class="w-8 h-2 bg-red-600 rounded-full"></div>
       </div>
@@ -233,147 +287,147 @@
         <table class="w-full text-left text-micro border-collapse">
           <thead>
             <tr class="bg-stone-100 text-stone-700 border-b border-stone-200 font-bold">
-              <th class="p-2.5">Ambiente no MVP</th>
-              <th class="p-2.5">Função Principal no Fluxo</th>
-              <th class="p-2.5 text-center">ATL</th>
-              <th class="p-2.5 text-center">Supervisão / Análise</th>
-              <th class="p-2.5 text-center">Público</th>
+              <th class="p-2">ambiente no mvp</th>
+              <th class="p-2">função principal no fluxo</th>
+              <th class="p-2 text-center">atl</th>
+              <th class="p-2 text-center">supervisão / análise</th>
+              <th class="p-2 text-center">público</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-stone-100 text-stone-600">
             <tr>
-              <td class="p-2.5 font-bold text-stone-800">1. Fila & Entrevistas</td>
-              <td class="p-2.5">Acompanhamento da tramitação de estados</td>
-              <td class="p-2.5 text-center text-amber-700 font-bold">Acesso</td>
-              <td class="p-2.5 text-center text-amber-700 font-bold">Acesso</td>
-              <td class="p-2.5 text-center text-stone-300">—</td>
+              <td class="p-2 font-bold text-stone-800">1. fila e entrevistas</td>
+              <td class="p-2">acompanhamento da tramitação de estados</td>
+              <td class="p-2 text-center text-amber-700 font-bold">acesso</td>
+              <td class="p-2 text-center text-amber-700 font-bold">acesso</td>
+              <td class="p-2 text-center text-stone-300">.</td>
             </tr>
             <tr>
-              <td class="p-2.5 font-bold text-stone-800">2. Cadastro & Ingestão</td>
-              <td class="p-2.5">Ficha pseudonimizada e upload com SHA-256</td>
-              <td class="p-2.5 text-center text-amber-700 font-bold">Acesso</td>
-              <td class="p-2.5 text-center text-stone-300">—</td>
-              <td class="p-2.5 text-center text-stone-300">—</td>
+              <td class="p-2 font-bold text-stone-800">2. cadastro e ingestão</td>
+              <td class="p-2">ficha pseudonimizada e upload com sha-256</td>
+              <td class="p-2 text-center text-amber-700 font-bold">acesso</td>
+              <td class="p-2 text-center text-stone-300">.</td>
+              <td class="p-2 text-center text-stone-300">.</td>
             </tr>
             <tr>
-              <td class="p-2.5 font-bold text-stone-800">3. Conferência Whisper</td>
-              <td class="p-2.5">Player sincronizado e revisão por turnos</td>
-              <td class="p-2.5 text-center text-amber-700 font-bold">Acesso</td>
-              <td class="p-2.5 text-center text-stone-300">—</td>
-              <td class="p-2.5 text-center text-stone-300">—</td>
+              <td class="p-2 font-bold text-stone-800">3. conferência whisper</td>
+              <td class="p-2">player sincronizado e revisão por turnos</td>
+              <td class="p-2 text-center text-amber-700 font-bold">acesso</td>
+              <td class="p-2 text-center text-stone-300">.</td>
+              <td class="p-2 text-center text-stone-300">.</td>
             </tr>
             <tr>
-              <td class="p-2.5 font-bold text-stone-800">4. Segmentação Roteiro</td>
-              <td class="p-2.5">Mapeamento de respostas transversais</td>
-              <td class="p-2.5 text-center text-stone-300">—</td>
-              <td class="p-2.5 text-center text-blue-700 font-bold">Acesso</td>
-              <td class="p-2.5 text-center text-stone-300">—</td>
+              <td class="p-2 font-bold text-stone-800">4. segmentação roteiro</td>
+              <td class="p-2">mapeamento de respostas transversais</td>
+              <td class="p-2 text-center text-stone-300">.</td>
+              <td class="p-2 text-center text-blue-700 font-bold">acesso</td>
+              <td class="p-2 text-center text-stone-300">.</td>
             </tr>
             <tr>
-              <td class="p-2.5 font-bold text-stone-800">5. Supervisão & Condução</td>
-              <td class="p-2.5">Aprovação do corpus e avaliação de escuta</td>
-              <td class="p-2.5 text-center text-stone-300">—</td>
-              <td class="p-2.5 text-center text-blue-700 font-bold">Acesso</td>
-              <td class="p-2.5 text-center text-stone-300">—</td>
+              <td class="p-2 font-bold text-stone-800">5. supervisão e condução</td>
+              <td class="p-2">aprovação do corpus e avaliação de escuta</td>
+              <td class="p-2 text-center text-stone-300">.</td>
+              <td class="p-2 text-center text-blue-700 font-bold">acesso</td>
+              <td class="p-2 text-center text-stone-300">.</td>
             </tr>
             <tr>
-              <td class="p-2.5 font-bold text-stone-800">6. Análise & Codebook</td>
-              <td class="p-2.5">Codificação temática e redação de Memos</td>
-              <td class="p-2.5 text-center text-stone-300">—</td>
-              <td class="p-2.5 text-center text-emerald-700 font-bold">Acesso</td>
-              <td class="p-2.5 text-center text-stone-300">—</td>
+              <td class="p-2 font-bold text-stone-800">6. análise e codebook</td>
+              <td class="p-2">codificação temática e redação de memos</td>
+              <td class="p-2 text-center text-stone-300">.</td>
+              <td class="p-2 text-center text-emerald-700 font-bold">acesso</td>
+              <td class="p-2 text-center text-stone-300">.</td>
             </tr>
             <tr class="bg-amber-50/40">
-              <td class="p-2.5 font-bold text-stone-900">7. Resultados Públicos</td>
-              <td class="p-2.5">Sínteses, indicadores e retorno comunitário</td>
-              <td class="p-2.5 text-center text-amber-700 font-bold">Acesso</td>
-              <td class="p-2.5 text-center text-amber-700 font-bold">Acesso</td>
-              <td class="p-2.5 text-center text-amber-700 font-bold">Acesso</td>
+              <td class="p-2 font-bold text-stone-900">7. resultados públicos</td>
+              <td class="p-2">sínteses, indicadores e retorno comunitário</td>
+              <td class="p-2 text-center text-amber-700 font-bold">acesso</td>
+              <td class="p-2 text-center text-amber-700 font-bold">acesso</td>
+              <td class="p-2 text-center text-amber-700 font-bold">acesso</td>
             </tr>
             <tr>
-              <td class="p-2.5 font-bold text-stone-800">8. Métodos & Diretrizes</td>
-              <td class="p-2.5">Protocolos e 6 perguntas do roteiro</td>
-              <td class="p-2.5 text-center text-amber-700 font-bold">Acesso</td>
-              <td class="p-2.5 text-center text-amber-700 font-bold">Acesso</td>
-              <td class="p-2.5 text-center text-amber-700 font-bold">Acesso</td>
+              <td class="p-2 font-bold text-stone-800">8. métodos e diretrizes</td>
+              <td class="p-2">protocolos e 6 perguntas do roteiro</td>
+              <td class="p-2 text-center text-amber-700 font-bold">acesso</td>
+              <td class="p-2 text-center text-amber-700 font-bold">acesso</td>
+              <td class="p-2 text-center text-amber-700 font-bold">acesso</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- SLIDE 6: ROADMAP QUALI / QUANTI -->
-    <section class="slide flex-col space-y-5 w-full">
-      <div class="border-b border-stone-200 pb-2 flex justify-between items-end">
+    <!-- slide 7: roadmap futuro -->
+    <section class="slide flex-col space-y-4 w-full">
+      <div class="border-b border-stone-200 pb-1 flex justify-between items-end">
         <div>
-          <h2 class="text-xl font-bold text-stone-900">5. Plano de Evolução do Produto (Roadmap)</h2>
-          <p class="text-xs text-stone-500">Módulos futuros após a consolidação da esteira de transcrição</p>
+          <h2 class="text-base font-bold text-stone-900">6. plano de evolução do produto (roadmap)</h2>
+          <p class="text-xs text-stone-500">módulos futuros após a consolidação da esteira de transcrição</p>
         </div>
         <div class="w-8 h-2 bg-amber-600 rounded-full"></div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-        <div class="bg-white p-4 rounded-lg border border-stone-200 shadow-sm space-y-2">
-          <span class="text-amber-800 font-bold block border-b pb-1">Módulo Qualitativo</span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+        <div class="bg-white p-3.5 rounded-lg border border-stone-200 shadow-sm space-y-1">
+          <span class="text-amber-800 font-bold block border-b pb-1">módulo qualitativo</span>
           <p class="text-stone-600 text-micro leading-relaxed">
-            Matriz de categorização temática, buscas semânticas assistidas por scripts Python e consolidação de evidências empíricas.
+            matriz de categorização temática, buscas semânticas assistidas por scripts python e consolidação de evidências empíricas.
           </p>
         </div>
-        <div class="bg-white p-4 rounded-lg border border-stone-200 shadow-sm space-y-2">
-          <span class="text-blue-800 font-bold block border-b pb-1">Módulo Quantitativo</span>
+        <div class="bg-white p-3.5 rounded-lg border border-stone-200 shadow-sm space-y-1">
+          <span class="text-blue-800 font-bold block border-b pb-1">módulo quantitativo</span>
           <p class="text-stone-600 text-micro leading-relaxed">
-            Indicadores de acidentes e saúde ocupacional, com triangulação por território mediante regras estritas de governança.
+            indicadores de acidentes e saúde ocupacional, com triangulação por território mediante regras estritas de governança.
           </p>
         </div>
-        <div class="bg-white p-4 rounded-lg border border-stone-200 shadow-sm space-y-2">
-          <span class="text-emerald-800 font-bold block border-b pb-1">Portal do Pescador</span>
+        <div class="bg-white p-3.5 rounded-lg border border-stone-200 shadow-sm space-y-1">
+          <span class="text-emerald-800 font-bold block border-b pb-1">portal do pescador</span>
           <p class="text-stone-600 text-micro leading-relaxed">
-            Devolutiva pública em linguagem acessível sobre segurança náutica, direitos previdenciários e saúde do trabalhador.
+            devolutiva pública em linguagem acessível sobre segurança náutica, direitos previdenciários e saúde do trabalhador.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- SLIDE 7: REQUISITOS PARA DADOS REAIS (LGPD) -->
-    <section class="slide flex-col space-y-5 w-full">
-      <div class="border-b border-stone-200 pb-2 flex justify-between items-end">
+    <!-- slide 8: governanca e dados reais -->
+    <section class="slide flex-col space-y-4 w-full">
+      <div class="border-b border-stone-200 pb-1 flex justify-between items-end">
         <div>
-          <h2 class="text-xl font-bold text-stone-900">6. Governança e Transição para Dados Reais</h2>
-          <p class="text-xs text-stone-500">Requisitos para o recebimento de arquivos de campo</p>
+          <h2 class="text-base font-bold text-stone-900">7. governança e transição para dados reais</h2>
+          <p class="text-xs text-stone-500">requisitos para o recebimento de arquivos de campo</p>
         </div>
         <div class="w-8 h-2 bg-red-600 rounded-full"></div>
       </div>
 
-      <div class="bg-stone-50 border border-stone-200 p-4 rounded-lg text-xs space-y-2.5 text-stone-800 shadow-sm">
-        <p class="font-bold text-amber-900">Diretrizes Estritas de Segurança e LGPD:</p>
+      <div class="bg-stone-50 border border-stone-200 p-4 rounded-lg text-xs space-y-2 text-stone-800 shadow-sm">
+        <p class="font-bold text-amber-900">diretrizes estritas de segurança e lgpd:</p>
         <ul class="list-disc list-inside space-y-1.5 text-stone-700 text-micro">
-          <li><strong>Bucket Privado:</strong> Armazenamento de áudios fora de pastas públicas, acessados via URLs temporárias pré-assinadas;</li>
-          <li><strong>Segregação do Cofre:</strong> Identificação civil do participante e TCLE mantidos em esquema separado do corpus de análise;</li>
-          <li><strong>Processamento Seguro:</strong> Execução de modelos de IA (Whisper) exclusivamente em ambiente interno ou controlado, sem submissão de áudio ou texto a APIs públicas externas.</li>
+          <li><strong>bucket privado:</strong> armazenamento de áudios fora de pastas públicas, acessados via urls temporárias pré-assinadas;</li>
+          <li><strong>segregação do cofre:</strong> identificação civil do participante e tcle mantidos em esquema separado do corpus de análise;</li>
+          <li><strong>processamento seguro:</strong> execução de transcrição automática exclusivamente em ambiente interno ou controlado, sem submissão de áudio ou texto a serviços externos abertos.</li>
         </ul>
       </div>
     </section>
 
   </main>
 
-  <!-- RODAPÉ COM NAVEGAÇÃO DOS SLIDES -->
-  <footer class="border-t border-stone-200 p-4 bg-white shadow-inner">
+  <!-- rodapé com navegação dos slides -->
+  <footer class="border-t border-stone-200 p-3 bg-white shadow-inner">
     <div class="max-w-5xl mx-auto flex justify-between items-center">
-      <button id="btn-prev" class="px-4 py-2 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded text-xs font-semibold border border-stone-300 disabled:opacity-30 transition">
-        ← Anterior
+      <button id="btn-prev" class="px-3 py-1.5 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded text-xs font-semibold border border-stone-300 disabled:opacity-30 transition">
+        ← anterior
       </button>
 
-      <div class="space-x-1.5 flex items-center" id="dots-container">
-        <!-- Indicadores de pontos injetados via JS -->
+      <div class="space-x-1 flex items-center" id="dots-container">
+        <!-- indicadores de pontos -->
       </div>
 
-      <button id="btn-next" class="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded text-xs font-semibold shadow transition">
-        Próximo →
+      <button id="btn-next" class="px-3 py-1.5 bg-amber-600 hover:bg-amber-700 text-white rounded text-xs font-semibold shadow transition">
+        próximo →
       </button>
     </div>
   </footer>
 
-  <!-- LÓGICA DE NAVEGAÇÃO DOS SLIDES -->
+  <!-- lógica de navegação -->
   <script>
     const slides = document.querySelectorAll('.slide');
     const btnPrev = document.getElementById('btn-prev');
@@ -382,10 +436,9 @@
     const dotsContainer = document.getElementById('dots-container');
     let currentSlide = 0;
 
-    // Cria os pontos de navegação estilo Tangram
     slides.forEach((_, i) => {
       const dot = document.createElement('span');
-      dot.className = `inline-block w-2.5 h-2.5 rounded-full cursor-pointer transition ${i === 0 ? 'bg-amber-600 scale-125' : 'bg-stone-300 hover:bg-stone-400'}`;
+      dot.className = `inline-block w-2 h-2 rounded-full cursor-pointer transition ${i === 0 ? 'bg-amber-600 scale-125' : 'bg-stone-300 hover:bg-stone-400'}`;
       dot.addEventListener('click', () => goToSlide(i));
       dotsContainer.appendChild(dot);
     });
@@ -394,13 +447,12 @@
       slides.forEach((slide, i) => {
         slide.classList.toggle('active', i === currentSlide);
       });
-      indicator.textContent = `Slide ${currentSlide + 1} de ${slides.length}`;
+      indicator.textContent = `slide ${currentSlide + 1} de ${slides.length}`;
       btnPrev.disabled = currentSlide === 0;
       btnNext.disabled = currentSlide === slides.length - 1;
 
-      // Atualiza os pontos
       Array.from(dotsContainer.children).forEach((dot, i) => {
-        dot.className = `inline-block w-2.5 h-2.5 rounded-full cursor-pointer transition ${i === currentSlide ? 'bg-amber-600 scale-125' : 'bg-stone-300 hover:bg-stone-400'}`;
+        dot.className = `inline-block w-2 h-2 rounded-full cursor-pointer transition ${i === currentSlide ? 'bg-amber-600 scale-125' : 'bg-stone-300 hover:bg-stone-400'}`;
       });
     }
 
@@ -417,7 +469,6 @@
       if (currentSlide < slides.length - 1) { currentSlide++; updateSlides(); }
     });
 
-    // Navegação pelas setas do teclado
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight' && currentSlide < slides.length - 1) { currentSlide++; updateSlides(); }
       if (e.key === 'ArrowLeft' && currentSlide > 0) { currentSlide--; updateSlides(); }
