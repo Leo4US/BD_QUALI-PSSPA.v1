@@ -1252,24 +1252,5 @@
       container.appendChild(span);
       simularAviso(`Código ${codigo} e Memo vinculados na demonstração!`);
     }
-
-    let audioPlaying = false;
-    function toggleAudio() {
-      audioPlaying = !audioPlaying;
-      const btn = document.getElementById('btn-audio-player');
-      const status = document.getElementById('player-status');
-      if (audioPlaying) {
-        btn.textContent = '❚❚ Pausar Áudio';
-        btn.classList.replace('bg-teal-600', 'bg-amber-600');
-        status.textContent = 'Reproduzindo trecho audio_p01_original.mp3 [00:00:45]...';
-      } else {
-        btn.textContent = '▶ Reproduzir Áudio';
-        btn.classList.replace('bg-amber-600', 'bg-teal-600');
-        status.textContent = 'Pausado - audio_p01_original.mp3 (00:00:45 / 00:28:10)';
-      }
-    }
-
-    atualizarPerfil('supervisor');
-  </script>
 </body>
 </html>
