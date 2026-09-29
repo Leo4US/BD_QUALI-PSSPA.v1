@@ -17,10 +17,10 @@
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <div class="flex items-center space-x-2">
         <span class="text-teal-400 text-xl">⚓</span>
-        <span class="font-bold text-slate-200 tracking-wide">Plataforma Quali/Quanti - Pesca Artesanal</span>
+        <span class="font-bold text-slate-200 tracking-wide">Plataforma Quali/Quanti - Pesca Artesanal (PTSSPA)</span>
       </div>
       <div id="slide-indicator" class="text-xs font-mono text-slate-400 bg-slate-800 px-3 py-1 rounded-full">
-        Slide 1 de 6
+        Slide 1 de 7
       </div>
     </div>
   </header>
@@ -28,149 +28,258 @@
   <!-- CONTAINER DE SLIDES (APRESENTAÇÃO) -->
   <main class="flex-grow max-w-5xl mx-auto w-full p-6 flex items-center justify-center">
 
-    <!-- SLIDE 1: CAPA -->
-    <section class="slide active flex-col items-center text-center space-y-6 max-w-2xl">
-      <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs rounded-full border border-teal-700">Projeto de Pesquisa Acadêmica</span>
-      <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight">
-        Apoio à Pesquisa Qualitativa:<br>
+    <!-- SLIDE 1: CAPA COM CRÉDITOS E AUTORIAS -->
+    <section class="slide active flex-col items-center text-center space-y-5 max-w-3xl">
+      <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs rounded-full border border-teal-700">
+        Programa Trabalho Saudável e Seguro na Pesca Artesanal (PTSSPA)
+      </span>
+      <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+        Plataforma de Apoio à Pesquisa Qualitativa:<br>
         <span class="text-teal-400">Trabalho, Saúde e Segurança na Pesca Artesanal</span>
       </h1>
-      <p class="text-sm text-slate-400 leading-relaxed">
-        Plataforma para gestão de entrevistas semiestruturadas, acompanhamento de campo por Agentes Territoriais (ATL) e fluxo de validação pela supervisão.
+      <p class="text-xs md:text-sm text-slate-400 leading-relaxed max-w-2xl">
+        Protótipo operacional (MVP) para gestão de entrevistas semiestruturadas, transcrição assistida por Whisper, validação de campo e tratamento analítico do corpus.
       </p>
-      <div class="pt-4 text-xs text-slate-500">
-        Use as setas do teclado (← →) ou os botões abaixo para navegar.
+
+      <!-- CRÉDITOS INSTITUCIONAIS DISCRETOS -->
+      <div class="pt-2 border-t border-slate-800/80 w-full grid grid-cols-1 md:grid-cols-3 gap-3 text-micro text-slate-400 text-left bg-slate-950/40 p-3 rounded-lg border border-slate-800">
+        <div>
+          <span class="text-slate-300 font-bold block">Propriedade dos Dados:</span>
+          Fundacentro
+        </div>
+        <div>
+          <span class="text-slate-300 font-bold block">Gestão Institucional:</span>
+          Coordenador PTSSPA: Marcelo Vasconcellos<br>
+          Dir. Pesquisa Aplicada: Eberval Castro
+        </div>
+        <div>
+          <span class="text-slate-300 font-bold block">Autoria e Desenvolvimento:</span>
+          Dra. Luana Bedigaray<br>
+          Dr. Leandro Oliveira
+        </div>
+      </div>
+
+      <div class="text-micro text-slate-500 font-mono">
+        Navegação: setas do teclado (← →) ou botões no rodapé.
       </div>
     </section>
 
-    <!-- SLIDE 2: FLUXO DE TRABALHO E PERFIS -->
-    <section class="slide flex-col space-y-6 w-full">
-      <div class="border-b border-slate-800 pb-3">
-        <h2 class="text-xl font-bold text-teal-400">1. Perfis e Fluxo de Estados</h2>
-        <p class="text-xs text-slate-400">Organização das papéis de usuário e ciclo de vida da transcrição</p>
+    <!-- SLIDE 2: PERFEIS DE USUÁRIO E CONTROLE DE ACESSO -->
+    <section class="slide flex-col space-y-5 w-full">
+      <div class="border-b border-slate-800 pb-2">
+        <h2 class="text-xl font-bold text-teal-400">1. Perfis e Restrições de Acesso</h2>
+        <p class="text-xs text-slate-400">Atribuição por escopo e isolamento das funções de trabalho</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-        <div class="bg-slate-800/60 p-4 rounded-lg border border-slate-700">
-          <h3 class="font-bold text-teal-300 mb-2">ATL (Agente Territorial)</h3>
-          <ul class="list-disc list-inside space-y-1 text-slate-300">
-            <li>Registra entrevistas e vincula materiais;</li>
-            <li>Realiza conferência textual por turnos de fala;</li>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+        <div class="bg-slate-800/60 p-3.5 rounded-lg border border-slate-700 space-y-1.5">
+          <div class="flex justify-between items-center">
+            <h3 class="font-bold text-teal-300">ATL (Agente Territorial)</h3>
+            <span class="text-micro bg-teal-950 text-teal-400 px-1.5 py-0.5 rounded border border-teal-800">Visão Limitada</span>
+          </div>
+          <p class="text-slate-400 text-micro">Acesso restrito aos Ambientes 1, 2 e 3:</p>
+          <ul class="list-disc list-inside space-y-1 text-slate-300 text-micro">
+            <li>Cadastra participante pseudonimizado e áudio;</li>
+            <li>Confecciona e ajusta transcrições atribuídas;</li>
             <li>Sinaliza dúvidas e ajusta inaudíveis;</li>
-            <li>Responde pendências da supervisão.</li>
+            <li>Responde pendências abertas pela supervisão.</li>
           </ul>
         </div>
-        <div class="bg-slate-800/60 p-4 rounded-lg border border-slate-700">
-          <h3 class="font-bold text-amber-300 mb-2">Supervisora (Pesquisadora)</h3>
-          <ul class="list-disc list-inside space-y-1 text-slate-300">
-            <li>Acompanha o progresso por território;</li>
-            <li>Avalia a condução pedagógica da conversa;</li>
-            <li>Devolve para acertos ou valida a transcrição;</li>
-            <li>Garante a conformidade metodológica.</li>
+
+        <div class="bg-slate-800/60 p-3.5 rounded-lg border border-slate-700 space-y-1.5">
+          <div class="flex justify-between items-center">
+            <h3 class="font-bold text-amber-300">Supervisora (Pesquisadora)</h3>
+            <span class="text-micro bg-amber-950 text-amber-400 px-1.5 py-0.5 rounded border border-amber-800">Visão Completa</span>
+          </div>
+          <p class="text-slate-400 text-micro">Gestão de qualidade e conformidade:</p>
+          <ul class="list-disc list-inside space-y-1 text-slate-300 text-micro">
+            <li>Acompanha tramitação por território;</li>
+            <li>Avalia a condução pedagógica da entrevista;</li>
+            <li>Aprova o corpus ou devolve com justificativa;</li>
+            <li>Garante regras éticas e de amostragem.</li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-800/60 p-3.5 rounded-lg border border-slate-700 space-y-1.5">
+          <div class="flex justify-between items-center">
+            <h3 class="font-bold text-indigo-300">Especialista Analítico</h3>
+            <span class="text-micro bg-indigo-950 text-indigo-400 px-1.5 py-0.5 rounded border border-indigo-800">Visão Completa</span>
+          </div>
+          <p class="text-slate-400 text-micro">Tratamento do corpus validado:</p>
+          <ul class="list-disc list-inside space-y-1 text-slate-300 text-micro">
+            <li>Acessa apenas transcrições aprovadas;</li>
+            <li>Gerencia o Codebook versionado (#Tags);</li>
+            <li>Elabora Memos e reflexões teóricas;</li>
+            <li>Consolida evidências para relatórios.</li>
           </ul>
         </div>
       </div>
 
-      <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 text-center text-xs text-slate-400 font-mono">
-        Registrada &rarr; Materiais Anexados &rarr; Conferência ATL &rarr; Revisão Supervisão &rarr; [ Pendência OR Validada ]
+      <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800 text-center text-micro text-slate-400">
+        Acesso protegido por autenticação (Login / Cadastro) e atribuição por projeto/território.
       </div>
     </section>
 
-    <!-- SLIDE 3: PRESERVAÇÃO DA FALA -->
-    <section class="slide flex-col space-y-6 w-full">
-      <div class="border-b border-slate-800 pb-3">
-        <h2 class="text-xl font-bold text-teal-400">2. Roteiro e Preservação da Fala</h2>
-        <p class="text-xs text-slate-400">Respeito à entrevista semiestruturada sem enquadramento rígido</p>
+    <!-- SLIDE 3: O PERCURSO DA EVIDÊNCIA (12 PASSO) -->
+    <section class="slide flex-col space-y-5 w-full">
+      <div class="border-b border-slate-800 pb-2">
+        <h2 class="text-xl font-bold text-teal-400">2. O Percurso da Evidência (Ciclo de Vida)</h2>
+        <p class="text-xs text-slate-400">Ciclo rastreável desde a gravação em campo até a síntese pública</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-micro">
+        <div class="bg-slate-800/40 p-2 rounded border border-slate-700">
+          <span class="text-teal-400 font-bold block">1. Coleta & Ingestão</span>
+          <span class="text-slate-400">Validação de SHA-256 e TCLE em cofre separado.</span>
+        </div>
+        <div class="bg-slate-800/40 p-2 rounded border border-slate-700">
+          <span class="text-teal-400 font-bold block">2. Transcrição Whisper</span>
+          <span class="text-slate-400">Processamento via Python mantendo original imutável.</span>
+        </div>
+        <div class="bg-slate-800/40 p-2 rounded border border-slate-700">
+          <span class="text-teal-400 font-bold block">3. Conferência ATL</span>
+          <span class="text-slate-400">Ajustes por turnos com dúvidas sinalizadas.</span>
+        </div>
+        <div class="bg-slate-800/40 p-2 rounded border border-slate-700">
+          <span class="text-teal-400 font-bold block">4. Validação Supervisão</span>
+          <span class="text-slate-400">Aprovação do corpus ou devolução motivada.</span>
+        </div>
+        <div class="bg-slate-800/40 p-2 rounded border border-slate-700">
+          <span class="text-teal-400 font-bold block">5. Segmentação Roteiro</span>
+          <span class="text-slate-400">Mapeamento das falas pelas 6 perguntas.</span>
+        </div>
+        <div class="bg-slate-800/40 p-2 rounded border border-slate-700">
+          <span class="text-teal-400 font-bold block">6. Codebook & Memos</span>
+          <span class="text-slate-400">Codificação temática e notas de interpretação.</span>
+        </div>
+        <div class="bg-slate-800/40 p-2 rounded border border-slate-700">
+          <span class="text-teal-400 font-bold block">7. Condução Pedagógica</span>
+          <span class="text-slate-400">Registro separado de orientação ao entrevistador.</span>
+        </div>
+        <div class="bg-slate-800/40 p-2 rounded border border-slate-700">
+          <span class="text-teal-400 font-bold block">8. Relatórios & Publicação</span>
+          <span class="text-slate-400">Produtos agregados sem risco de reidentificação.</span>
+        </div>
+      </div>
+
+      <div class="p-2.5 bg-slate-950 border-l-2 border-teal-500 text-micro text-teal-200">
+        <strong>Princípio de Imutabilidade:</strong> Correções geram novas versões derivadas da transcrição, sem sobrescrever o áudio ou texto original.
+      </div>
+    </section>
+
+    <!-- SLIDE 4: PRESERVAÇÃO DA FALA E ROTEIRO -->
+    <section class="slide flex-col space-y-5 w-full">
+      <div class="border-b border-slate-800 pb-2">
+        <h2 class="text-xl font-bold text-teal-400">3. Roteiro Semiestruturado & Preservação da Fala</h2>
+        <p class="text-xs text-slate-400">Respeito à narrativa na ordem em que ocorreu em campo</p>
       </div>
 
       <div class="bg-slate-800/40 p-4 rounded-lg border border-slate-700 text-xs space-y-3">
-        <p class="text-slate-300">
-          A pesquisa aborda <strong>6 eixos temáticos</strong> (Trajetória, Perigos/Saúde, Proteção, Percepção Temporal, Redes de Ajuda e Necessidades Futuras).
+        <p class="text-slate-300 leading-relaxed">
+          O instrumento abrange <strong>6 eixos temáticos</strong>: (1) Trajetória e Rotina; (2) Perigos e Acidentes; (3) Proteção; (4) Percepção de Saúde; (5) Enfrentamento/Redes de Ajuda; e (6) Necessidades Futuras.
         </p>
-        <div class="p-3 bg-teal-950/40 border-l-2 border-teal-500 text-teal-200">
-          <strong>Princípio Metodológico:</strong> O participante não responde a 6 "caixas fechadas". O discurso é mantido na ordem cronológica em que ocorreu, permitindo que um tema atravesse múltiplos momentos da conversa.
+        <div class="p-3 bg-teal-950/40 border-l-2 border-teal-500 text-teal-200 text-micro space-y-1">
+          <span class="font-bold block text-teal-300">Diretriz Metodológica da Pesquisa:</span>
+          <p>O discurso do participante não deve ser forçado a caber rigidamente em 6 caixas de resposta. Um assunto pode surgir transversalmente em qualquer momento do depoimento e se relacionar com mais de uma pergunta do roteiro.</p>
         </div>
       </div>
     </section>
 
-    <!-- SLIDE 4: MATRIZ DE PERMISSÕES -->
-    <section class="slide flex-col space-y-6 w-full">
-      <div class="border-b border-slate-800 pb-3">
-        <h2 class="text-xl font-bold text-teal-400">3. Matriz de Permissões (Demonstração)</h2>
-        <p class="text-xs text-slate-400">Isolamento funcional por atribuição territorial</p>
+    <!-- SLIDE 5: MATRIZ DE FUNCIONALIDADES DAS 7 TELAS -->
+    <section class="slide flex-col space-y-5 w-full">
+      <div class="border-b border-slate-800 pb-2">
+        <h2 class="text-xl font-bold text-teal-400">4. Módulos das 7 Telas do MVP</h2>
+        <p class="text-xs text-slate-400">Mapeamento dos ambientes clicáveis construídos</p>
       </div>
 
       <div class="overflow-x-auto">
-        <table class="w-full text-left text-xs border-collapse">
+        <table class="w-full text-left text-micro border-collapse">
           <thead>
             <tr class="bg-slate-800 text-slate-300 border-b border-slate-700">
-              <th class="p-2.5">Funcionalidade</th>
-              <th class="p-2.5 text-center">ATL</th>
-              <th class="p-2.5 text-center">Supervisora</th>
+              <th class="p-2">Ambiente no MVP</th>
+              <th class="p-2">Função Principal</th>
+              <th class="p-2 text-center">Permissão ATL</th>
+              <th class="p-2 text-center">Supervisão/Análise</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-800 text-slate-400">
             <tr>
-              <td class="p-2.5">Registrar Entrevista e Participante Pseudonimizado</td>
-              <td class="p-2.5 text-center text-teal-400">Sim</td>
-              <td class="p-2.5 text-center text-slate-600">Não</td>
+              <td class="p-2 font-bold text-slate-200">1. Fila & Entrevistas</td>
+              <td class="p-2">Acompanhamento da tramitação de estados</td>
+              <td class="p-2 text-center text-teal-400">Acesso</td>
+              <td class="p-2 text-center text-teal-400">Acesso</td>
             </tr>
             <tr>
-              <td class="p-2.5">Corrigir Turnos de Fala e Sinalizar Dúvidas</td>
-              <td class="p-2.5 text-center text-teal-400">Sim</td>
-              <td class="p-2.5 text-center text-slate-600">Não</td>
+              <td class="p-2 font-bold text-slate-200">2. Cadastro & Ingestão</td>
+              <td class="p-2">Ficha pseudonimizada e upload com SHA-256</td>
+              <td class="p-2 text-center text-teal-400">Acesso</td>
+              <td class="p-2 text-center text-slate-600">Restrito</td>
             </tr>
             <tr>
-              <td class="p-2.5">Registrar Avaliação da Condução (Formulário Separado)</td>
-              <td class="p-2.5 text-center text-slate-600">Não</td>
-              <td class="p-2.5 text-center text-amber-400">Sim</td>
+              <td class="p-2 font-bold text-slate-200">3. Conferência Whisper</td>
+              <td class="p-2">Player sincronizado e revisão por turnos</td>
+              <td class="p-2 text-center text-teal-400">Acesso</td>
+              <td class="p-2 text-center text-slate-600">Restrito</td>
             </tr>
             <tr>
-              <td class="p-2.5">Aprovar Transcrição Final / Devolver Pendência</td>
-              <td class="p-2.5 text-center text-slate-600">Não</td>
-              <td class="p-2.5 text-center text-amber-400">Sim</td>
+              <td class="p-2 font-bold text-slate-200">4. Segmentação Roteiro</td>
+              <td class="p-2">Mapeamento de respostas transversais</td>
+              <td class="p-2 text-center text-slate-600">Bloqueado</td>
+              <td class="p-2 text-center text-amber-400">Acesso</td>
+            </tr>
+            <tr>
+              <td class="p-2 font-bold text-slate-200">5. Supervisão & Condução</td>
+              <td class="p-2">Aprovação do corpus e avaliação de escuta</td>
+              <td class="p-2 text-center text-slate-600">Bloqueado</td>
+              <td class="p-2 text-center text-amber-400">Acesso</td>
+            </tr>
+            <tr>
+              <td class="p-2 font-bold text-slate-200">6. Análise & Codebook</td>
+              <td class="p-2">Codificação temática e redação de Memos</td>
+              <td class="p-2 text-center text-slate-600">Bloqueado</td>
+              <td class="p-2 text-center text-indigo-400">Acesso</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- SLIDE 5: ROADMAP FUTURO (QUALI / QUANTI) -->
-    <section class="slide flex-col space-y-6 w-full">
-      <div class="border-b border-slate-800 pb-3">
-        <h2 class="text-xl font-bold text-teal-400">4. Plano de Evolução do Produto</h2>
-        <p class="text-xs text-slate-400">Módulos previstos para as etapas posteriores ao MVP</p>
+    <!-- SLIDE 6: ROADMAP QUALI / QUANTI -->
+    <section class="slide flex-col space-y-5 w-full">
+      <div class="border-b border-slate-800 pb-2">
+        <h2 class="text-xl font-bold text-teal-400">5. Plano de Evolução do Produto</h2>
+        <p class="text-xs text-slate-400">Evolução planejada após a estabilização do MVP de transcrições</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
         <div class="bg-slate-800/50 p-3 rounded border border-slate-700 space-y-1">
           <span class="text-teal-400 font-bold">Módulo Qualitativo</span>
-          <p class="text-slate-400 text-micro">Codificação temática, redação de memos e criação de categorias com trechos de evidência.</p>
+          <p class="text-slate-400 text-micro">Matriz de categorias, buscas semânticas assistidas por scripts Python e consolidação de evidências.</p>
         </div>
         <div class="bg-slate-800/50 p-3 rounded border border-slate-700 space-y-1">
           <span class="text-amber-400 font-bold">Módulo Quantitativo</span>
-          <p class="text-slate-400 text-micro">Indicadores municipais, cruzamento quali-quanti por localidade mediante governança de dados.</p>
+          <p class="text-slate-400 text-micro">Indicadores de acidentes e saúde ocupacional, com triangulação por território mediante governança.</p>
         </div>
         <div class="bg-slate-800/50 p-3 rounded border border-slate-700 space-y-1">
           <span class="text-indigo-400 font-bold">Portal do Pescador</span>
-          <p class="text-slate-400 text-micro">Área informativa com orientações de saúde ocupacional e direitos previdenciários.</p>
+          <p class="text-slate-400 text-micro">Devolutiva pública em linguagem acessível sobre segurança náutica e direitos previdenciários.</p>
         </div>
       </div>
     </section>
 
-    <!-- SLIDE 6: SEGURANÇA E DADOS REAIS -->
-    <section class="slide flex-col space-y-6 w-full">
-      <div class="border-b border-slate-800 pb-3">
-        <h2 class="text-xl font-bold text-teal-400">5. Requisitos para Transição para Dados Reais</h2>
-        <p class="text-xs text-slate-400">O que é necessário antes de receber informações de campo</p>
+    <!-- SLIDE 7: REQUISITOS PARA DADOS REAIS (LGPD) -->
+    <section class="slide flex-col space-y-5 w-full">
+      <div class="border-b border-slate-800 pb-2">
+        <h2 class="text-xl font-bold text-teal-400">6. Governança e Transição para Dados Reais</h2>
+        <p class="text-xs text-slate-400">Requisitos obrigatórios para o recebimento de arquivos de campo</p>
       </div>
 
       <div class="bg-amber-950/30 border border-amber-800/50 p-4 rounded-lg text-xs space-y-2 text-amber-200">
-        <p class="font-bold">⚠️ Diretrizes Estritas de Governança:</p>
-        <ul class="list-disc list-inside space-y-1 text-slate-300">
-          <li><strong>Autenticação Forte:</strong> Implementação de login seguro com controle de perfil por JWT/OAuth.</li>
-          <li><strong>Armazenamento Criptografado:</strong> Áudios mantidos fora de repositórios públicos e com acesso restrito via tokens expiráveis.</li>
-          <li><strong>Sem envio para serviços externos:</strong> Garantia de que conteúdos e voz não serão submetidos a ferramentas externas sem governança.</li>
+        <p class="font-bold">⚠️ Diretrizes Estritas de Segurança e LGPD:</p>
+        <ul class="list-disc list-inside space-y-1 text-slate-300 text-micro">
+          <li><strong>Bucket Privado:</strong> Armazenamento de áudios fora de pastas públicas, acessados via tokens expiráveis;</li>
+          <li><strong>Segregação do Cofre:</strong> Identificação do participante e TCLE separados do corpus de análise;</li>
+          <li><strong>Processamento Seguro:</strong> Execução de modelos de IA (Whisper) exclusivamente em ambiente interno ou controlado, sem submissão de voz a APIs públicas.</li>
         </ul>
       </div>
     </section>
