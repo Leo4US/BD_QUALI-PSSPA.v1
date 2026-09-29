@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plataforma de Pesquisa QUALI - pesquisadora responsável: Dra. Luana Bidigaray</title>
+  <title>Plataforma de Pesquisa Quali/Quanti - Pesca Artesanal</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .tab-content { display: none; }
@@ -12,64 +12,68 @@
 </head>
 <body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col font-sans">
 
-  <!-- AVISO DE DADOS FICTÍCIOS / RIGOR CIENTÍFICO -->
+  <!-- AVISO DE GOVERNANÇA E DADOS SINTÉTICOS -->
   <div class="bg-slate-800 text-slate-300 text-xs px-4 py-1.5 border-b border-slate-700 flex justify-between items-center">
-    <span><strong>Ambiente de Demonstração (MVP):</strong> Protocolo Científico e Dados Sintéticos baseados nos Instrumentos de Pesquisa.</span>
-    <span class="text-slate-400">Versão do Roteiro: 1.0 (Semiestruturado)</span>
+    <span><strong>Ambiente de Demonstração (MVP):</strong> Protocolo Científico v0.1 | Dados Sintéticos e Pseudonimizados.</span>
+    <span class="text-slate-400 font-mono text-micro">Diretrizes de Rastreabilidade e Custódia</span>
   </div>
 
-  <!-- CABEÇALHO DA PLATAFORMA -->
+  <!-- CABEÇALHO PRINCIPAL -->
   <header class="bg-slate-900 text-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-3">
       <div>
         <h1 class="font-bold text-lg leading-tight tracking-wide text-slate-100">Pesca Artesanal: Trabalho, Saúde e Segurança</h1>
-        <p class="text-xs text-teal-400 font-medium">Plataforma de Apoio à Pesquisa Quali/Quanti</p>
+        <p class="text-xs text-teal-400 font-medium">Plataforma Operacional de Pesquisa Qualitativa</p>
       </div>
 
-      <!-- SELEÇÃO DE PERFIL / MÓDULO -->
+      <!-- SELEÇÃO DE PERFIL / CONTEXTO -->
       <div class="flex items-center space-x-2 bg-slate-800 px-3 py-1.5 rounded border border-slate-700">
         <label for="select-perfil" class="text-xs font-semibold text-slate-300">Perfil Ativo:</label>
-        <select id="select-perfil" class="bg-slate-900 text-white text-xs rounded border border-slate-600 px-2 py-1 focus:outline-none focus:border-teal-500 cursor-pointer">
+        <select id="select-perfil" onchange="atualizarPerfil(this.value)" class="bg-slate-900 text-white text-xs rounded border border-slate-600 px-2 py-1 focus:outline-none focus:border-teal-500 cursor-pointer">
           <option value="atl">ATL (Agente Territorial - João)</option>
-          <option value="pesquisador">Pesquisador/Supervisão (Luana)</option>
+          <option value="supervisor">Pesquisadora / Supervisora (Luana)</option>
+          <option value="analista">Especialista Analítico</option>
         </select>
       </div>
     </div>
   </header>
 
-  <!-- NAVEGAÇÃO / AMBIENTES CLICÁVEIS -->
+  <!-- NAVEGAÇÃO SECUNDÁRIA (REORGANIZADA CONFORME PLANO) -->
   <nav class="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-10">
     <div class="max-w-7xl mx-auto px-4 flex overflow-x-auto space-x-1 text-xs font-semibold" id="nav-tabs">
-      <button onclick="switchTab('tab-entrevistas')" class="tab-btn px-4 py-3 text-teal-700 border-b-2 border-teal-700 whitespace-nowrap hover:bg-slate-50" id="btn-entrevistas">
-        Minhas Entrevistas
+      <button onclick="switchTab('tab-entrevistas')" class="tab-btn px-3.5 py-3 text-teal-700 border-b-2 border-teal-700 whitespace-nowrap hover:bg-slate-50">
+        1. Fila de Trabalho & Entrevistas
       </button>
-      <button onclick="switchTab('tab-cadastro')" class="tab-btn px-4 py-3 text-slate-600 hover:text-teal-700 whitespace-nowrap hover:bg-slate-50" id="btn-cadastro">
-        Novo Cadastro (Ficha de Identificação)
+      <button onclick="switchTab('tab-cadastro')" class="tab-btn px-3.5 py-3 text-slate-600 hover:text-teal-700 whitespace-nowrap hover:bg-slate-50">
+        2. Cadastro & Ingestão
       </button>
-      <button onclick="switchTab('tab-conferencia')" class="tab-btn px-4 py-3 text-slate-600 hover:text-teal-700 whitespace-nowrap hover:bg-slate-50" id="btn-conferencia">
-        Conferência da Transcrição (Whisper)
+      <button onclick="switchTab('tab-conferencia')" class="tab-btn px-3.5 py-3 text-slate-600 hover:text-teal-700 whitespace-nowrap hover:bg-slate-50">
+        3. Conferência Transcrição (Whisper)
       </button>
-      <button onclick="switchTab('tab-supervisao')" class="tab-btn px-4 py-3 text-slate-600 hover:text-teal-700 whitespace-nowrap hover:bg-slate-50" id="btn-supervisao">
-        Validação & Condução (Supervisão)
+      <button onclick="switchTab('tab-segmentacao')" class="tab-btn px-3.5 py-3 text-slate-600 hover:text-teal-700 whitespace-nowrap hover:bg-slate-50">
+        4. Segmentação por Pergunta
       </button>
-      <button onclick="switchTab('tab-analise')" class="tab-btn px-4 py-3 text-slate-600 hover:text-teal-700 whitespace-nowrap hover:bg-slate-50" id="btn-analise">
-        Tratamento & Análise Qualitativa
+      <button onclick="switchTab('tab-supervisao')" class="tab-btn px-3.5 py-3 text-slate-600 hover:text-teal-700 whitespace-nowrap hover:bg-slate-50">
+        5. Supervisão & Condução
       </button>
-      <button onclick="switchTab('tab-roteiro')" class="tab-btn px-4 py-3 text-slate-600 hover:text-teal-700 whitespace-nowrap hover:bg-slate-50" id="btn-roteiro">
-        Roteiro & Métodos da Pesquisa
+      <button onclick="switchTab('tab-analise')" class="tab-btn px-3.5 py-3 text-slate-600 hover:text-teal-700 whitespace-nowrap hover:bg-slate-50">
+        6. Análise & Codebook
+      </button>
+      <button onclick="switchTab('tab-roteiro')" class="tab-btn px-3.5 py-3 text-slate-600 hover:text-teal-700 whitespace-nowrap hover:bg-slate-50">
+        7. Métodos & Diretrizes
       </button>
     </div>
   </nav>
 
-  <!-- CONTEÚDO PRINCIPAL DA SPA -->
+  <!-- CONTEÚDO PRINCIPAL (SPA) -->
   <main class="max-w-7xl mx-auto px-4 py-6 flex-grow w-full">
 
-    <!-- 1. PAINEL DE ENTREVISTAS -->
+    <!-- TELA 1: FILA DE TRABALHO E ENTREVISTAS -->
     <section id="tab-entrevistas" class="tab-content active space-y-4">
       <div class="flex justify-between items-center bg-white p-4 rounded border border-slate-200 shadow-sm">
         <div>
-          <h2 class="text-base font-bold text-slate-800">Painel Geral de Entrevistas em Campo</h2>
-          <p class="text-xs text-slate-500">Acompanhamento do estado das entrevistas semiestruturadas por território.</p>
+          <h2 class="text-base font-bold text-slate-800">Fila de Trabalho e Tramitação das Entrevistas</h2>
+          <p class="text-xs text-slate-500">Acompanhamento do percurso da evidência e estados operacionais (Passo 1 ao 6).</p>
         </div>
         <button onclick="switchTab('tab-cadastro')" class="bg-teal-700 hover:bg-teal-800 text-white text-xs font-semibold px-3 py-2 rounded transition">
           + Cadastrar Nova Entrevista
@@ -80,36 +84,48 @@
         <table class="w-full text-left text-xs border-collapse">
           <thead>
             <tr class="bg-slate-100 text-slate-700 border-b border-slate-200 font-bold">
-              <th class="p-3">Código Pseudonimizado</th>
-              <th class="p-3">Município / Localidade</th>
-              <th class="p-3">Tipo de Pesca</th>
-              <th class="p-3">Tempo de Pesca</th>
-              <th class="p-3">Estado Atual</th>
-              <th class="p-3 text-right">Ação</th>
+              <th class="p-3">Código Publicável</th>
+              <th class="p-3">Município / Local</th>
+              <th class="p-3">ATL Responsável</th>
+              <th class="p-3">Estado no Fluxo</th>
+              <th class="p-3">Versão Transcrição</th>
+              <th class="p-3 text-right">Ação Requerida</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-slate-100" id="lista-entrevistas">
+          <tbody class="divide-y divide-slate-100">
             <tr class="hover:bg-slate-50">
               <td class="p-3 font-bold text-teal-800">P-ILHA-01</td>
-              <td class="p-3 text-slate-600">Ilha Comprida (Vila Pedrinhas)</td>
-              <td class="p-3 text-slate-600">Emalhe e Cerco (Mar/Estuário)</td>
-              <td class="p-3 text-slate-600">22 anos</td>
-              <td class="p-3"><span class="bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded text-micro">EM CONFERÊNCIA (ATL)</span></td>
+              <td class="p-3 text-slate-600">Ilha Comprida (Pedrinhas)</td>
+              <td class="p-3 text-slate-600">João Silva (ATL)</td>
+              <td class="p-3"><span class="bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded text-micro">EM CONFERÊNCIA ATL</span></td>
+              <td class="p-3 text-slate-500 font-mono">v1.1 (Whisper base)</td>
               <td class="p-3 text-right">
-                <button onclick="carregarEntrevistaExemplo('P-ILHA-01')" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-2.5 py-1 rounded">
-                  Abrir Conferência &rarr;
+                <button onclick="carregarCaso('P-ILHA-01', 'tab-conferencia')" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-2.5 py-1 rounded">
+                  Conferir Áudio/Texto &rarr;
                 </button>
               </td>
             </tr>
             <tr class="hover:bg-slate-50">
               <td class="p-3 font-bold text-teal-800">P-ILHA-02</td>
               <td class="p-3 text-slate-600">Ilha Comprida (Boqueirão)</td>
-              <td class="p-3 text-slate-600">Coleta de Mariscos</td>
-              <td class="p-3 text-slate-600">15 anos</td>
+              <td class="p-3 text-slate-600">João Silva (ATL)</td>
               <td class="p-3"><span class="bg-indigo-100 text-indigo-800 font-bold px-2 py-0.5 rounded text-micro">REVISÃO SUPERVISÃO</span></td>
+              <td class="p-3 text-slate-500 font-mono">v1.2 (Revisada ATL)</td>
               <td class="p-3 text-right">
-                <button onclick="switchTab('tab-supervisao')" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-2.5 py-1 rounded">
-                  Revisar &rarr;
+                <button onclick="carregarCaso('P-ILHA-02', 'tab-supervisao')" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-2.5 py-1 rounded">
+                  Validar / Devolver &rarr;
+                </button>
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-bold text-teal-800">P-CANAN-01</td>
+              <td class="p-3 text-slate-600">Cananéia (Ariri)</td>
+              <td class="p-3 text-slate-600">Maria Oliveira (ATL)</td>
+              <td class="p-3"><span class="bg-green-100 text-green-800 font-bold px-2 py-0.5 rounded text-micro">CORPUS APROVADO</span></td>
+              <td class="p-3 text-slate-500 font-mono">v2.0 (Validada)</td>
+              <td class="p-3 text-right">
+                <button onclick="carregarCaso('P-CANAN-01', 'tab-analise')" class="bg-teal-700 hover:bg-teal-800 text-white font-semibold px-2.5 py-1 rounded">
+                  Analisar Trechos &rarr;
                 </button>
               </td>
             </tr>
@@ -118,306 +134,299 @@
       </div>
     </section>
 
-    <!-- 2. NOVO CADASTRO (FICHA DE IDENTIFICAÇÃO DO PARTICIPANTE) -->
+    <!-- TELA 2: CADASTRO E INGESTÃO DE MÍDIA -->
     <section id="tab-cadastro" class="tab-content space-y-4">
       <div class="bg-white p-6 rounded border border-slate-200 shadow-sm space-y-4 max-w-3xl mx-auto">
         <div class="border-b border-slate-200 pb-3">
-          <h2 class="text-base font-bold text-slate-800">Ficha de Identificação do(a) Entrevistado(a)</h2>
-          <p class="text-xs text-slate-500">Instrumento de Cadastro do Participante da Entrevista Semiestruturada. Os dados pessoais são pseudonimizados automaticamente.</p>
+          <h2 class="text-base font-bold text-slate-800">Ficha do Participante & Ingestão de Áudio</h2>
+          <p class="text-xs text-slate-500">Registro de Metadados, Validação de Checksum e Consentimento Informado.</p>
         </div>
 
-        <form id="form-cadastro-participante" class="space-y-4 text-xs">
-          <!-- REGRA METODOLÓGICA DE PRIVACIDADE -->
+        <form id="form-cadastro" class="space-y-4 text-xs">
           <div class="bg-slate-50 p-3 rounded border border-slate-200 text-slate-600 text-micro">
-            <strong>Garantia de Pseudonimização:</strong> O nome completo fica armazenado isoladamente. Para a equipe de análise qualitativa, o participante será identificado exclusivamente pela chave territorial.
-          </div>
-
-          <div>
-            <label class="block font-semibold text-slate-700 mb-1">1. Nome do(a) entrevistado(a) (Uso do ATL):</label>
-            <input type="text" id="cad-nome" placeholder="Ex: João da Silva (fictício)" required class="w-full p-2 border border-slate-300 rounded focus:border-teal-600">
+            <strong>Proteção por Finalidade:</strong> A identidade civil e o termo de consentimento ficam armazenados em cofre separado. O corpus de análise utiliza apenas a chave pseudonimizada.
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label class="block font-semibold text-slate-700 mb-1">2. Data de Nascimento:</label>
-              <input type="date" id="cad-nascimento" value="1978-05-12" required class="w-full p-2 border border-slate-300 rounded">
+              <label class="block font-semibold text-slate-700 mb-1">Nome Completo do(a) Entrevistado(a):</label>
+              <input type="text" required placeholder="Fictício para demonstração" class="w-full p-2 border border-slate-300 rounded">
             </div>
             <div>
-              <label class="block font-semibold text-slate-700 mb-1">5. Tempo na pesca artesanal (Anos):</label>
-              <input type="number" id="cad-tempo" value="22" min="0" required class="w-full p-2 border border-slate-300 rounded">
+              <label class="block font-semibold text-slate-700 mb-1">Situação do Consentimento (TCLE):</label>
+              <select required class="w-full p-2 border border-slate-300 rounded">
+                <option value="assinado">TCLE Assinado e Arquivado</option>
+                <option value="gravado">Consentimento Gravado em Áudio</option>
+              </select>
             </div>
           </div>
 
-          <div>
-            <label class="block font-semibold text-slate-700 mb-1">3. Gênero[cite: 1]:</label>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 pt-1">
-              <label class="flex items-center space-x-1.5 cursor-pointer"><input type="radio" name="genero" value="Homem" checked> <span>Homem</span></label>
-              <label class="flex items-center space-x-1.5 cursor-pointer"><input type="radio" name="genero" value="Mulher"> <span>Mulher</span></label>
-              <label class="flex items-center space-x-1.5 cursor-pointer"><input type="radio" name="genero" value="Não binário"> <span>Não binário</span></label>
-              <label class="flex items-center space-x-1.5 cursor-pointer"><input type="radio" name="genero" value="Mulher Trans"> <span>Mulher Trans</span></label>
-              <label class="flex items-center space-x-1.5 cursor-pointer"><input type="radio" name="genero" value="Homem Trans"> <span>Homem Trans</span></label>
-              <label class="flex items-center space-x-1.5 cursor-pointer"><input type="radio" name="genero" value="Outro"> <span>Outro</span></label>
-              <label class="flex items-center space-x-1.5 cursor-pointer"><input type="radio" name="genero" value="Prefere não responder"> <span>Prefere não responder</span></label>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label class="block font-semibold text-slate-700 mb-1">Gênero:</label>
+              <select class="w-full p-2 border border-slate-300 rounded">
+                <option>Homem</option><option>Mulher</option><option>Não binário</option><option>Outro</option>
+              </select>
             </div>
-          </div>
-
-          <div>
-            <label class="block font-semibold text-slate-700 mb-1">4. Cor ou Raça[cite: 1]:</label>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 pt-1">
-              <label class="flex items-center space-x-1.5 cursor-pointer"><input type="radio" name="raca" value="Branca"> <span>Branca</span></label>
-              <label class="flex items-center space-x-1.5 cursor-pointer"><input type="radio" name="raca" value="Preta"> <span>Preta</span></label>
-              <label class="flex items-center space-x-1.5 cursor-pointer"><input type="radio" name="raca" value="Parda" checked> <span>Parda</span></label>
-              <label class="flex items-center space-x-1.5 cursor-pointer"><input type="radio" name="raca" value="Amarela"> <span>Amarela</span></label>
-              <label class="flex items-center space-x-1.5 cursor-pointer"><input type="radio" name="raca" value="Indígena"> <span>Indígena</span></label>
-              <label class="flex items-center space-x-1.5 cursor-pointer"><input type="radio" name="raca" value="Quilombola"> <span>Quilombola</span></label>
-              <label class="flex items-center space-x-1.5 cursor-pointer"><input type="radio" name="raca" value="Prefere não responder"> <span>Prefere não responder</span></label>
+            <div>
+              <label class="block font-semibold text-slate-700 mb-1">Cor ou Raça:</label>
+              <select class="w-full p-2 border border-slate-300 rounded">
+                <option>Parda</option><option>Preta</option><option>Branca</option><option>Indígena</option><option>Amarela</option><option>Quilombola</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-semibold text-slate-700 mb-1">Tempo na Pesca (Anos):</label>
+              <input type="number" required value="18" class="w-full p-2 border border-slate-300 rounded">
             </div>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label class="block font-semibold text-slate-700 mb-1">6. Município - Comunidade/Localidade[cite: 1]:</label>
-              <input type="text" id="cad-local" value="Ilha Comprida - Vila Pedrinhas" required class="w-full p-2 border border-slate-300 rounded">
+              <label class="block font-semibold text-slate-700 mb-1">Município - Comunidade/Localidade:</label>
+              <input type="text" required value="Ilha Comprida - Pedrinhas" class="w-full p-2 border border-slate-300 rounded">
             </div>
             <div>
-              <label class="block font-semibold text-slate-700 mb-1">7. Tipo principal de pesca[cite: 1]:</label>
-              <input type="text" id="cad-tipo" value="Emalhe e Cerco" required class="w-full p-2 border border-slate-300 rounded">
+              <label class="block font-semibold text-slate-700 mb-1">Tipo Principal de Pesca:</label>
+              <input type="text" required value="Emalhe e Cerco" class="w-full p-2 border border-slate-300 rounded">
             </div>
           </div>
 
-          <div class="pt-3 flex justify-end space-x-2">
+          <!-- ARQUIVO DE ÁUDIO & CHECKSUM -->
+          <div class="p-3 bg-slate-50 border border-slate-200 rounded space-y-2">
+            <label class="block font-semibold text-slate-700">Arquivo de Áudio da Entrevista (.mp3 / .wav / .m4a):</label>
+            <input type="file" class="block w-full text-xs text-slate-500 file:mr-4 file:py-1.5 file:px-3 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-slate-800 file:text-white hover:file:bg-slate-700">
+            <p class="text-micro text-slate-500">Validação Automática de Ingestão: Cálculo de Checksum SHA-256 e Verificação de Duplicidade ao Enviar.</p>
+          </div>
+
+          <div class="pt-2 flex justify-end space-x-2">
             <button type="button" onclick="switchTab('tab-entrevistas')" class="px-3 py-2 border rounded text-slate-600 hover:bg-slate-100">Cancelar</button>
-            <button type="submit" class="px-4 py-2 bg-teal-700 hover:bg-teal-800 text-white font-semibold rounded">Salvar Ficha & Registrar Entrevista</button>
+            <button type="submit" class="px-4 py-2 bg-teal-700 hover:bg-teal-800 text-white font-semibold rounded">Salvar & Enviar para Ingestão</button>
           </div>
         </form>
       </div>
     </section>
 
-    <!-- 3. CONFERÊNCIA DA TRANSCRIÇÃO (WHISPER/ATL) -->
+    <!-- TELA 3: CONFERÊNCIA DA TRANSCRIÇÃO (WHISPER) -->
     <section id="tab-conferencia" class="tab-content space-y-4">
       <div class="bg-white p-4 rounded border border-slate-200 shadow-sm flex flex-wrap justify-between items-center gap-2">
         <div>
-          <h2 class="text-base font-bold text-slate-800">Conferência de Transcrição Automática (Whisper)</h2>
-          <p class="text-xs text-slate-500">Participante: <strong class="text-teal-800" id="conf-codigo">P-ILHA-01</strong> | Local: Ilha Comprida | Responsável: ATL João</p>
+          <h2 class="text-base font-bold text-slate-800">Conferência de Transcrição e Sincronia de Áudio</h2>
+          <p class="text-xs text-slate-500">Caso: <strong id="conf-caso-id" class="text-teal-800">P-ILHA-01</strong> | Motor: Whisper Python (versão base) | Idioma: pt</p>
         </div>
         <div class="flex space-x-2 text-xs">
-          <button onclick="simularImportacaoWhisper()" class="bg-slate-700 hover:bg-slate-800 text-white px-3 py-1.5 rounded font-semibold">
-            Reimportar Transcrição Whisper (.json)
+          <button onclick="alert('Reprocessamento do Whisper solicitado com novo modelo (small).')" class="bg-slate-700 hover:bg-slate-800 text-white px-3 py-1.5 rounded font-semibold">
+            Reprocessar Whisper
           </button>
-          <button onclick="salvarRevisaoATL()" class="bg-teal-700 hover:bg-teal-800 text-white px-3 py-1.5 rounded font-semibold">
-            Enviar para Validação da Supervisão
+          <button onclick="concluirConferenciaATL()" class="bg-teal-700 hover:bg-teal-800 text-white px-3 py-1.5 rounded font-semibold">
+            Concluir Conferência & Submeter
           </button>
         </div>
       </div>
 
-      <!-- PLAYER SIMULADO DE ÁUDIO DE CAMPO -->
+      <!-- PLAYER SIMULADO DE ÁUDIO -->
       <div class="bg-slate-900 text-white p-3 rounded border border-slate-800 flex items-center justify-between text-xs font-mono">
         <div class="flex items-center space-x-3">
-          <button id="btn-play" onclick="toggleAudioSimulado()" class="bg-teal-600 px-3 py-1 rounded text-white font-bold font-sans hover:bg-teal-500">
+          <button onclick="toggleAudio()" id="btn-audio-player" class="bg-teal-600 px-3 py-1 rounded text-white font-bold font-sans hover:bg-teal-500">
             ▶ Reproduzir Áudio
           </button>
-          <span id="audio-status">Simulação de reprodução pausada (audio_ficticio_01.mp3)</span>
+          <span id="player-status">Pausado - audio_p01_original.mp3 (00:00:45 / 00:28:10)</span>
         </div>
-        <span>00:01:45 / 00:12:30</span>
+        <span class="text-slate-400">Ator: João Silva (ATL)</span>
       </div>
 
-      <!-- CRITÉRIO METODOLÓGICO DA CONVERSA -->
-      <div class="bg-amber-50 border-l-4 border-amber-500 p-3 rounded text-xs text-amber-900">
-        <strong>Orientação Metodológica:</strong> Preserve a narrativa na ordem cronológica em que ocorreu. Não force a fala do participante para caber estritamente nos 6 eixos do roteiro[cite: 2]; um mesmo trecho pode atravessar mais de um tema[cite: 2].
-      </div>
-
-      <!-- LISTA DE TURNOS DE FALA EDITÁVEIS -->
-      <div class="space-y-3" id="container-turnos">
-        <!-- TURNO 1 (ATL) -->
+      <!-- TURNOS DE FALA COM AUDITORIA -->
+      <div class="space-y-3">
         <div class="bg-white p-3 rounded border border-slate-200 text-xs space-y-1">
           <div class="flex justify-between font-bold text-slate-600">
-            <span class="text-teal-700">ATL (Entrevistador) [00:00:05]</span>
-            <span class="text-slate-400 font-normal">Tema 1: Rotina e Local da Pesca</span>
+            <span class="text-teal-700">ATL (Entrevistador) [00:00:05 - 00:00:20]</span>
+            <span class="text-slate-400 font-normal">Pergunta Roteiro #1</span>
           </div>
-          <p class="text-slate-800">"Conte pra mim como você começou a trabalhar na pesca e como é um dia seu de trabalho, desde a hora que sai para pescar até voltar? Como é o lugar e o tipo de pesca que faz?"[cite: 2]</p>
+          <p class="text-slate-800">"Conte pra mim como você começou a trabalhar na pesca e como é um dia seu de trabalho, desde a hora que sai para pescar até voltar?"</p>
         </div>
 
-        <!-- TURNO 2 (PARTICIPANTE - COM DÚVIDA / INAUDÍVEL) -->
-        <div class="bg-amber-50/60 p-3 rounded border border-amber-300 text-xs space-y-2" id="turno-2">
+        <div class="bg-amber-50/70 p-3 rounded border border-amber-300 text-xs space-y-2">
           <div class="flex justify-between items-center font-bold">
-            <span class="text-indigo-800">Participante (P-ILHA-01) [00:00:22]</span>
-            <div class="space-x-2">
-              <span class="bg-amber-200 text-amber-900 px-2 py-0.5 rounded text-micro font-bold">INAUDÍVEL/DÚVIDA</span>
-              <button onclick="alternarDuvida('turno-2')" class="text-slate-600 hover:text-slate-900 underline text-micro">Marcar/Desmarcar Dúvida</button>
-            </div>
+            <span class="text-indigo-800">Participante (P-ILHA-01) [00:00:22 - 00:01:05]</span>
+            <span class="bg-amber-200 text-amber-900 px-2 py-0.5 rounded text-micro font-bold">DÚVIDA / INAUDÍVEL SINALIZADO</span>
           </div>
-          <textarea id="texto-turno-2" class="w-full p-2 border border-amber-300 rounded bg-white text-slate-800 leading-relaxed font-sans" rows="3">Eu comecei com 12 anos acompanhando meu pai. Hoje saio às 4h da manhã na barra do [inaudível / canal da baía]. A gente pesca no estuário com rede de emalhe. O mar é muito revolto quando entra vento sul.</textarea>
+          <textarea class="w-full p-2 border border-amber-300 rounded bg-white text-slate-800 leading-relaxed font-sans" rows="3">Comecei com 12 anos acompanhando meu pai. Hoje saio às 4h da manhã para a barra do [inaudível / canal da baía]. A gente pesca no estuário com rede de emalhe. Quando entra o vento sul, o mar fica muito revolto.</textarea>
           <div class="flex justify-between items-center text-micro text-slate-500">
-            <span>Motivo do ajuste: Áudio com ruído de vento no barco.</span>
-            <button onclick="registrarCorrecaoATL('turno-2')" class="bg-slate-800 text-white px-2 py-1 rounded font-semibold hover:bg-slate-700">Salvar Ajuste do Turno</button>
-          </div>
-        </div>
-
-        <!-- TURNO 3 (PARTICIPANTE - SAÚDE E RISCOS) -->
-        <div class="bg-white p-3 rounded border border-slate-200 text-xs space-y-2" id="turno-3">
-          <div class="flex justify-between items-center font-bold">
-            <span class="text-indigo-800">Participante (P-ILHA-01) [00:01:10]</span>
-            <button onclick="alternarDuvida('turno-3')" class="text-slate-500 hover:text-slate-900 underline text-micro">Sinalizar Dúvida</button>
-          </div>
-          <textarea id="texto-turno-3" class="w-full p-2 border border-slate-200 rounded bg-white text-slate-800 leading-relaxed font-sans" rows="3">A parte mais perigosa é o sol forte o dia todo e o peso de puxar a rede na mão[cite: 2]. Já sinto muita dor na coluna e nos braços. A gente toma analgésico por conta própria para aguentar ir trabalhar no dia seguinte[cite: 2].</textarea>
-          <div class="flex justify-between items-center text-micro text-slate-500">
-            <span>Sem pendências registradas.</span>
-            <button onclick="registrarCorrecaoATL('turno-3')" class="bg-slate-800 text-white px-2 py-1 rounded font-semibold hover:bg-slate-700">Salvar Ajuste do Turno</button>
+            <span>Última alteração: ATL João Silva em 29/09/2026 às 08:30 (Versão 1.1)</span>
+            <button onclick="alert('Alteração salva no histórico de auditoria do turno.')" class="bg-slate-800 text-white px-2 py-1 rounded font-semibold hover:bg-slate-700">Salvar Ajuste do Turno</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 4. PAINEL DE VALIDAÇÃO E CONDUÇÃO (SUPERVISÃO - LUANA) -->
+    <!-- TELA 4: SEGMENTAÇÃO E ASSOCIAÇÃO AO ROTEIRO -->
+    <section id="tab-segmentacao" class="tab-content space-y-4">
+      <div class="bg-white p-4 rounded border border-slate-200 shadow-sm">
+        <h2 class="text-base font-bold text-slate-800">Segmentação e Mapeamento de Respostas por Pergunta</h2>
+        <p class="text-xs text-slate-500">Vinculação das falas do participante ao Roteiro Semiestruturado, tratando respostas transversais.</p>
+      </div>
+
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-3 rounded text-xs text-amber-900">
+        <strong>Regra de Segmentação:</strong> Não force o depoimento a caber rigidamente nas caixas. Uma resposta pode estar espalhada em múltiplos turnos de fala ao longo da entrevista.
+      </div>
+
+      <div class="space-y-4 text-xs">
+        <!-- BLOCO DA PERGUNTA 1 DO ROTEIRO -->
+        <div class="bg-white p-4 rounded border border-slate-200 space-y-2">
+          <div class="border-b pb-2 flex justify-between items-center">
+            <span class="font-bold text-teal-800">Pergunta 1: Trajetória, Rotina, Local e Tipo de Pesca</span>
+            <span class="text-micro bg-slate-100 text-slate-600 px-2 py-0.5 rounded">2 Trechos Vinculados</span>
+          </div>
+          <div class="bg-slate-50 p-2.5 rounded border border-slate-200 text-slate-700 space-y-1">
+            <span class="text-micro font-mono text-slate-400">[Turno 2 | 00:00:22]</span>
+            <p>"Comecei com 12 anos acompanhando meu pai. Hoje saio às 4h da manhã para a barra..."</p>
+          </div>
+        </div>
+
+        <!-- BLOCO DA PERGUNTA 2 DO ROTEIRO -->
+        <div class="bg-white p-4 rounded border border-slate-200 space-y-2">
+          <div class="border-b pb-2 flex justify-between items-center">
+            <span class="font-bold text-teal-800">Pergunta 2: Perigos, Acidentes e Problemas de Saúde</span>
+            <span class="text-micro bg-slate-100 text-slate-600 px-2 py-0.5 rounded">1 Trecho Vinculado</span>
+          </div>
+          <div class="bg-slate-50 p-2.5 rounded border border-slate-200 text-slate-700 space-y-1">
+            <span class="text-micro font-mono text-slate-400">[Turno 3 | 00:01:10]</span>
+            <p>"A parte mais perigosa é o sol forte o dia todo e o peso de puxar a rede na mão..."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELA 5: PAINEL DE SUPERVISÃO E CONDUÇÃO -->
     <section id="tab-supervisao" class="tab-content space-y-4">
       <div class="bg-white p-4 rounded border border-slate-200 shadow-sm">
-        <h2 class="text-base font-bold text-slate-800">Área da Supervisão de Pesquisa (Validação & Avaliação)</h2>
-        <p class="text-xs text-slate-500">Exame de correções do ATL e avaliação da condução pedagógica da entrevista semiestruturada.</p>
+        <h2 class="text-base font-bold text-slate-800">Painel de Supervisão e Validação Metodológica</h2>
+        <p class="text-xs text-slate-500">Exame de Qualidade pela Pesquisadora Supervisora (Dra. Luana).</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- COLUNA DA ESQUERDA: AÇÕES DE VALIDAÇÃO -->
-        <div class="bg-white p-4 rounded border border-slate-200 shadow-sm space-y-4 md:col-span-2">
-          <div class="border-b border-slate-200 pb-2 flex justify-between items-center">
-            <h3 class="font-bold text-xs text-slate-700">Transcrição sob Revisão: P-ILHA-01</h3>
-            <span class="text-micro bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">1 Dúvida Sinalizada</span>
+        <!-- DECISÃO DA SUPERVISÃO -->
+        <div class="bg-white p-4 rounded border border-slate-200 shadow-sm md:col-span-2 space-y-4">
+          <h3 class="font-bold text-xs text-slate-700 border-b pb-2">Revisão de Caso: P-ILHA-02</h3>
+          
+          <div class="bg-slate-50 p-3 rounded border border-slate-200 text-xs space-y-2">
+            <span class="font-bold text-slate-700">Resumo das Alterações Feitas pelo ATL:</span>
+            <p class="text-slate-600">O ATL corrigiu 3 termos técnicos locais ("rede de emalhe", "gaiola") e assinalou 1 trecho inaudível devido ao ruído de motor.</p>
           </div>
 
-          <div class="space-y-3 text-xs">
-            <div class="p-3 bg-slate-50 rounded border border-slate-200">
-              <span class="font-bold text-slate-700 block mb-1">Turno 2 ajustado pelo ATL:</span>
-              <p class="italic text-slate-600">"Eu comecei com 12 anos acompanhando meu pai. Hoje saio às 4h da manhã na barra do [inaudível / canal da baía]..."</p>
-            </div>
-
-            <!-- DECISÃO DA SUPERVISÃO -->
-            <div class="p-3 bg-slate-100 rounded border border-slate-300 space-y-2">
-              <span class="font-bold text-slate-800 block">Decisão da Pesquisadora Responsável:</span>
-              <div class="flex flex-wrap gap-2">
-                <button onclick="validarTranscricaoSupervisao('P-ILHA-01')" class="bg-teal-700 hover:bg-teal-800 text-white font-bold px-3 py-1.5 rounded text-xs">
-                  Aprovar & Validar Transcrição
-                </button>
-                <button onclick="devolverComPendencia('P-ILHA-01')" class="bg-red-700 hover:bg-red-800 text-white font-bold px-3 py-1.5 rounded text-xs">
-                  Devolver ao ATL com Pendência
-                </button>
-              </div>
+          <div class="p-3 bg-slate-100 rounded border border-slate-300 space-y-2 text-xs">
+            <span class="font-bold text-slate-800 block">Decisão de Validação:</span>
+            <div class="flex flex-wrap gap-2">
+              <button onclick="validarSupervisao()" class="bg-teal-700 hover:bg-teal-800 text-white font-bold px-3 py-1.5 rounded">
+                ✔ Aprovar Transcrição & Liberar para Análise
+              </button>
+              <button onclick="devolverSupervisao()" class="bg-red-700 hover:bg-red-800 text-white font-bold px-3 py-1.5 rounded">
+                ✖ Devolver com Pendência para o ATL
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- COLUNA DA DIREITA: FORMULÁRIO DE CONDUÇÃO (SEPARADO) -->
-        <div class="bg-white p-4 rounded border border-slate-200 shadow-sm space-y-3 text-xs">
-          <div class="border-b border-slate-200 pb-2">
-            <h3 class="font-bold text-slate-800">Avaliação da Condução da Entrevista</h3>
-            <p class="text-micro text-slate-500">Registro pedagógico sobre a atuação do ATL na escuta qualitativa.</p>
+        <!-- FORMULÁRIO SEPARADO DE CONDUÇÃO -->
+        <div class="bg-white p-4 rounded border border-slate-200 shadow-sm text-xs space-y-3">
+          <h3 class="font-bold text-slate-800 border-b pb-2">Avaliação da Condução Pedagógica</h3>
+          <p class="text-micro text-slate-500">Registro separado da transcrição para orientação do entrevistador.</p>
+
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Qualidade da Escuta Semiestruturada:</label>
+            <select class="w-full p-2 border border-slate-300 rounded">
+              <option>Adequada - Utilizou perguntas de aprofundamento</option>
+              <option>Aprimorar - Induziu respostas em categorias fechadas</option>
+            </select>
           </div>
 
-          <form id="form-conducao" class="space-y-3">
-            <div>
-              <label class="block font-semibold text-slate-700 mb-1">Aprofundamento e Escuta:</label>
-              <select id="eval-escuta" class="w-full p-2 border border-slate-300 rounded">
-                <option value="adequada">Adequada - Utilizou perguntas de aprofundamento[cite: 2]</option>
-                <option value="interrompeu">Aprimorar - Interrompeu a narrativa do participante</option>
-                <option value="excelente">Excelente - Permitiu livre associação de temas</option>
-              </select>
-            </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Orientações para o ATL:</label>
+            <textarea rows="3" class="w-full p-2 border border-slate-300 rounded" placeholder="Observações metodológicas..."></textarea>
+          </div>
 
-            <div>
-              <label class="block font-semibold text-slate-700 mb-1">Observações para Orientação do ATL:</label>
-              <textarea id="eval-obs" rows="4" class="w-full p-2 border border-slate-300 rounded" placeholder="Ex: Lembrar de explorar mais os acidentes naturalizados (ex: exposição solar contínua)...[cite: 2]"></textarea>
-            </div>
-
-            <button type="button" onclick="salvarAvaliacaoConducao()" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-semibold py-1.5 rounded">
-              Salvar Observação de Condução
-            </button>
-          </form>
+          <button onclick="alert('Avaliação da condução salva com sucesso.')" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-semibold py-1.5 rounded">
+            Salvar Avaliação
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- 5. TRATAMENTO DE DADOS & ANÁLISE QUALITATIVA -->
+    <!-- TELA 6: TRATAMENTO DE DADOS E ANÁLISE QUALITATIVA -->
     <section id="tab-analise" class="tab-content space-y-4">
       <div class="bg-white p-4 rounded border border-slate-200 shadow-sm">
-        <h2 class="text-base font-bold text-slate-800">Tratamento de Dados & Codificação Temática</h2>
-        <p class="text-xs text-slate-500">Área de análise qualitativa da pesquisadora: categorização de trechos das transcrições validadas.</p>
+        <h2 class="text-base font-bold text-slate-800">Tratamento de Dados & Codificação Temática (Corpus Aprovado)</h2>
+        <p class="text-xs text-slate-500">Espaço do Especialista Analítico para Gestão de Codebook, Memos e Evidências.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- TRECHO SOB ANÁLISE -->
+        <!-- TRECHOS DO CORPUS -->
         <div class="bg-white p-4 rounded border border-slate-200 shadow-sm md:col-span-2 space-y-3 text-xs">
-          <h3 class="font-bold text-slate-700 border-b pb-2">Trechos da Entrevista Validadas (P-ILHA-01)</h3>
+          <h3 class="font-bold text-slate-700 border-b pb-2">Corpus Aprovado: P-CANAN-01</h3>
 
           <div class="p-3 bg-slate-50 rounded border border-slate-200 space-y-2">
             <p class="text-slate-800 leading-relaxed font-sans">
-              "A parte mais perigosa é o sol forte o dia todo e o peso de puxar a rede na mão[cite: 2]. Já sinto muita dor na coluna e nos braços. A gente toma analgésico por conta própria para aguentar ir trabalhar no dia seguinte[cite: 2]."
+              "A parte mais perigosa é o sol forte o dia todo e o peso de puxar a rede na mão. Já sinto muita dor na coluna e nos braços. A gente toma analgésico por conta própria para aguentar ir trabalhar no dia seguinte."
             </p>
-            <div class="flex flex-wrap gap-1.5 pt-1" id="tags-aplicadas">
-              <span class="bg-teal-100 text-teal-800 font-semibold px-2 py-0.5 rounded text-micro">#Risco_ExposiçãoSol[cite: 2]</span>
-              <span class="bg-teal-100 text-teal-800 font-semibold px-2 py-0.5 rounded text-micro">#Ergonomia_DorColuna[cite: 2]</span>
+            <div class="flex flex-wrap gap-1.5 pt-1" id="tags-container">
+              <span class="bg-teal-100 text-teal-800 font-semibold px-2 py-0.5 rounded text-micro">#Risco_ExposiçãoSol</span>
+              <span class="bg-teal-100 text-teal-800 font-semibold px-2 py-0.5 rounded text-micro">#Ergonomia_DorColuna</span>
               <span class="bg-amber-100 text-amber-800 font-semibold px-2 py-0.5 rounded text-micro">#Automedicação</span>
             </div>
           </div>
         </div>
 
-        <!-- PAINEL DE CODIFICAÇÃO E MEMOS -->
+        <!-- CODEBOOK & MEMOS -->
         <div class="bg-white p-4 rounded border border-slate-200 shadow-sm text-xs space-y-3">
-          <h3 class="font-bold text-slate-800 border-b pb-2">Adicionar Código / Memo Analítico</h3>
+          <h3 class="font-bold text-slate-800 border-b pb-2">Vincular Código / Memo Analítico</h3>
 
           <div>
-            <label class="block font-semibold text-slate-700 mb-1">Código Temático:</label>
-            <input type="text" id="input-novo-codigo" placeholder="Ex: #Rede_de_Ajuda[cite: 2]" class="w-full p-2 border border-slate-300 rounded">
+            <label class="block font-semibold text-slate-700 mb-1">Selecionar Código do Codebook (v1.0):</label>
+            <select id="select-codigo" class="w-full p-2 border border-slate-300 rounded">
+              <option value="#Rede_de_Ajuda">#Rede_de_Ajuda</option>
+              <option value="#Insegurança_Náutica">#Insegurança_Náutica</option>
+              <option value="#Naturalização_da_Dor">#Naturalização_da_Dor</option>
+            </select>
           </div>
 
           <div>
-            <label class="block font-semibold text-slate-700 mb-1">Memo Analítico (Nota Teórica):</label>
-            <textarea id="input-memo" rows="3" class="w-full p-2 border border-slate-300 rounded" placeholder="Relacionar a naturalização da dor ao imperativo do sustento diário..."></textarea>
+            <label class="block font-semibold text-slate-700 mb-1">Memo Analítico (Reflexão Teórica):</label>
+            <textarea id="memo-texto" rows="3" class="w-full p-2 border border-slate-300 rounded" placeholder="Relacionar a automedicação ao imperativo do sustento diário..."></textarea>
           </div>
 
-          <button onclick="adicionarCodigoAnalitico()" class="w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-1.5 rounded">
-            Vincular Código ao Trecho
+          <button onclick="adicionarCodigo()" class="w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-1.5 rounded">
+            Aplicar Código e Salvar Memo
           </button>
         </div>
       </div>
     </section>
 
-    <!-- 6. ROTEIRO & MÉTODOS DA PESQUISA -->
+    <!-- TELA 7: ROTEIRO, MÉTODOS E DIRETRIZES DE LGPD -->
     <section id="tab-roteiro" class="tab-content space-y-4">
       <div class="bg-white p-6 rounded border border-slate-200 shadow-sm space-y-4 text-xs">
         <div class="border-b border-slate-200 pb-3">
-          <h2 class="text-base font-bold text-slate-800">Roteiro de Entrevista Semiestruturada & Critérios Metodológicos</h2>
-          <p class="text-xs text-slate-500">Documento Oficial de Orientação de Campo (Instrumento Qualitativo)[cite: 2].</p>
+          <h2 class="text-base font-bold text-slate-800">Protocolo Metodológico & Roteiro Versionado (v1.0)</h2>
+          <p class="text-xs text-slate-500">Diretrizes de Campo, Rastreabilidade de Dados e Proteção por Finalidade.</p>
         </div>
 
-        <div class="space-y-4 text-slate-700 leading-relaxed">
-          <div class="p-3 bg-slate-50 rounded border border-slate-200">
-            <h3 class="font-bold text-teal-800 mb-1">1. Pesca e local de trabalho[cite: 2]</h3>
-            <p><strong>Pergunta central:</strong> Conte pra mim como você começou a trabalhar na pesca e como é um dia seu de trabalho, desde a hora que sai para pescar até voltar? Como é o lugar onde você costuma pescar e como é o tipo de pesca que você faz?[cite: 2]</p>
-            <p class="text-slate-500 text-micro mt-1"><strong>Aprofundamento:</strong> Tipo de embarcação (canoa, gaiola), ambiente (rio, lagoa, mar, estuário) e peixes pescados[cite: 2].</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-700">
+          <div class="p-3 bg-slate-50 rounded border border-slate-200 space-y-2">
+            <h3 class="font-bold text-teal-800">Princípios do Plano Metodológico:</h3>
+            <ul class="list-disc list-inside space-y-1 text-micro">
+              <li><strong>Fonte Preservada:</strong> Áudio e cadastro original são imutáveis.</li>
+              <li><strong>Transcrição é Hipótese:</strong> O resultado do Whisper exige conferência humana.</li>
+              <li><strong>Rastreabilidade Total:</strong> Todas as afirmações analíticas apontam para o trecho e versão.</li>
+            </ul>
           </div>
-
-          <div class="p-3 bg-slate-50 rounded border border-slate-200">
-            <h3 class="font-bold text-teal-800 mb-1">2. Perigos e riscos na pesca[cite: 2]</h3>
-            <p><strong>Pergunta central:</strong> No seu trabalho na pesca, o que você acha mais perigoso? Isso já causou algum acidente ou problema de saúde? Conte pra mim como aconteceu[cite: 2].</p>
-            <p class="text-slate-500 text-micro mt-1"><strong>Aprofundamento:</strong> Tempo de exposição ao sol, chuva, frio, ventos e acidentes naturalizados[cite: 2].</p>
-          </div>
-
-          <div class="p-3 bg-slate-50 rounded border border-slate-200">
-            <h3 class="font-bold text-teal-800 mb-1">3. Proteção e prevenção[cite: 2]</h3>
-            <p><strong>Pergunta central:</strong> Quando aparece esse tipo de perigo no trabalho, o que você faz para se proteger ou evitar que aconteça alguma coisa?[cite: 2]</p>
-          </div>
-
-          <div class="p-3 bg-slate-50 rounded border border-slate-200">
-            <h3 class="font-bold text-teal-800 mb-1">4. Perceção sobre a Saúde[cite: 2]</h3>
-            <p><strong>Pergunta central:</strong> Como você percebe sua saúde ao longo dos anos trabalhando na pesca? Percebeu alguma mudança? Acha que alguma delas tem a ver com o trabalho na pesca?[cite: 2]</p>
-          </div>
-
-          <div class="p-3 bg-slate-50 rounded border border-slate-200">
-            <h3 class="font-bold text-teal-800 mb-1">5. Enfrentamento e estratégias[cite: 2]</h3>
-            <p><strong>Pergunta central:</strong> Quando acontece um acidente, um problema de saúde ou outra dificuldade por causa do trabalho, o que você costuma fazer? Como você resolve essa situação? Quem ajuda você nessas horas?[cite: 2]</p>
-          </div>
-
-          <div class="p-3 bg-slate-50 rounded border border-slate-200">
-            <h3 class="font-bold text-teal-800 mb-1">6. Perspectiva de Futuro e Necessidades[cite: 2]</h3>
-            <p><strong>Pergunta central:</strong> Na sua opinião, o que seria necessário para que os pescadores e as pescadoras pudessem trabalhar com mais saúde e segurança sem deixar de viver da pesca?[cite: 2]</p>
+          <div class="p-3 bg-slate-50 rounded border border-slate-200 space-y-2">
+            <h3 class="font-bold text-teal-800">Perguntas do Roteiro Semiestruturado:</h3>
+            <ol class="list-decimal list-inside space-y-1 text-micro">
+              <li>Trajetória, rotina, local e tipo de pesca.</li>
+              <li>Perigos, acidentes e problemas de saúde.</li>
+              <li>Formas de proteção e prevenção.</li>
+              <li>Percepção da própria saúde ao longo dos anos.</li>
+              <li>Estratégias de enfrentamento e redes de ajuda.</li>
+              <li>Necessidades para trabalhar com saúde e segurança.</li>
+            </ol>
           </div>
         </div>
       </div>
@@ -425,21 +434,20 @@
 
   </main>
 
-  <!-- RODAPÉ CLEAN E TÉCNICO -->
+  <!-- RODAPÉ TÉCNICO -->
   <footer class="bg-slate-900 text-slate-400 text-xs py-4 border-t border-slate-800 mt-auto">
     <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-between items-center gap-2">
       <div>
-        <span class="font-semibold text-slate-200">Plataforma de Apoio à Pesquisa Quali/Quanti</span> - Pesca Artesanal
+        <span class="font-semibold text-slate-200">Plataforma Pesca Artesanal</span> - Protótipo de Validação Metodológica
       </div>
       <div class="text-slate-500 font-mono text-micro">
-        Ambiente de Demonstração | Estritamente com Dados Sintéticos
+        Ambiente Local com Persistência Sintética
       </div>
     </div>
   </footer>
 
-  <!-- LÓGICA E INTERATIVIDADE EM JAVASCRIPT -->
+  <!-- JAVASCRIPT E NAVEGAÇÃO -->
   <script>
-    // 1. TROCA DE ABAS E AMBIENTES (SPA)
     function switchTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(el => {
@@ -448,7 +456,6 @@
       });
 
       document.getElementById(tabId).classList.add('active');
-      
       const activeBtn = document.querySelector(`[onclick="switchTab('${tabId}')"]`);
       if (activeBtn) {
         activeBtn.classList.add('text-teal-700', 'border-b-2', 'border-teal-700');
@@ -456,91 +463,62 @@
       }
     }
 
-    // 2. SIMULAÇÃO DE ÁUDIO
-    let isPlaying = false;
-    function toggleAudioSimulado() {
-      isPlaying = !isPlaying;
-      const btn = document.getElementById('btn-play');
-      const status = document.getElementById('audio-status');
-      
-      if (isPlaying) {
-        btn.textContent = '❚❚ Pausar Áudio';
-        btn.classList.replace('bg-teal-600', 'bg-amber-600');
-        status.textContent = 'Reproduzindo trecho do áudio fictício [00:01:45]...';
-      } else {
-        btn.textContent = '▶ Reproduzir Áudio';
-        btn.classList.replace('bg-amber-600', 'bg-teal-600');
-        status.textContent = 'Simulação de reprodução pausada (audio_ficticio_01.mp3)';
-      }
+    function atualizarPerfil(perfil) {
+      alert(`Perfil alterado para simulação: ${perfil.toUpperCase()}`);
     }
 
-    // 3. AÇÕES DO ATL
-    function alternarDuvida(turnoId) {
-      const el = document.getElementById(turnoId);
-      el.classList.toggle('bg-amber-50/60');
-      el.classList.toggle('border-amber-300');
-      alert(`Sinalização de dúvida atualizada para o ${turnoId}.`);
+    function carregarCaso(codigo, abaDestino) {
+      const el = document.getElementById('conf-caso-id');
+      if (el) el.textContent = codigo;
+      switchTab(abaDestino);
     }
 
-    function registrarCorrecaoATL(turnoId) {
-      alert(`Ajuste no ${turnoId} registrado no histórico de auditoria pelo ATL.`);
-    }
-
-    function simularImportacaoWhisper() {
-      alert("Simulação: Transcrição automatizada gerada pelo Whisper reimportada com sucesso para o banco de dados.");
-    }
-
-    function salvarRevisaoATL() {
-      alert("Transcrição conferida pelo ATL e encaminhada para o Painel de Supervisão!");
+    function concluirConferenciaATL() {
+      alert("Conferência do ATL concluída com sucesso! Estado alterado para REVISÃO SUPERVISÃO.");
       switchTab('tab-supervisao');
     }
 
-    // 4. FORMULÁRIO DE CADASTRO DO PARTICIPANTE
-    document.getElementById('form-cadastro-participante').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const local = document.getElementById('cad-local').value;
-      const tipo = document.getElementById('cad-tipo').value;
-      const tempo = document.getElementById('cad-tempo').value;
-      
-      alert(`Ficha de Identificação registrada!\nCódigo Pseudonimizado gerado: P-ILHA-03\nLocal: ${local}\nTipo: ${tipo}`);
-      switchTab('tab-entrevistas');
-    });
-
-    // 5. AÇÕES DA SUPERVISÃO
-    function validarTranscricaoSupervisao(codigo) {
-      alert(`Transcrição ${codigo} VALIDADA com sucesso pela supervisão! Avançando para a fase de Análise Qualitativa.`);
+    function validarSupervisao() {
+      alert("Transcrição VALIDADA pela supervisão! Estado alterado para CORPUS APROVADO.");
       switchTab('tab-analise');
     }
 
-    function devolverComPendencia(codigo) {
+    function devolverSupervisao() {
       const motivo = prompt("Digite o motivo da devolução ao ATL:");
       if (motivo) {
-        alert(`Entrevista ${codigo} devolvida ao ATL. Motivo: ${motivo}`);
+        alert(`Entrevista devolvida ao ATL. Motivo registrado: ${motivo}`);
         switchTab('tab-entrevistas');
       }
     }
 
-    function salvarAvaliacaoConducao() {
-      alert("Registro de Avaliação da Condução salvo com sucesso no banco de dados da pesquisa!");
+    function adicionarCodigo() {
+      const select = document.getElementById('select-codigo');
+      const codigo = select.value;
+      const container = document.getElementById('tags-container');
+      
+      const span = document.createElement('span');
+      span.className = 'bg-teal-100 text-teal-800 font-semibold px-2 py-0.5 rounded text-micro';
+      span.textContent = codigo;
+      container.appendChild(span);
+      
+      alert(`Código ${codigo} e memo analítico vinculados ao trecho!`);
     }
 
-    // 6. AÇÕES DE ANÁLISE QUALITATIVA
-    function adicionarCodigoAnalitico() {
-      const cod = document.getElementById('input-novo-codigo').value;
-      if (cod) {
-        const container = document.getElementById('tags-aplicadas');
-        const span = document.createElement('span');
-        span.className = 'bg-teal-100 text-teal-800 font-semibold px-2 py-0.5 rounded text-micro';
-        span.textContent = cod.startsWith('#') ? cod : '#' + cod;
-        container.appendChild(span);
-        document.getElementById('input-novo-codigo').value = '';
-        alert("Código temático vinculado ao trecho selecionado!");
+    let audioPlaying = false;
+    function toggleAudio() {
+      audioPlaying = !audioPlaying;
+      const btn = document.getElementById('btn-audio-player');
+      const status = document.getElementById('player-status');
+      
+      if (audioPlaying) {
+        btn.textContent = '❚❚ Pausar Áudio';
+        btn.classList.replace('bg-teal-600', 'bg-amber-600');
+        status.textContent = 'Reproduzindo trecho audio_p01_original.mp3 [00:00:45]...';
+      } else {
+        btn.textContent = '▶ Reproduzir Áudio';
+        btn.classList.replace('bg-amber-600', 'bg-teal-600');
+        status.textContent = 'Pausado - audio_p01_original.mp3 (00:00:45 / 00:28:10)';
       }
-    }
-
-    function carregarEntrevistaExemplo(codigo) {
-      document.getElementById('conf-codigo').textContent = codigo;
-      switchTab('tab-conferencia');
     }
   </script>
 </body>
