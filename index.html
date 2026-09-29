@@ -429,20 +429,27 @@
         <p class="text-xs text-slate-500">Espaço do Especialista Analítico para Gestão de Códigos, Memos e Teste de Marcadores Relacionais.</p>
       </div>
 
+      <!-- PAINEL INTERATIVO COM OS 11 CÓDIGOS-SEMENTE DO CODEBOOK V1.0 -->
       <div class="bg-slate-800 text-white p-4 rounded-lg shadow-sm space-y-3 text-xs">
         <div class="flex justify-between items-center border-b border-slate-700 pb-2">
           <span class="font-bold text-teal-400">🔍 Teste de Recuperação Textual (Regra Central: Marcador NÃO é Código)</span>
-          <span class="text-micro bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-700">Codebook v1.0</span>
+          <span class="text-micro bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-700">Codebook v1.0 (11 Dimensões)</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
           <div>
             <label class="block text-slate-300 mb-1">1. Código-Semente (Dimensão):</label>
             <select id="sim-semente" onchange="executarSimulacaoMarcador()" class="w-full p-1.5 bg-slate-900 border border-slate-700 text-white rounded">
-              <option value="PROT">PROT - Proteção / Prevenção (Q3)</option>
+              <option value="TRAJ">TRAJ - Trajetória na Pesca (Q1)</option>
+              <option value="TERR">TERR - Território / Local (Q1)</option>
+              <option value="PESCA">PESCA - Tipo de Pesca / Petrechos (Q1)</option>
+              <option value="OPER">OPER - Operações do Trabalho (Q1)</option>
               <option value="PERI">PERI - Perigos e Riscos (Q2)</option>
               <option value="ACID">ACID - Acidente / Ocorrência (Q2)</option>
               <option value="SAUD">SAUD - Saúde e Agravos (Q2/Q4)</option>
+              <option value="PROT" selected>PROT - Proteção / Prevenção (Q3)</option>
+              <option value="ENFR">ENFR - Enfrentamento / Estratégia (Q5)</option>
+              <option value="APOIO">APOIO - Rede de Apoio (Q5)</option>
               <option value="PROP">PROP - Propostas / Demandas (Q6)</option>
             </select>
           </div>
@@ -492,10 +499,28 @@
           <div>
             <label class="block font-semibold text-slate-700 mb-1">Código do Codebook Versionado (v1.0):</label>
             <select id="select-codigo" class="w-full p-2 border border-slate-300 rounded">
-              <option value="#PROT_RecusaEPI">#PROT_RecusaEPI (Ausência/Recusa de Proteção)</option>
-              <option value="#SAUD_NaturalizaçãoDor">#SAUD_NaturalizaçãoDor (Naturalização da Dor)</option>
-              <option value="#ENFR_Automedicação">#ENFR_Automedicação (Uso por conta própria)</option>
-              <option value="#PROP_DemandaEquipamento">#PROP_DemandaEquipamento (Propostas/Demandas)</option>
+              <optgroup label="Q1 - Trajetória & Operações">
+                <option value="#TRAJ_AprendizadoFamiliar">#TRAJ_AprendizadoFamiliar (Aprendizagem na família)</option>
+                <option value="#TERR_AmbienteMangue">#TERR_AmbienteMangue (Atuação em mangue/estuário)</option>
+                <option value="#PESCA_CovoEmalhe">#PESCA_CovoEmalhe (Uso de covo / rede de emalhe)</option>
+                <option value="#OPER_EsforçoPuxada">#OPER_EsforçoPuxada (Trabalho braçal na recolhida)</option>
+              </optgroup>
+              <optgroup label="Q2 - Perigos & Acidentes">
+                <option value="#PERI_ExposiçãoSol">#PERI_ExposiçãoSol (Exposição prolongada ao sol)</option>
+                <option value="#PERI_CondiçãoMeteo">#PERI_CondiçãoMeteo (Temporal e maré agitada)</option>
+                <option value="#ACID_PerfuraçãoPequena">#ACID_PerfuraçãoPequena (Corte/furo com espinho/peixe)</option>
+              </optgroup>
+              <optgroup label="Q3 / Q4 - Proteção & Saúde">
+                <option value="#PROT_RecusaEPI" selected>#PROT_RecusaEPI (Ausência/Recusa por incômodo)</option>
+                <option value="#PROT_AdaptaçãoInformal">#PROT_AdaptaçãoInformal (Estratégia informal de proteção)</option>
+                <option value="#SAUD_DorColuna">#SAUD_DorColuna (Queixas osteomusculares)</option>
+                <option value="#SAUD_NaturalizaçãoDor">#SAUD_NaturalizaçãoDor (Habituação ao desconforto)</option>
+              </optgroup>
+              <optgroup label="Q5 / Q6 - Enfrentamento & Demandas">
+                <option value="#ENFR_Automedicação">#ENFR_Automedicação (Uso de medicação por conta própria)</option>
+                <option value="#APOIO_MutirãoCompanheiros">#APOIO_MutirãoCompanheiros (Suporte do grupo de pesca)</option>
+                <option value="#PROP_DemandaEquipamento">#PROP_DemandaEquipamento (Proposta de EPI adaptado)</option>
+              </optgroup>
             </select>
           </div>
 
@@ -510,7 +535,7 @@
         </div>
       </div>
     </section>
-
+    
     <!-- TELA 7: RESULTADOS PÚBLICOS -->
     <section id="tab-resultados" class="tab-content space-y-6">
       
@@ -1156,7 +1181,9 @@
 
       fecharModalAuth();
     }
-
+    /* ----------------------------------------------------------------- */
+    /* CÉLULA D: TESTE DE MARCADORES LEXICAIS E RELACIONAIS (TELA 6)     */
+    /* ----------------------------------------------------------------- */
     function executarSimulacaoMarcador() {
       const semente = document.getElementById('sim-semente').value;
       const operador = document.getElementById('sim-operador').value;
@@ -1164,16 +1191,19 @@
       const textoCorpus = document.getElementById('texto-corpus-analise');
 
       if (semente === 'PROT' && operador === 'negacao') {
-        resPainel.innerHTML = "<strong>Recuperado por PROT + Negação:</strong> Ocorrência lexical 'não uso luva'. <br><span class='text-amber-400'>Instrução Analítica:</span> A palavra foi recuperada, mas expressa ausência de proteção. Atribuído o código <strong>#PROT_RecusaEPI</strong>.";
+        resPainel.innerHTML = "<strong>Recuperado por PROT + Negação:</strong> Ocorrência lexical 'não uso luva'. <br><span class='text-amber-400'>Instrução Analítica:</span> Palavra recuperada indicando ausência de proteção. Código: <strong>#PROT_RecusaEPI</strong>.";
         textoCorpus.innerHTML = '"A parte mais perigosa na maré é o sol forte o dia todo e o peso de puxar a rede na mão. Eu <span class="bg-amber-300 font-bold text-amber-950 px-1 border border-amber-600">NÃO USO LUVA</span> nem chapéu porque atrapalha no movimento. Sinto muita dor na coluna e nos braços."';
       } else if (semente === 'PERI' && operador === 'quase') {
         resPainel.innerHTML = "<strong>Recuperado por PERI + Quase:</strong> Ocorrência 'quase virou a canoa'. <br><span class='text-amber-400'>Instrução Analítica:</span> Recupera situação de quase-acidente (risco iminente sem dano consumado).";
         textoCorpus.innerHTML = '"Na última semana o banzeiro estava tão forte no rio que <span class="bg-amber-300 font-bold text-amber-950 px-1 border border-amber-600">QUASE VIROU A CANOA</span>. Fiquei muito assustado com a força da correnteza."';
       } else if (semente === 'PROP' && operador === 'necessidade') {
-        resPainel.innerHTML = "<strong>Recuperado por PROP + Necessidade:</strong> Ocorrência 'precisa ter mais apoio'. <br><span class='text-amber-400'>Instrução Analítica:</span> Trecho recuperado na Q6 referente a propostas e demandas de saúde e segurança.";
+        resPainel.innerHTML = "<strong>Recuperado por PROP + Necessidade:</strong> Ocorrência 'precisa ter mais apoio'. <br><span class='text-amber-400'>Instrução Analítica:</span> Trecho recuperado referente a propostas de saúde e segurança (Q6).";
         textoCorpus.innerHTML = '"Para a gente trabalhar com saúde <span class="bg-amber-300 font-bold text-amber-950 px-1 border border-amber-600">PRECISA TER MAIS APOIO</span> do posto de saúde e equipamento adequado que não atrapalhe na puxada."';
+      } else if (semente === 'TRAJ' && operador === 'temporal') {
+        resPainel.innerHTML = "<strong>Recuperado por TRAJ + Temporalidade:</strong> Ocorrência 'desde criança'. <br><span class='text-amber-400'>Instrução Analítica:</span> Recupera narrativas do início da atividade e tempo de trabalho.";
+        textoCorpus.innerHTML = '"Trabalho na pesca <span class="bg-amber-300 font-bold text-amber-950 px-1 border border-amber-600">DESDE CRIANÇA</span> quando acompanhava meu pai nos canais do rio."';
       } else {
-        resPainel.innerHTML = `<strong>Filtro Combinado Aplicado:</strong> Código-Semente [<strong>${semente}</strong>] + Operador [<strong>${operador.toUpperCase()}</strong>].<br>Trecho candidato recuperado na base de dados para leitura contextual do especialista.`;
+        resPainel.innerHTML = `<strong>Filtro Combinado Aplicado:</strong> Código-Semente [<strong>${semente}</strong>] + Operador [<strong>${operador.toUpperCase()}</strong>].<br>Trecho candidato recuperado na base para leitura e validação do especialista.`;
         textoCorpus.innerHTML = '"A gente sai muito cedo para a maré. Quando a água está muito agitada, o trabalho exige esforço dobrado e atenção com os petrechos."';
       }
     }
