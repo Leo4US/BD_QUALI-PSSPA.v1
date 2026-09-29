@@ -1019,11 +1019,33 @@
     </div>
   </footer>
 
-  <!-- LÓGICA DE INTERAÇÃO E PERMISSÕES EM JAVASCRIPT -->
+  <!-- ================================================================= -->
+  <!-- MÓDULO JAVASCRIPT: LÓGICA DE NAVEGAÇÃO, PERFIS E INTERAÇÕES (MVP)  -->
+  <!-- ================================================================= -->
   <script>
+
+    /* ----------------------------------------------------------------- */
+    /* CÉLULA A: ESTADO GLOBAL & MAPEAMENTO DE URLs (HASH ROUTING)       */
+    /* ----------------------------------------------------------------- */
     let perfilAtual = 'supervisor';
     let tipoModalAuth = 'cadastro_publico';
+    let audioPlaying = false;
 
+    const mapaHashes = {
+      'entrevistas': 'tab-entrevistas',
+      'cadastro':    'tab-cadastro',
+      'conferencia': 'tab-conferencia',
+      'segmentacao': 'tab-segmentacao',
+      'supervisao':  'tab-supervisao',
+      'analise':     'tab-analise',
+      'resultados':  'tab-resultados',
+      'roteiro':     'tab-roteiro'
+    };
+
+
+    /* ----------------------------------------------------------------- */
+    /* CÉLULA B: GERENCIADOR DE NAVEGAÇÃO ENTRE ABAS & HASH NA URL        */
+    /* ----------------------------------------------------------------- */
     function switchTab(tabId) {
       if (perfilAtual === 'publico') {
         if (tabId !== 'tab-resultados' && tabId !== 'tab-roteiro') {
@@ -1053,8 +1075,28 @@
         activeBtn.classList.add('text-teal-700', 'border-b-2', 'border-teal-700');
         activeBtn.classList.remove('text-slate-600');
       }
+
+      const hashName = tabId.replace('tab-', '');
+      if (window.location.hash.replace('#', '') !== hashName) {
+        window.location.hash = hashName;
+      }
     }
 
+    function carregarAbaPorHash() {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && mapaHashes[hash]) {
+        switchTab(mapaHashes[hash]);
+      } else {
+        switchTab('tab-entrevistas');
+      }
+    }
+
+    window.addEventListener('hashchange', carregarAbaPorHash);
+
+
+    /* ----------------------------------------------------------------- */
+    /* CÉLULA C: CONTROLE DE PERMISSÕES E VISIBILIDADE POR PERFIL       */
+    /* ----------------------------------------------------------------- */
     function atualizarPerfil(perfil) {
       perfilAtual = perfil;
       const abasOperacionais = document.querySelectorAll('.tab-operacional');
@@ -1099,7 +1141,38 @@
       }
     }
 
-    // Modal de Autenticação
+
+    /* ----------------------------------------------------------------- */
+    /* CÉLULA D: TESTE DE MARCADORES LEXICAIS E RELACIONAIS (TELA 6)     */
+    /* ----------------------------------------------------------------- */
+    function executarSimulacaoMarcador() {
+      const semente = document.getElementById('sim-semente').value;
+      const operador = document.getElementById('sim-operador').value;
+      const resPainel = document.getElementById('resultado-simulacao-texto');
+      const textoCorpus = document.getElementById('texto-corpus-analise');
+
+      if (semente === 'PROT' && operador === 'negacao') {
+        resPainel.innerHTML = "<strong>Recuperado por PROT + Negação:</strong> Ocorrência lexical 'não uso luva'. <br><span class='text-amber-400'>Instrução Analítica:</span> Palavra recuperada indicando ausência de proteção. Código: <strong>#PROT_RecusaEPI</strong>.";
+        textoCorpus.innerHTML = '"A parte mais perigosa na maré é o sol forte o dia todo e o peso de puxar a rede na mão. Eu <span class="bg-amber-300 font-bold text-amber-950 px-1 border border-amber-600">NÃO USO LUVA</span> nem chapéu porque atrapalha no movimento. Sinto muita dor na coluna e nos braços."';
+      } else if (semente === 'PERI' && operador === 'quase') {
+        resPainel.innerHTML = "<strong>Recuperado por PERI + Quase:</strong> Ocorrência 'quase virou a canoa'. <br><span class='text-amber-400'>Instrução Analítica:</span> Recupera situação de quase-acidente (risco iminente sem dano consumado).";
+        textoCorpus.innerHTML = '"Na última semana o banzeiro estava tão forte no rio que <span class="bg-amber-300 font-bold text-amber-950 px-1 border border-amber-600">QUASE VIROU A CANOA</span>. Fiquei muito assustado com a força da correnteza."';
+      } else if (semente === 'PROP' && operador === 'necessidade') {
+        resPainel.innerHTML = "<strong>Recuperado por PROP + Necessidade:</strong> Ocorrência 'precisa ter mais apoio'. <br><span class='text-amber-400'>Instrução Analítica:</span> Trecho recuperado referente a propostas de saúde e segurança (Q6).";
+        textoCorpus.innerHTML = '"Para a gente trabalhar com saúde <span class="bg-amber-300 font-bold text-amber-950 px-1 border border-amber-600">PRECISA TER MAIS APOIO</span> do posto de saúde e equipamento adequado que não atrapalhe na puxada."';
+      } else if (semente === 'TRAJ' && operador === 'temporal') {
+        resPainel.innerHTML = "<strong>Recuperado por TRAJ + Temporalidade:</strong> Ocorrência 'desde criança'. <br><span class='text-amber-400'>Instrução Analítica:</span> Recupera narrativas do início da atividade e tempo de trabalho.";
+        textoCorpus.innerHTML = '"Trabalho na pesca <span class="bg-amber-300 font-bold text-amber-950 px-1 border border-amber-600">DESDE CRIANÇA</span> quando acompanhava meu pai nos canais do rio."';
+      } else {
+        resPainel.innerHTML = `<strong>Filtro Combinado Aplicado:</strong> Código-Semente [<strong>${semente}</strong>] + Operador [<strong>${operador.toUpperCase()}</strong>].<br>Trecho candidato recuperado na base para leitura e validação do especialista.`;
+        textoCorpus.innerHTML = '"A gente sai muito cedo para a maré. Quando a água está muito agitada, o trabalho exige esforço dobrado e atenção com os petrechos."';
+      }
+    }
+
+
+    /* ----------------------------------------------------------------- */
+    /* CÉLULA E: MODAL DE AUTENTICAÇÃO E VERIFICAÇÃO SIMULADA           */
+    /* ----------------------------------------------------------------- */
     function abrirModalAuth(tipo) {
       tipoModalAuth = tipo;
       const modal = document.getElementById('modal-auth');
@@ -1141,7 +1214,6 @@
     }
 
     function avancarEtapaVerificacao() {
-      const email = document.getElementById('auth-email').value;
       const senha = document.getElementById('auth-senha').value;
       const confSenha = document.getElementById('auth-confirmar-senha').value;
 
@@ -1150,7 +1222,7 @@
         return;
       }
 
-      document.getElementById('exibir-email-verificacao').textContent = email || "seu e-mail";
+      document.getElementById('exibir-email-verificacao').textContent = document.getElementById('auth-email').value || "seu e-mail";
       document.getElementById('form-auth-step1').classList.add('hidden');
       document.getElementById('form-auth-step2').classList.remove('hidden');
     }
@@ -1181,33 +1253,11 @@
 
       fecharModalAuth();
     }
-    /* ----------------------------------------------------------------- */
-    /* CÉLULA D: TESTE DE MARCADORES LEXICAIS E RELACIONAIS (TELA 6)     */
-    /* ----------------------------------------------------------------- */
-    function executarSimulacaoMarcador() {
-      const semente = document.getElementById('sim-semente').value;
-      const operador = document.getElementById('sim-operador').value;
-      const resPainel = document.getElementById('resultado-simulacao-texto');
-      const textoCorpus = document.getElementById('texto-corpus-analise');
 
-      if (semente === 'PROT' && operador === 'negacao') {
-        resPainel.innerHTML = "<strong>Recuperado por PROT + Negação:</strong> Ocorrência lexical 'não uso luva'. <br><span class='text-amber-400'>Instrução Analítica:</span> Palavra recuperada indicando ausência de proteção. Código: <strong>#PROT_RecusaEPI</strong>.";
-        textoCorpus.innerHTML = '"A parte mais perigosa na maré é o sol forte o dia todo e o peso de puxar a rede na mão. Eu <span class="bg-amber-300 font-bold text-amber-950 px-1 border border-amber-600">NÃO USO LUVA</span> nem chapéu porque atrapalha no movimento. Sinto muita dor na coluna e nos braços."';
-      } else if (semente === 'PERI' && operador === 'quase') {
-        resPainel.innerHTML = "<strong>Recuperado por PERI + Quase:</strong> Ocorrência 'quase virou a canoa'. <br><span class='text-amber-400'>Instrução Analítica:</span> Recupera situação de quase-acidente (risco iminente sem dano consumado).";
-        textoCorpus.innerHTML = '"Na última semana o banzeiro estava tão forte no rio que <span class="bg-amber-300 font-bold text-amber-950 px-1 border border-amber-600">QUASE VIROU A CANOA</span>. Fiquei muito assustado com a força da correnteza."';
-      } else if (semente === 'PROP' && operador === 'necessidade') {
-        resPainel.innerHTML = "<strong>Recuperado por PROP + Necessidade:</strong> Ocorrência 'precisa ter mais apoio'. <br><span class='text-amber-400'>Instrução Analítica:</span> Trecho recuperado referente a propostas de saúde e segurança (Q6).";
-        textoCorpus.innerHTML = '"Para a gente trabalhar com saúde <span class="bg-amber-300 font-bold text-amber-950 px-1 border border-amber-600">PRECISA TER MAIS APOIO</span> do posto de saúde e equipamento adequado que não atrapalhe na puxada."';
-      } else if (semente === 'TRAJ' && operador === 'temporal') {
-        resPainel.innerHTML = "<strong>Recuperado por TRAJ + Temporalidade:</strong> Ocorrência 'desde criança'. <br><span class='text-amber-400'>Instrução Analítica:</span> Recupera narrativas do início da atividade e tempo de trabalho.";
-        textoCorpus.innerHTML = '"Trabalho na pesca <span class="bg-amber-300 font-bold text-amber-950 px-1 border border-amber-600">DESDE CRIANÇA</span> quando acompanhava meu pai nos canais do rio."';
-      } else {
-        resPainel.innerHTML = `<strong>Filtro Combinado Aplicado:</strong> Código-Semente [<strong>${semente}</strong>] + Operador [<strong>${operador.toUpperCase()}</strong>].<br>Trecho candidato recuperado na base para leitura e validação do especialista.`;
-        textoCorpus.innerHTML = '"A gente sai muito cedo para a maré. Quando a água está muito agitada, o trabalho exige esforço dobrado e atenção com os petrechos."';
-      }
-    }
 
+    /* ----------------------------------------------------------------- */
+    /* CÉLULA F: REGRAS E MOCKS DAS TELAS OPERACIONAIS                   */
+    /* ----------------------------------------------------------------- */
     function aplicarFiltrosPublicos() {
       const terr = document.getElementById('filtro-territorio').value;
       const tema = document.getElementById('filtro-tema').value;
@@ -1282,5 +1332,29 @@
       container.appendChild(span);
       simularAviso(`Código ${codigo} e Memo vinculados na demonstração!`);
     }
+
+    function toggleAudio() {
+      audioPlaying = !audioPlaying;
+      const btn = document.getElementById('btn-audio-player');
+      const status = document.getElementById('player-status');
+      if (audioPlaying) {
+        btn.textContent = '❚❚ Pausar Áudio';
+        btn.classList.replace('bg-teal-600', 'bg-amber-600');
+        status.textContent = 'Reproduzindo trecho audio_p01_original.mp3 [00:00:45]...';
+      } else {
+        btn.textContent = '▶ Reproduzir Áudio';
+        btn.classList.replace('bg-amber-600', 'bg-teal-600');
+        status.textContent = 'Pausado - audio_p01_original.mp3 (00:00:45 / 00:28:10)';
+      }
+    }
+
+
+    /* ----------------------------------------------------------------- */
+    /* CÉLULA G: INICIALIZAÇÃO DA INTERFACE & LEITURA DA URL             */
+    /* ----------------------------------------------------------------- */
+    atualizarPerfil('supervisor');
+    carregarAbaPorHash();
+
+  </script>
 </body>
 </html>
