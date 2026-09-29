@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plataforma de Pesquisa Quali/Quanti - Pesca Artesanal</title>
+  <title>Plataforma de Pesquisa Quali/Quanti - Pesca Artesanal (PTSSPA)</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .tab-content { display: none; }
@@ -33,7 +33,7 @@
     <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-3">
       <div>
         <h1 class="font-bold text-lg leading-tight tracking-wide text-slate-100">Pesca Artesanal: Trabalho, Saúde e Segurança</h1>
-        <p class="text-xs text-teal-400 font-medium">Plataforma Operacional de Pesquisa Qualitativa (PTSSPA)</p>
+        <p class="text-xs text-teal-400 font-medium">Plataforma Operacional de Pesquisa Qualitativa (PTSSPA - AM, BA, MA, PA, PI)</p>
       </div>
 
       <!-- SELETOR DE PERFIL DE SIMULAÇÃO DE INTERFACE -->
@@ -84,10 +84,53 @@
 
     <!-- TELA 1: FILA DE TRABALHO E TRAMITAÇÃO -->
     <section id="tab-entrevistas" class="tab-content active space-y-4">
+      
+      <!-- PAINEL EXCLUSIVO DO ATL -->
+      <div id="painel-producao-atl" class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+        <div class="bg-white p-4 rounded-lg border border-teal-200 shadow-sm space-y-2">
+          <div class="flex justify-between items-center border-b pb-1.5">
+            <span class="font-bold text-teal-800">📊 Sua Produção Territorial</span>
+            <span class="text-micro bg-teal-100 text-teal-800 px-2 py-0.5 rounded font-bold">ATL João Silva (BA)</span>
+          </div>
+          <div class="grid grid-cols-3 gap-2 text-center pt-1">
+            <div class="bg-slate-50 p-2 rounded border">
+              <span class="block text-lg font-black text-slate-800">12</span>
+              <span class="text-micro text-slate-500">Cadastradas</span>
+            </div>
+            <div class="bg-amber-50 p-2 rounded border border-amber-200">
+              <span class="block text-lg font-black text-amber-800">3</span>
+              <span class="text-micro text-amber-700">Em Conferência</span>
+            </div>
+            <div class="bg-green-50 p-2 rounded border border-green-200">
+              <span class="block text-lg font-black text-green-800">9</span>
+              <span class="text-micro text-green-700">Validadas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm md:col-span-2 space-y-2">
+          <div class="flex justify-between items-center border-b pb-1.5">
+            <span class="font-bold text-slate-800 flex items-center gap-1.5">
+              <span>💡 Recados & Orientações Metodológicas</span>
+              <span class="text-micro font-normal text-slate-500">(Extraídas das transcrições de campo)</span>
+            </span>
+            <span class="text-micro bg-slate-100 text-slate-600 px-2 py-0.5 rounded">Síntese Automática</span>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-micro">
+            <div class="p-2 bg-amber-50 rounded border border-amber-200 text-amber-900">
+              <strong>Aviso de Áudio:</strong> Detectada interferência de maré/motor em Valença (BA). Orientação: aproximar gravador do participante nas próximas saídas de campo.
+            </div>
+            <div class="p-2 bg-teal-50 rounded border border-teal-200 text-teal-900">
+              <strong>Destaque Metodológico:</strong> Ótimo aprofundamento do termo regional "covo/matapi" em Bragança (PA). Lembre-se de aprofundar sobre o horário de saída na Q1.
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="flex justify-between items-center bg-white p-4 rounded border border-slate-200 shadow-sm">
         <div>
           <h2 class="text-base font-bold text-slate-800">Fila de Trabalho e Tramitação das Entrevistas</h2>
-          <p class="text-xs text-slate-500">Acompanhamento do percurso da evidência e estados operacionais (Passos 1 ao 6).</p>
+          <p class="text-xs text-slate-500">Acompanhamento dos 5 estados operacionais das entrevistas (AM, BA, MA, PA, PI).</p>
         </div>
         <button onclick="switchTab('tab-cadastro')" class="bg-teal-700 hover:bg-teal-800 text-white text-xs font-semibold px-3 py-2 rounded transition">
           + Cadastrar Nova Entrevista
@@ -99,7 +142,7 @@
           <thead>
             <tr class="bg-slate-100 text-slate-700 border-b border-slate-200 font-bold">
               <th class="p-3">Código Publicável</th>
-              <th class="p-3">Município / Local</th>
+              <th class="p-3">UF / Município / Local</th>
               <th class="p-3">ATL Responsável</th>
               <th class="p-3">Estado no Fluxo</th>
               <th class="p-3">Versão Transcrição</th>
@@ -108,37 +151,37 @@
           </thead>
           <tbody class="divide-y divide-slate-100">
             <tr class="hover:bg-slate-50">
-              <td class="p-3 font-bold text-teal-800">P-ILHA-01</td>
-              <td class="p-3 text-slate-600">Ilha Comprida (Pedrinhas)</td>
+              <td class="p-3 font-bold text-teal-800">P-BA-VAL-01</td>
+              <td class="p-3 text-slate-600">BA - Valença (Guaibim)</td>
               <td class="p-3 text-slate-600">João Silva (ATL)</td>
               <td class="p-3"><span class="bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded text-micro">EM CONFERÊNCIA ATL</span></td>
               <td class="p-3 text-slate-500 font-mono">v1.1 (Whisper base)</td>
               <td class="p-3 text-right">
-                <button onclick="carregarCaso('P-ILHA-01', 'tab-conferencia')" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-2.5 py-1 rounded">
+                <button onclick="carregarCaso('P-BA-VAL-01', 'tab-conferencia')" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-2.5 py-1 rounded">
                   Conferir Áudio/Texto &rarr;
                 </button>
               </td>
             </tr>
             <tr class="hover:bg-slate-50">
-              <td class="p-3 font-bold text-teal-800">P-ILHA-02</td>
-              <td class="p-3 text-slate-600">Ilha Comprida (Boqueirão)</td>
-              <td class="p-3 text-slate-600">João Silva (ATL)</td>
+              <td class="p-3 font-bold text-teal-800">P-PA-BRA-02</td>
+              <td class="p-3 text-slate-600">PA - Bragança (Caratateua)</td>
+              <td class="p-3 text-slate-600">Ana Souza (ATL)</td>
               <td class="p-3"><span class="bg-indigo-100 text-indigo-800 font-bold px-2 py-0.5 rounded text-micro">REVISÃO SUPERVISÃO</span></td>
               <td class="p-3 text-slate-500 font-mono">v1.2 (Revisada ATL)</td>
               <td class="p-3 text-right">
-                <button onclick="carregarCaso('P-ILHA-02', 'tab-supervisao')" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-2.5 py-1 rounded btn-acao-restrita">
+                <button onclick="carregarCaso('P-PA-BRA-02', 'tab-supervisao')" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-2.5 py-1 rounded btn-acao-restrita">
                   Validar / Devolver &rarr;
                 </button>
               </td>
             </tr>
             <tr class="hover:bg-slate-50">
-              <td class="p-3 font-bold text-teal-800">P-CANAN-01</td>
-              <td class="p-3 text-slate-600">Cananéia (Ariri)</td>
-              <td class="p-3 text-slate-600">Maria Oliveira (ATL)</td>
+              <td class="p-3 font-bold text-teal-800">P-MA-RAP-01</td>
+              <td class="p-3 text-slate-600">MA - Raposa (Carimã)</td>
+              <td class="p-3 text-slate-600">Carlos Lima (ATL)</td>
               <td class="p-3"><span class="bg-green-100 text-green-800 font-bold px-2 py-0.5 rounded text-micro">CORPUS APROVADO</span></td>
               <td class="p-3 text-slate-500 font-mono">v2.0 (Validada)</td>
               <td class="p-3 text-right">
-                <button onclick="carregarCaso('P-CANAN-01', 'tab-analise')" class="bg-teal-700 hover:bg-teal-800 text-white font-semibold px-2.5 py-1 rounded btn-acao-restrita">
+                <button onclick="carregarCaso('P-MA-RAP-01', 'tab-analise')" class="bg-teal-700 hover:bg-teal-800 text-white font-semibold px-2.5 py-1 rounded btn-acao-restrita">
                   Analisar Trechos &rarr;
                 </button>
               </td>
@@ -152,26 +195,23 @@
     <section id="tab-cadastro" class="tab-content space-y-4">
       <div class="bg-white p-6 rounded border border-slate-200 shadow-sm space-y-4 max-w-3xl mx-auto">
         <div class="border-b border-slate-200 pb-3">
-          <h2 class="text-base font-bold text-slate-800">Ficha do Participante & Ingestão de Áudio</h2>
-          <p class="text-xs text-slate-500">Registro de Metadados, Validação de Checksum e Consentimento Informado.</p>
+          <h2 class="text-base font-bold text-slate-800">Ficha de Identificação e Ingestão do Áudio</h2>
+          <p class="text-xs text-slate-500">Campos completos conforme Instrumento de Cadastro e TCLE (CAAE 94837225.1.0000.5450).</p>
         </div>
 
         <form id="form-cadastro" class="space-y-4 text-xs" onsubmit="event.preventDefault(); simularAviso('Ficha sintética registrada! Áudio em fila de ingestão no bucket privado.'); switchTab('tab-entrevistas');">
           <div class="bg-slate-50 p-3 rounded border border-slate-200 text-slate-600 text-micro">
-            <strong>Proteção por Finalidade:</strong> A identidade civil e o termo de consentimento ficam armazenados em cofre separado. O corpus de análise utiliza apenas a chave pseudonimizada.
+            <strong>Proteção por Finalidade:</strong> O Nome Civil, Data de Nascimento e o TCLE assinado/gravado ficam restritos em cofre de dados. O corpus de análise utiliza apenas a chave pseudonimizada e os metadados territoriais.
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="md:col-span-2">
               <label class="block font-semibold text-slate-700 mb-1">1. Nome Completo do(a) Entrevistado(a):</label>
-              <input type="text" required placeholder="Ex: Manoel da Silva (fictício)" class="w-full p-2 border border-slate-300 rounded">
+              <input type="text" required placeholder="Ex: Maria das Dores (fictício)" class="w-full p-2 border border-slate-300 rounded">
             </div>
             <div>
-              <label class="block font-semibold text-slate-700 mb-1">Situação do Consentimento (TCLE):</label>
-              <select required class="w-full p-2 border border-slate-300 rounded">
-                <option value="assinado">TCLE Assinado e Arquivado</option>
-                <option value="gravado">Consentimento Gravado em Áudio</option>
-              </select>
+              <label class="block font-semibold text-slate-700 mb-1">2. Data de Nascimento:</label>
+              <input type="date" required class="w-full p-2 border border-slate-300 rounded">
             </div>
           </div>
 
@@ -185,23 +225,47 @@
             <div>
               <label class="block font-semibold text-slate-700 mb-1">4. Cor ou Raça:</label>
               <select class="w-full p-2 border border-slate-300 rounded">
-                <option>Parda</option><option>Preta</option><option>Branca</option><option>Indígena</option><option>Amarela</option><option>Quilombola</option><option>Prefere não responder</option>
+                <option>Branca</option><option>Preta</option><option>Parda</option><option>Amarela</option><option>Indígena</option><option>Quilombola</option><option>Outro</option><option>Prefere não responder</option>
               </select>
             </div>
             <div>
               <label class="block font-semibold text-slate-700 mb-1">5. Tempo na Pesca (Anos):</label>
-              <input type="number" required value="22" class="w-full p-2 border border-slate-300 rounded">
+              <input type="number" required value="18" class="w-full p-2 border border-slate-300 rounded">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label class="block font-semibold text-slate-700 mb-1">Estado (UF do TCLE):</label>
+              <select required class="w-full p-2 border border-slate-300 rounded font-bold text-teal-800">
+                <option value="BA">Bahia (BA)</option>
+                <option value="PA">Pará (PA)</option>
+                <option value="MA">Maranhão (MA)</option>
+                <option value="AM">Amazonas (AM)</option>
+                <option value="PI">Piauí (PI)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-semibold text-slate-700 mb-1">6. Município - Comunidade/Localidade:</label>
+              <input type="text" required value="Valença - Guaibim" class="w-full p-2 border border-slate-300 rounded">
+            </div>
+            <div>
+              <label class="block font-semibold text-slate-700 mb-1">7. Tipo Principal de Pesca:</label>
+              <input type="text" required value="Covo e Emalhe" class="w-full p-2 border border-slate-300 rounded">
             </div>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label class="block font-semibold text-slate-700 mb-1">6. Município - Comunidade/Localidade:</label>
-              <input type="text" required value="Ilha Comprida - Pedrinhas" class="w-full p-2 border border-slate-300 rounded">
+              <label class="block font-semibold text-slate-700 mb-1">Nome do(a) Agente Territorial (ATL):</label>
+              <input type="text" required value="João Silva" class="w-full p-2 border border-slate-300 rounded">
             </div>
             <div>
-              <label class="block font-semibold text-slate-700 mb-1">7. Tipo Principal de Pesca:</label>
-              <input type="text" required value="Emalhe e Cerco" class="w-full p-2 border border-slate-300 rounded">
+              <label class="block font-semibold text-slate-700 mb-1">Situação do Consentimento (TCLE):</label>
+              <select required class="w-full p-2 border border-slate-300 rounded">
+                <option value="assinado">TCLE Assinado e Arquivado</option>
+                <option value="gravado">Consentimento Gravado em Áudio</option>
+              </select>
             </div>
           </div>
 
@@ -224,7 +288,7 @@
       <div class="bg-white p-4 rounded border border-slate-200 shadow-sm flex flex-wrap justify-between items-center gap-2">
         <div>
           <h2 class="text-base font-bold text-slate-800">Conferência de Transcrição e Sincronia de Áudio</h2>
-          <p class="text-xs text-slate-500">Caso: <strong id="conf-caso-id" class="text-teal-800">P-ILHA-01</strong> | Motor: Whisper Python (modelo base, pt)</p>
+          <p class="text-xs text-slate-500">Caso: <strong id="conf-caso-id" class="text-teal-800">P-BA-VAL-01</strong> | Motor: Whisper Python (modelo base, pt)</p>
         </div>
         <div class="flex space-x-2 text-xs">
           <button onclick="simularAviso('Simulação de reprocessamento via Script Python: whisper audio.mp3 --model small')" class="bg-slate-700 hover:bg-slate-800 text-white px-3 py-1.5 rounded font-semibold">
@@ -243,7 +307,7 @@
           </button>
           <span id="player-status">Pausado - audio_p01_original.mp3 (00:00:45 / 00:28:10)</span>
         </div>
-        <span class="text-slate-400">Responsável: João Silva (ATL)</span>
+        <span class="text-slate-400">Responsável: João Silva (ATL - BA)</span>
       </div>
 
       <div class="space-y-3">
@@ -257,10 +321,10 @@
 
         <div class="bg-amber-50/70 p-3 rounded border border-amber-300 text-xs space-y-2">
           <div class="flex justify-between items-center font-bold">
-            <span class="text-indigo-800">Participante (P-ILHA-01) [00:00:22 - 00:01:05]</span>
+            <span class="text-indigo-800">Participante (P-BA-VAL-01) [00:00:22 - 00:01:05]</span>
             <span class="bg-amber-200 text-amber-900 px-2 py-0.5 rounded text-micro font-bold">DÚVIDA / INAUDÍVEL SINALIZADO</span>
           </div>
-          <textarea class="w-full p-2 border border-amber-300 rounded bg-white text-slate-800 leading-relaxed font-sans" rows="3">Comecei com 12 anos acompanhando meu pai. Hoje saio às 4h da manhã para a barra do [inaudível / canal da baía]. A gente pesca no estuário com rede de emalhe. Quando entra o vento sul, o mar fica muito revolto.</textarea>
+          <textarea class="w-full p-2 border border-amber-300 rounded bg-white text-slate-800 leading-relaxed font-sans" rows="3">Comecei com 12 anos acompanhando meu pai na maré. Hoje saio às 4h da manhã na canoa para o [inaudível / manguezal]. A gente pesca com covo e rede de emalhe. Quando entra o vento forte, o maré fica muito perigosa.</textarea>
           <div class="flex justify-between items-center text-micro text-slate-500">
             <span>Última alteração: ATL João Silva em 29/09/2026 às 08:30 (Versão 1.1)</span>
             <button onclick="simularAviso('Ajuste de turno registrado na auditoria da sessão de simulação.')" class="bg-slate-800 text-white px-2 py-1 rounded font-semibold hover:bg-slate-700">Salvar Ajuste do Turno</button>
@@ -273,33 +337,33 @@
     <section id="tab-segmentacao" class="tab-content space-y-4">
       <div class="bg-white p-4 rounded border border-slate-200 shadow-sm">
         <h2 class="text-base font-bold text-slate-800">Segmentação e Mapeamento de Respostas por Pergunta</h2>
-        <p class="text-xs text-slate-500">Vinculação dos turnos de fala ao Roteiro Semiestruturado, tratando respostas transversais.</p>
+        <p class="text-xs text-slate-500">Vinculação dos turnos de fala às 6 Questões do Roteiro (Q1 a Q6).</p>
       </div>
 
       <div class="bg-amber-50 border-l-4 border-amber-500 p-3 rounded text-xs text-amber-900">
-        <strong>Regra Metodológica de Segmentação:</strong> A fala não deve ser forçada a caber em 6 caixas fechadas. A narrativa deve ser preservada na ordem em que ocorreu.
+        <strong>Regra Metodológica de Segmentação:</strong> A narrativa deve ser preservada na ordem em que ocorreu, permitindo recuperar falas transversais entre questões.
       </div>
 
       <div class="space-y-4 text-xs">
         <div class="bg-white p-4 rounded border border-slate-200 space-y-2">
           <div class="border-b pb-2 flex justify-between items-center">
-            <span class="font-bold text-teal-800">Pergunta 1: Trajetória, Rotina, Local e Tipo de Pesca</span>
+            <span class="font-bold text-teal-800">Q1: Trajetória, Rotina, Local e Tipo de Pesca</span>
             <span class="text-micro bg-slate-100 text-slate-600 px-2 py-0.5 rounded">2 Trechos Mapeados</span>
           </div>
           <div class="bg-slate-50 p-2.5 rounded border border-slate-200 text-slate-700 space-y-1">
             <span class="text-micro font-mono text-slate-400">[Turno 2 | Timestamp: 00:00:22]</span>
-            <p>"Comecei com 12 anos acompanhando meu pai. Hoje saio às 4h da manhã para a barra..."</p>
+            <p>"Comecei com 12 anos acompanhando meu pai na maré. Hoje saio às 4h da manhã na canoa..."</p>
           </div>
         </div>
 
         <div class="bg-white p-4 rounded border border-slate-200 space-y-2">
           <div class="border-b pb-2 flex justify-between items-center">
-            <span class="font-bold text-teal-800">Pergunta 2: Perigos, Acidentes e Problemas de Saúde</span>
+            <span class="font-bold text-teal-800">Q2: Perigos, Acidentes e Problemas de Saúde</span>
             <span class="text-micro bg-slate-100 text-slate-600 px-2 py-0.5 rounded">1 Trecho Mapeado</span>
           </div>
           <div class="bg-slate-50 p-2.5 rounded border border-slate-200 text-slate-700 space-y-1">
             <span class="text-micro font-mono text-slate-400">[Turno 3 | Timestamp: 00:01:10]</span>
-            <p>"A parte mais perigosa é o sol forte o dia todo e o peso de puxar a rede na mão..."</p>
+            <p>"O mais perigoso é o sol forte o dia todo e o peso de puxar o covo cheio..."</p>
           </div>
         </div>
       </div>
@@ -309,16 +373,16 @@
     <section id="tab-supervisao" class="tab-content space-y-4">
       <div class="bg-white p-4 rounded border border-slate-200 shadow-sm">
         <h2 class="text-base font-bold text-slate-800">Painel de Supervisão e Validação Metodológica</h2>
-        <p class="text-xs text-slate-500">Exame de Qualidade e Condução Pedagógica pela Supervisão (Dra. Luana).</p>
+        <p class="text-xs text-slate-500">Exame de Qualidade e Condução Pedagógica pela Supervisão (Dra. Luana Bedigaray).</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="bg-white p-4 rounded border border-slate-200 shadow-sm md:col-span-2 space-y-4">
-          <h3 class="font-bold text-xs text-slate-700 border-b pb-2">Revisão de Transcrição: P-ILHA-02</h3>
+          <h3 class="font-bold text-xs text-slate-700 border-b pb-2">Revisão de Transcrição: P-PA-BRA-02</h3>
           
           <div class="bg-slate-50 p-3 rounded border border-slate-200 text-xs space-y-2">
             <span class="font-bold text-slate-700">Resumo dos Ajustes do ATL:</span>
-            <p class="text-slate-600">Ajuste de termos regionais ("rede de emalhe") e sinalização de 1 trecho inaudível por ruído de motor.</p>
+            <p class="text-slate-600">Ajuste de termos regionais ("matapi", "covo") e sinalização de 1 trecho inaudível por ruído de motor.</p>
           </div>
 
           <div class="p-3 bg-slate-100 rounded border border-slate-300 space-y-2 text-xs">
@@ -358,57 +422,123 @@
       </div>
     </section>
 
-    <!-- TELA 6: TRATAMENTO DE DADOS E ANÁLISE QUALITATIVA -->
+    <!-- TELA 6: TRATAMENTO DE DADOS, CODEBOOK E SIMULAÇÃO DE MARCADORES RELACIONAIS -->
     <section id="tab-analise" class="tab-content space-y-4">
       <div class="bg-white p-4 rounded border border-slate-200 shadow-sm">
-        <h2 class="text-base font-bold text-slate-800">Tratamento de Dados & Codificação Temática</h2>
-        <p class="text-xs text-slate-500">Espaço do Especialista Analítico para Gestão do Codebook, Memos e Evidências.</p>
+        <h2 class="text-base font-bold text-slate-800">Tratamento de Dados, Codebook & Filtragem Lexical</h2>
+        <p class="text-xs text-slate-500">Espaço do Especialista Analítico para Gestão de Códigos, Memos e Teste de Marcadores Relacionais.</p>
+      </div>
+
+      <!-- PAINEL INTERATIVO COM OS 11 CÓDIGOS-SEMENTE DO CODEBOOK V1.0 -->
+      <div class="bg-slate-800 text-white p-4 rounded-lg shadow-sm space-y-3 text-xs">
+        <div class="flex justify-between items-center border-b border-slate-700 pb-2">
+          <span class="font-bold text-teal-400">🔍 Teste de Recuperação Textual (Regra Central: Marcador NÃO é Código)</span>
+          <span class="text-micro bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-700">Codebook v1.0 (11 Dimensões)</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div>
+            <label class="block text-slate-300 mb-1">1. Código-Semente (Dimensão):</label>
+            <select id="sim-semente" onchange="executarSimulacaoMarcador()" class="w-full p-1.5 bg-slate-900 border border-slate-700 text-white rounded">
+              <option value="TRAJ">TRAJ - Trajetória na Pesca (Q1)</option>
+              <option value="TERR">TERR - Território / Local (Q1)</option>
+              <option value="PESCA">PESCA - Tipo de Pesca / Petrechos (Q1)</option>
+              <option value="OPER">OPER - Operações do Trabalho (Q1)</option>
+              <option value="PERI">PERI - Perigos e Riscos (Q2)</option>
+              <option value="ACID">ACID - Acidente / Ocorrência (Q2)</option>
+              <option value="SAUD">SAUD - Saúde e Agravos (Q2/Q4)</option>
+              <option value="PROT" selected>PROT - Proteção / Prevenção (Q3)</option>
+              <option value="ENFR">ENFR - Enfrentamento / Estratégia (Q5)</option>
+              <option value="APOIO">APOIO - Rede de Apoio (Q5)</option>
+              <option value="PROP">PROP - Propostas / Demandas (Q6)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-slate-300 mb-1">2. Marcador Relacional (Operador):</label>
+            <select id="sim-operador" onchange="executarSimulacaoMarcador()" class="w-full p-1.5 bg-slate-900 border border-slate-700 text-white rounded">
+              <option value="negacao">Negação (não; nunca; sem)</option>
+              <option value="quase">Quase Ocorrência (quase)</option>
+              <option value="temporal">Temporalidade (desde; quando; depois)</option>
+              <option value="explicacao">Explicação (porque; devido; por causa)</option>
+              <option value="necessidade">Necessidade (precisa; deveria; falta)</option>
+            </select>
+          </div>
+
+          <div class="flex items-end">
+            <button onclick="executarSimulacaoMarcador()" class="w-full bg-teal-600 hover:bg-teal-500 text-white font-bold py-1.5 rounded">
+              Simular Filtragem Lexical &rarr;
+            </button>
+          </div>
+        </div>
+
+        <div class="p-2.5 bg-slate-900 border border-slate-700 rounded text-micro text-slate-300" id="resultado-simulacao-texto">
+          <strong>Resultado da Busca Candidate:</strong> Selecione os marcadores acima para ver o trecho recuperado e a instrução analítica.
+        </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="bg-white p-4 rounded border border-slate-200 shadow-sm md:col-span-2 space-y-3 text-xs">
-          <h3 class="font-bold text-slate-700 border-b pb-2">Corpus Aprovado: P-CANAN-01</h3>
+          <h3 class="font-bold text-slate-700 border-b pb-2">Corpus Aprovado em Exame: P-MA-RAP-01 (Raposa - MA)</h3>
 
           <div class="p-3 bg-slate-50 rounded border border-slate-200 space-y-2">
-            <p class="text-slate-800 leading-relaxed font-sans">
-              "A parte mais perigosa é o sol forte o dia todo e o peso de puxar a rede na mão. Já sinto muita dor na coluna e nos braços. A gente toma analgésico por conta própria para aguentar ir trabalhar no dia seguinte."
+            <p id="texto-corpus-analise" class="text-slate-800 leading-relaxed font-sans">
+              "A parte mais perigosa na maré é o sol forte o dia todo e o peso de puxar a rede na mão. Eu <span class="bg-amber-200 font-bold text-amber-900 px-1">não uso luva</span> nem chapéu porque atrapalha no movimento. Sinto muita dor na coluna e nos braços. A gente toma remédio por conta própria para ir trabalhar no dia seguinte."
             </p>
             <div class="flex flex-wrap gap-1.5 pt-1" id="tags-container">
-              <span class="bg-teal-100 text-teal-800 font-semibold px-2 py-0.5 rounded text-micro">#Risco_ExposiçãoSol</span>
-              <span class="bg-teal-100 text-teal-800 font-semibold px-2 py-0.5 rounded text-micro">#Ergonomia_DorColuna</span>
-              <span class="bg-amber-100 text-amber-800 font-semibold px-2 py-0.5 rounded text-micro">#Automedicação</span>
+              <span class="bg-teal-100 text-teal-800 font-semibold px-2 py-0.5 rounded text-micro">#PERI_ExposiçãoSol</span>
+              <span class="bg-teal-100 text-teal-800 font-semibold px-2 py-0.5 rounded text-micro">#SAUD_DorColuna</span>
+              <span class="bg-amber-100 text-amber-800 font-semibold px-2 py-0.5 rounded text-micro">#PROT_NegaçãoUso</span>
             </div>
           </div>
         </div>
 
         <div class="bg-white p-4 rounded border border-slate-200 shadow-sm text-xs space-y-3">
-          <h3 class="font-bold text-slate-800 border-b pb-2">Codebook & Memo</h3>
+          <h3 class="font-bold text-slate-800 border-b pb-2">Atribuição de Código & Memo</h3>
 
           <div>
             <label class="block font-semibold text-slate-700 mb-1">Código do Codebook Versionado (v1.0):</label>
             <select id="select-codigo" class="w-full p-2 border border-slate-300 rounded">
-              <option value="#Rede_de_Ajuda">#Rede_de_Ajuda</option>
-              <option value="#Insegurança_Náutica">#Insegurança_Náutica</option>
-              <option value="#Naturalização_da_Dor">#Naturalização_da_Dor</option>
+              <optgroup label="Q1 - Trajetória & Operações">
+                <option value="#TRAJ_AprendizadoFamiliar">#TRAJ_AprendizadoFamiliar (Aprendizagem na família)</option>
+                <option value="#TERR_AmbienteMangue">#TERR_AmbienteMangue (Atuação em mangue/estuário)</option>
+                <option value="#PESCA_CovoEmalhe">#PESCA_CovoEmalhe (Uso de covo / rede de emalhe)</option>
+                <option value="#OPER_EsforçoPuxada">#OPER_EsforçoPuxada (Trabalho braçal na recolhida)</option>
+              </optgroup>
+              <optgroup label="Q2 - Perigos & Acidentes">
+                <option value="#PERI_ExposiçãoSol">#PERI_ExposiçãoSol (Exposição prolongada ao sol)</option>
+                <option value="#PERI_CondiçãoMeteo">#PERI_CondiçãoMeteo (Temporal e maré agitada)</option>
+                <option value="#ACID_PerfuraçãoPequena">#ACID_PerfuraçãoPequena (Corte/furo com espinho/peixe)</option>
+              </optgroup>
+              <optgroup label="Q3 / Q4 - Proteção & Saúde">
+                <option value="#PROT_RecusaEPI" selected>#PROT_RecusaEPI (Ausência/Recusa por incômodo)</option>
+                <option value="#PROT_AdaptaçãoInformal">#PROT_AdaptaçãoInformal (Estratégia informal de proteção)</option>
+                <option value="#SAUD_DorColuna">#SAUD_DorColuna (Queixas osteomusculares)</option>
+                <option value="#SAUD_NaturalizaçãoDor">#SAUD_NaturalizaçãoDor (Habituação ao desconforto)</option>
+              </optgroup>
+              <optgroup label="Q5 / Q6 - Enfrentamento & Demandas">
+                <option value="#ENFR_Automedicação">#ENFR_Automedicação (Uso de medicação por conta própria)</option>
+                <option value="#APOIO_MutirãoCompanheiros">#APOIO_MutirãoCompanheiros (Suporte do grupo de pesca)</option>
+                <option value="#PROP_DemandaEquipamento">#PROP_DemandaEquipamento (Proposta de EPI adaptado)</option>
+              </optgroup>
             </select>
           </div>
 
           <div>
             <label class="block font-semibold text-slate-700 mb-1">Memo Analítico (Nota Teórica do Especialista):</label>
-            <textarea id="memo-texto" rows="3" class="w-full p-2 border border-slate-300 rounded" placeholder="Relacionar o uso de medicação por conta própria à necessidade de não interromper a jornada laboral de subsistência..."></textarea>
+            <textarea id="memo-texto" rows="3" class="w-full p-2 border border-slate-300 rounded" placeholder="Relacionar a recusa de luvas ao desconforto tátil na operação da rede, evidenciando que a não adesão decorre da ergonomia do petrecho..."></textarea>
           </div>
 
           <button onclick="adicionarCodigo()" class="w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-1.5 rounded">
-            Aplicar Código e Registrar Memo
+            Validar Código e Registrar Memo
           </button>
         </div>
       </div>
     </section>
-
-    <!-- TELA 7: RESULTADOS PÚBLICOS (NOVA ÁREA DE DIVULGAÇÃO SOCIAL E CIENTÍFICA) -->
+    
+    <!-- TELA 7: RESULTADOS PÚBLICOS -->
     <section id="tab-resultados" class="tab-content space-y-6">
       
-      <!-- PAINEL INICIAL DA ÁREA PÚBLICA -->
       <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm space-y-3">
         <div class="flex flex-wrap justify-between items-start gap-2 border-b border-slate-200 pb-3">
           <div>
@@ -416,42 +546,45 @@
             <h2 class="text-xl font-extrabold text-slate-800">Panorama da Saúde, Trabalho e Segurança na Pesca Artesanal</h2>
           </div>
           <span class="bg-slate-100 text-slate-600 text-micro font-mono px-2.5 py-1 rounded border border-slate-300">
-            Versão Demonstrativa: Setembro/2026
+            Abrangência: AM, BA, MA, PA, PI | CAAE 94837225.1.0000.5450
           </span>
         </div>
         
         <p class="text-xs text-slate-600 leading-relaxed">
-          Esta área apresenta os achados consolidados do estudo sobre a rotina de trabalho, percepção de saúde e estratégias de prevenção de pescadores e pescadoras artesanais. A iniciativa busca devolver o conhecimento gerado às comunidades de pesca, pesquisadores e formuladores de políticas públicas.
+          Esta área apresenta os achados consolidados do estudo sobre a rotina de trabalho, percepção de saúde e estratégias de prevenção de pescadores e pescadoras artesanais dos estados do Amazonas, Bahia, Maranhão, Pará e Piauí.
         </p>
 
-        <!-- AVISO VISÍVEL DE DADOS SINTÉTICOS -->
         <div class="bg-amber-50 border-l-4 border-amber-500 p-3 rounded text-xs text-amber-900 font-medium">
-          <strong>Aviso de Demonstração:</strong> Todos os números, gráficos, cartões e trechos ilustrativos exibidos nesta página são <u>dados sintéticos e fictícios</u> criados exclusivamente para validação da interface. Não representam dados consolidados da pesquisa real.
+          <strong>Aviso de Demonstração:</strong> Todos os números, gráficos e trechos ilustrativos exibidos nesta página são <u>dados sintéticos e fictícios</u> criados exclusivamente para validação do protótipo.
         </div>
       </div>
 
-      <!-- BARRA DE FILTROS DEMONSTRATIVOS (MUNICÍPIO / TEMA) -->
+      <!-- BARRA DE FILTROS POR ESTADO DO TCLE -->
       <div class="bg-slate-800 text-white p-4 rounded-lg shadow-sm flex flex-wrap items-center justify-between gap-4 text-xs">
         <div class="flex flex-wrap items-center gap-4">
-          <span class="font-bold text-teal-400">Filtrar Visualização Sintética:</span>
+          <span class="font-bold text-teal-400">Filtrar Estado (TCLE):</span>
           
           <div class="flex items-center space-x-2">
-            <label for="filtro-territorio" class="text-slate-300">Território:</label>
-            <select id="filtro-territorio" onchange="aplicarFiltrosPublicos()" class="bg-slate-900 text-white border border-slate-700 rounded px-2.5 py-1 focus:border-teal-500">
-              <option value="todos">Todos os Municípios (Demonstrativo)</option>
-              <option value="ilha_comprida">Ilha Comprida</option>
-              <option value="cananeia">Cananéia</option>
-              <option value="iguape">Iguape</option>
+            <label for="filtro-territorio" class="text-slate-300">Estado / UF:</label>
+            <select id="filtro-territorio" onchange="aplicarFiltrosPublicos()" class="bg-slate-900 text-white border border-slate-700 rounded px-2.5 py-1 focus:border-teal-500 font-semibold">
+              <option value="todos">Todos os 5 Estados (AM, BA, MA, PA, PI)</option>
+              <option value="BA">Bahia (BA)</option>
+              <option value="PA">Pará (PA)</option>
+              <option value="MA">Maranhão (MA)</option>
+              <option value="AM">Amazonas (AM)</option>
+              <option value="PI">Piauí (PI)</option>
             </select>
           </div>
 
           <div class="flex items-center space-x-2">
             <label for="filtro-tema" class="text-slate-300">Eixo Temático:</label>
             <select id="filtro-tema" onchange="aplicarFiltrosPublicos()" class="bg-slate-900 text-white border border-slate-700 rounded px-2.5 py-1 focus:border-teal-500">
-              <option value="todos">Todos os Temas</option>
-              <option value="perigos">Perigos e Acidentes</option>
-              <option value="saude">Percepção de Saúde</option>
-              <option value="protecao">Medidas de Proteção</option>
+              <option value="todos">Todos os Eixos (Q1 a Q6)</option>
+              <option value="perigos">Operações do Trabalho (Q1)</option>
+              <option value="perigos">Perigos e Acidentes (Q2)</option>
+              <option value="saude">Percepção de Saúde (Q4)</option>
+              <option value="protecao">Medidas de Proteção (Q3)</option>
+              <option value="propostas">Propostas/Demandas (Q6)</option>
             </select>
           </div>
         </div>
@@ -465,26 +598,26 @@
       <div class="bg-white p-5 rounded-lg border border-slate-200 shadow-sm space-y-3">
         <h3 class="text-sm font-bold text-slate-800 border-b pb-2 flex items-center justify-between">
           <span>Síntese dos Achados Qualitativos (Exemplo Demonstrativo)</span>
-          <span class="text-micro font-normal text-slate-500" id="rotulo-filtro-ativo">Filtro Ativo: Todos os Municípios</span>
+          <span class="text-micro font-normal text-slate-500" id="rotulo-filtro-ativo">Filtro Ativo: Todos os 5 Estados</span>
         </h3>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
           <div class="p-3 bg-slate-50 rounded border border-slate-200 space-y-1">
-            <span class="font-bold text-teal-800 block">Exposição Contínua e Sol</span>
+            <span class="font-bold text-teal-800 block">Exposição e Riscos de Campo</span>
             <p class="text-slate-600 text-micro leading-relaxed">
-              A exposição prolongada à radiação solar e às intempéries é naturalizada pela rotina de trabalho na água, raramente associada ao uso regular de proteção.
+              A exposição prolongada à radiação solar, intempéries e riscos na água (rios, mangues e mar) é naturalizada na rotina diária de trabalho.
             </p>
           </div>
           <div class="p-3 bg-slate-50 rounded border border-slate-200 space-y-1">
-            <span class="font-bold text-teal-800 block">Sobrecarga Ergonômica</span>
+            <span class="font-bold text-teal-800 block">Sobrecarga Músculo-esquelética</span>
             <p class="text-slate-600 text-micro leading-relaxed">
-              O manuseio repetitivo de petrechos pesados e o esforço físico continuo refletem-se em queixas recorrentes de dores na coluna, braços e articulações.
+              Manuseio de petrechos pesados (redes, covos, matapis) gera relatos frequentes de dores articulares e na coluna.
             </p>
           </div>
           <div class="p-3 bg-slate-50 rounded border border-slate-200 space-y-1">
-            <span class="font-bold text-teal-800 block">Automedicação & Subsistência</span>
+            <span class="font-bold text-teal-800 block">Estratégias de Enfrentamento</span>
             <p class="text-slate-600 text-micro leading-relaxed">
-              Relatos apontam o uso pontual de analgésicos como estratégia imediata para garantir a saída para a pesca no dia seguinte, adiando buscas por cuidados formais.
+              Apoio mútuo entre companheiros e uso pontual de medicação para garantir o retorno imediato ao trabalho de subsistência.
             </p>
           </div>
         </div>
@@ -496,53 +629,49 @@
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           
-          <!-- Indicador 1 -->
           <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm space-y-2">
             <div class="flex justify-between items-start">
               <span class="text-micro font-bold text-slate-500 uppercase">Indicador Processual</span>
               <span class="bg-teal-100 text-teal-800 text-micro font-bold px-2 py-0.5 rounded">100% Validado</span>
             </div>
-            <div class="text-2xl font-black text-slate-800" id="ind-validadas">24 Entrevistas</div>
+            <div class="text-2xl font-black text-slate-800" id="ind-validadas">35 Entrevistas</div>
             <p class="text-xs font-semibold text-teal-800">Entrevistas Semiestruturadas Validadas</p>
             <div class="text-micro text-slate-500 border-t pt-2 space-y-1">
-              <p><strong>Território:</strong> Litoral Sul (Sintético)</p>
-              <p><strong>Período:</strong> Março a Setembro/2026</p>
-              <p><strong>O que mede:</strong> Total de depoimentos com transcrição conferida pelo ATL e aprovada pela supervisão de pesquisa.</p>
+              <p><strong>Território:</strong> AM, BA, MA, PA, PI (Sintético)</p>
+              <p><strong>O que mede:</strong> Total de depoimentos com transcrição conferida pelo ATL e aprovada pela supervisão.</p>
             </div>
           </div>
 
-          <!-- Indicador 2 -->
           <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm space-y-2">
             <div class="flex justify-between items-start">
               <span class="text-micro font-bold text-slate-500 uppercase">Presença no Corpus</span>
-              <span class="bg-amber-100 text-amber-800 text-micro font-bold px-2 py-0.5 rounded" id="ind-ergonomia-pct">18 de 24 (75%)</span>
+              <span class="bg-amber-100 text-amber-800 text-micro font-bold px-2 py-0.5 rounded" id="ind-ergonomia-pct">26 de 35 (74%)</span>
             </div>
-            <div class="text-2xl font-black text-slate-800" id="ind-ergonomia-val">18 Entrevistas</div>
+            <div class="text-2xl font-black text-slate-800" id="ind-ergonomia-val">26 Entrevistas</div>
             <p class="text-xs font-semibold text-slate-800">Presença do Tema "Sobrecarga/Dor Músculo-esquelética"</p>
             <div class="text-micro text-slate-500 border-t pt-2 space-y-1">
-              <p><strong>Denominador:</strong> 24 entrevistas da amostra qualitativa ativa.</p>
-              <p><strong>Regra de Leitura:</strong> Exprime o número de <u>entrevistas selecionadas em que o tema foi identificado</u>. Não representa a prevalência do problema na população geral de pescadores.</p>
+              <p><strong>Denominador:</strong> 35 entrevistas ativas da amostragem.</p>
+              <p><strong>Regra de Leitura:</strong> Exprime o número de <u>entrevistas selecionadas em que o tema foi identificado</u>. Não representa prevalência estatística populacional.</p>
             </div>
           </div>
 
-          <!-- Indicador 3 -->
           <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm space-y-2">
             <div class="flex justify-between items-start">
               <span class="text-micro font-bold text-slate-500 uppercase">Presença no Corpus</span>
-              <span class="bg-indigo-100 text-indigo-800 text-micro font-bold px-2 py-0.5 rounded" id="ind-protecao-pct">12 de 24 (50%)</span>
+              <span class="bg-indigo-100 text-indigo-800 text-micro font-bold px-2 py-0.5 rounded" id="ind-protecao-pct">18 de 35 (51%)</span>
             </div>
-            <div class="text-2xl font-black text-slate-800" id="ind-protecao-val">12 Entrevistas</div>
-            <p class="text-xs font-semibold text-slate-800">Relato de Uso de Equipamentos de Proteção / Prevenção</p>
+            <div class="text-2xl font-black text-slate-800" id="ind-protecao-val">18 Entrevistas</div>
+            <p class="text-xs font-semibold text-slate-800">Relato de Práticas de Proteção / Adaptação</p>
             <div class="text-micro text-slate-500 border-t pt-2 space-y-1">
-              <p><strong>Denominador:</strong> 24 entrevistas da amostra qualitativa ativa.</p>
-              <p><strong>O que mede:</strong> Entrevistas em que foram citadas estratégias formais ou informais de proteção (como chapéu, colete, luva ou adaptação de petrecho).</p>
+              <p><strong>Denominador:</strong> 35 entrevistas ativas da amostragem.</p>
+              <p><strong>O que mede:</strong> Entrevistas em que foram citadas estratégias formais ou informais de proteção (chapéu, capa, adaptação de petrecho).</p>
             </div>
           </div>
 
         </div>
       </div>
 
-      <!-- CARTÕES DEMONSTRATIVOS E ILUSTRAÇÕES DE TEMAS (COM FALAS SINTÉTICAS) -->
+      <!-- CARTÕES DEMONSTRATIVOS DE RELATOS -->
       <div class="space-y-3">
         <h3 class="text-sm font-bold text-slate-800">Exemplos Ilustrativos de Relatos (Trechos Sintéticos Fictícios)</h3>
         
@@ -550,82 +679,45 @@
           
           <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm space-y-2">
             <div class="flex justify-between items-center border-b pb-1">
-              <span class="font-bold text-teal-800">Eixo: Perigos e Condições de Trabalho</span>
-              <span class="text-micro text-slate-400">Exemplo Sintético</span>
+              <span class="font-bold text-teal-800">Eixo: Perigos e Condições de Trabalho (Q2)</span>
+              <span class="text-micro text-slate-400">Valença - BA</span>
             </div>
             <p class="italic text-slate-700 font-sans leading-relaxed">
-              "A gente sai muito cedo, no escuro. Se entra vento forte ou vira o tempo no canal, a preocupação maior é não perder a rede e conseguir voltar em segurança."
+              "A gente sai muito cedo na maré. Se entra vento forte ou vira o tempo na baía, a preocupação maior é não perder a embarcação nem o petrecho."
             </p>
             <p class="text-micro text-slate-500">
-              <strong>Contexto Demonstrativo:</strong> Pescador artesanal, pesca de estuário/mar. A citação é uma construção sintética ilustrativa. Não exibe dados pessoais ou localidades restritas.
+              <strong>Contexto Demonstrativo:</strong> Pescador artesanal. Construção sintética ilustrativa. Preserva a privacidade e não exibe dados pessoais.
             </p>
           </div>
 
           <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm space-y-2">
             <div class="flex justify-between items-center border-b pb-1">
-              <span class="font-bold text-teal-800">Eixo: Redes de Apoio e Enfrentamento</span>
-              <span class="text-micro text-slate-400">Exemplo Sintético</span>
+              <span class="font-bold text-teal-800">Eixo: Redes de Apoio e Enfrentamento (Q5)</span>
+              <span class="text-micro text-slate-400">Bragança - PA</span>
             </div>
             <p class="italic text-slate-700 font-sans leading-relaxed">
-              "Quando alguém se machuca no barco ou precisa parar uns dias, os companheiros do porto chegam junto para ajudar a puxar o barco ou arrumar o petrecho."
+              "Quando alguém se machuca no barco ou precisa parar uns dias, os companheiros do porto chegam junto para ajudar a puxar o matapi ou arrumar a rede."
             </p>
             <p class="text-micro text-slate-500">
-              <strong>Contexto Demonstrativo:</strong> Pescadora/Pescador, comunidade costeira. Fala fictícia rótulo sintético.
+              <strong>Contexto Demonstrativo:</strong> Pescadora artesanal. Fala fictícia rótulo sintético.
             </p>
           </div>
 
         </div>
-      </div>
-
-      <!-- RELATÓRIOS PARA LEITURA E DOWNLOAD (EXEMPLOS DEMONSTRATIVOS) -->
-      <div class="bg-white p-5 rounded-lg border border-slate-200 shadow-sm space-y-3">
-        <h3 class="text-sm font-bold text-slate-800 border-b pb-2">Relatórios e Publicações de Resultados (Exemplos de Demonstração)</h3>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-          
-          <div class="p-3 bg-slate-50 rounded border border-slate-200 flex items-center justify-between">
-            <div>
-              <p class="font-bold text-slate-800">Relatório Síntese Litoral Sul (Exemplo PDF)</p>
-              <p class="text-micro text-slate-500">Resumo executivo com dados consolidados e limites da amostragem.</p>
-            </div>
-            <button onclick="abrirPreviaRelatorio('Relatório Síntese Litoral Sul')" class="bg-slate-800 hover:bg-slate-700 text-white text-micro font-semibold px-3 py-1.5 rounded">
-              Visualizar Prévia
-            </button>
-          </div>
-
-          <div class="p-3 bg-slate-50 rounded border border-slate-200 flex items-center justify-between">
-            <div>
-              <p class="font-bold text-slate-800">Informativo Comunitário de Saúde Náutica (Exemplo PDF)</p>
-              <p class="text-micro text-slate-500">Material de devolutiva formatado em linguagem acessível.</p>
-            </div>
-            <button onclick="abrirPreviaRelatorio('Informativo Comunitário de Saúde Náutica')" class="bg-slate-800 hover:bg-slate-700 text-white text-micro font-semibold px-3 py-1.5 rounded">
-              Visualizar Prévia
-            </button>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- EXPLICAÇÃO DA METODOLOGIA E LIMITES DOS RESULTADOS -->
-      <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-xs space-y-2 text-slate-700">
-        <h4 class="font-bold text-slate-800">Nota Metodológica e Limites de Interpretação dos Resultados</h4>
-        <p class="leading-relaxed">
-          Os dados qualitativos sintetizados nesta área advêm de entrevistas semiestruturadas com amostras intencionais e de conveniência de pescadores e pescadoras artesanais. Os percentuais e contagens apresentados referem-se estritamente ao <u>grupo de depoimentos analisados</u> na pesquisa, não constituindo estimativas epidemiológicas nem estatísticas de prevalência para a população geral do município ou estado.
-        </p>
       </div>
 
       <!-- FORMULÁRIO DEMONSTRATIVO DE RETORNO DA COMUNIDADE -->
       <div class="bg-white p-5 rounded-lg border border-slate-200 shadow-sm space-y-3">
         <div class="border-b pb-2">
           <h3 class="text-sm font-bold text-slate-800">Espaço de Retorno e Diálogo com a Comunidade</h3>
-          <p class="text-micro text-slate-500">Pescadores, pescadoras e lideranças podem enviar dúvidas, sugestões de temas ou comentários à equipe de pesquisa.</p>
+          <p class="text-micro text-slate-500">Pescadores, pescadoras e lideranças dos 5 estados podem enviar dúvidas, sugestões de temas ou comentários.</p>
         </div>
 
         <form id="form-comentario-publico" class="space-y-3 text-xs" onsubmit="event.preventDefault(); enviarComentarioPublico();">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
               <label class="block font-semibold text-slate-700 mb-1">Nome ou Comunidade (Opcional):</label>
-              <input type="text" placeholder="Ex: Pescador da Vila Pedrinhas" class="w-full p-2 border border-slate-300 rounded">
+              <input type="text" placeholder="Ex: Pescadora da Raposa - MA" class="w-full p-2 border border-slate-300 rounded">
             </div>
             <div>
               <label class="block font-semibold text-slate-700 mb-1">Assunto / Eixo:</label>
@@ -639,7 +731,7 @@
 
           <div>
             <label class="block font-semibold text-slate-700 mb-1">Sua Mensagem ou Comentário:</label>
-            <textarea rows="3" required placeholder="Escreva aqui seu comentário ou percepção sobre o trabalho na pesca..." class="w-full p-2 border border-slate-300 rounded"></textarea>
+            <textarea rows="3" required placeholder="Escreva aqui seu comentário..." class="w-full p-2 border border-slate-300 rounded"></textarea>
           </div>
 
           <button type="submit" class="bg-teal-700 hover:bg-teal-800 text-white font-semibold px-4 py-2 rounded">
@@ -648,47 +740,157 @@
         </form>
 
         <div id="mensagem-sucesso-comentario" class="hidden bg-green-50 text-green-800 border border-green-200 p-3 rounded text-xs font-medium">
-          Sua mensagem de simulação foi recebida na interface de demonstração! Em uma versão com backend, seu comentário seria armazenado para análise da equipe.
+          Sua mensagem de simulação foi recebida na interface de demonstração!
         </div>
       </div>
 
     </section>
 
-    <!-- TELA 8: ROTEIRO, MÉTODOS E DIRETRIZES DE PESQUISA -->
+    <!-- TELA 8: MÉTODOS, DIRETRIZES E ESTRUTURA FORMAL COMPLETA DO CODEBOOK (11 CÓDIGOS/DIMENSÕES) -->
     <section id="tab-roteiro" class="tab-content space-y-4">
       <div class="bg-white p-6 rounded border border-slate-200 shadow-sm space-y-4 text-xs">
         <div class="border-b border-slate-200 pb-3">
-          <h2 class="text-base font-bold text-slate-800">Protocolo Metodológico & Roteiro Versionado (v1.0)</h2>
-          <p class="text-xs text-slate-500">Diretrizes de Campo, Rastreabilidade de Dados e Proteção por Finalidade.</p>
+          <h2 class="text-base font-bold text-slate-800">Protocolo Metodológico & Estrutura Completa do Codebook (v1.0)</h2>
+          <p class="text-xs text-slate-500">Fundamentação conceitual, regras de filtragem lexical e matriz de codificação completa com os 11 códigos operacionais (CAAE 94837225.1.0000.5450).</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-700">
           <div class="p-3 bg-slate-50 rounded border border-slate-200 space-y-2">
             <h3 class="font-bold text-teal-800">Princípios do Plano Metodológico:</h3>
             <ul class="list-disc list-inside space-y-1 text-micro">
-              <li><strong>Fonte Preservada:</strong> Áudio e cadastro original são imutáveis.</li>
-              <li><strong>Transcrição é Hipótese:</strong> O texto do Whisper exige conferência.</li>
-              <li><strong>Rastreabilidade Total:</strong> Afirmações analíticas apontam aos trechos.</li>
+              <li><strong>Fonte Preservada:</strong> Áudio e cadastro civil são imutáveis e protegidos em cofre separado.</li>
+              <li><strong>Marcador NÃO é Código:</strong> A palavra recupera o trecho candidato; o código analítico exige leitura do contexto.</li>
+              <li><strong>Rastreabilidade Total:</strong> Qualquer afirmação aponta para o ID, questão e turno de fala.</li>
             </ul>
           </div>
           <div class="p-3 bg-slate-50 rounded border border-slate-200 space-y-2">
-            <h3 class="font-bold text-teal-800">As 6 Perguntas do Roteiro Semiestruturado:</h3>
+            <h3 class="font-bold text-teal-800">As 6 Questões do Roteiro Semiestruturado:</h3>
             <ol class="list-decimal list-inside space-y-1 text-micro">
-              <li>Trajetória, rotina, local e tipo de pesca.</li>
-              <li>Perigos, acidentes e problemas de saúde.</li>
-              <li>Formas de proteção e prevenção.</li>
-              <li>Percepção da própria saúde ao longo dos anos.</li>
-              <li>Estratégias de enfrentamento e redes de ajuda.</li>
-              <li>Necessidades para trabalhar com saúde e segurança.</li>
+              <li>Q1: Trajetória, rotina, local e tipo de pesca.</li>
+              <li>Q2: Perigos, acidentes e problemas de saúde.</li>
+              <li>Q3: Formas de proteção e prevenção.</li>
+              <li>Q4: Percepção da própria saúde ao longo dos anos.</li>
+              <li>Q5: Estratégias de enfrentamento e redes de ajuda.</li>
+              <li>Q6: Propostas e necessidades para trabalhar com saúde e segurança.</li>
             </ol>
           </div>
         </div>
+
+        <!-- TABELA DA ESTRUTURA FORMAL DO CODEBOOK COMPLETA (TODOS OS 11 CÓDIGOS DO ROTEIRO DE ANÁLISE) -->
+        <div class="space-y-2 pt-2">
+          <h3 class="font-bold text-slate-800 border-b pb-1">Matriz de Estrutura do Codebook (Especificação Técnica Completa - 11 Códigos)</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-micro border-collapse border border-slate-200">
+              <thead>
+                <tr class="bg-slate-100 text-slate-800 font-bold border-b">
+                  <th class="p-2 border-r w-16">Código</th>
+                  <th class="p-2 border-r w-32">Dimensão</th>
+                  <th class="p-2 border-r">Definição Operacional / Finalidade</th>
+                  <th class="p-2 border-r w-48">Marcadores-Semente</th>
+                  <th class="p-2 border-r">Exemplo Positivo (Validado)</th>
+                  <th class="p-2">Contraexemplo (Rejeitado para o Código)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 text-slate-600">
+                <tr>
+                  <td class="p-2 border-r font-bold text-teal-800">TRAJ</td>
+                  <td class="p-2 border-r">Trajetória na Pesca (Q1)</td>
+                  <td class="p-2 border-r">Localizar narrativas de ingresso, aprendizagem e tempo na atividade.</td>
+                  <td class="p-2 border-r font-mono">comecei; aprendi; desde; anos; pai; mãe; família</td>
+                  <td class="p-2 border-r bg-green-50/50">"Comecei com 12 anos acompanhando meu pai na canoa."</td>
+                  <td class="p-2 bg-red-50/50">"Meu pai não trabalhava na pesca." (Menciona pai, sem vínculo de aprendizagem)</td>
+                </tr>
+                <tr>
+                  <td class="p-2 border-r font-bold text-teal-800">TERR</td>
+                  <td class="p-2 border-r">Território / Local (Q1)</td>
+                  <td class="p-2 border-r">Localizar referências ao espaço físico e condições do ambiente.</td>
+                  <td class="p-2 border-r font-mono">rio; lago; mar; mangue; praia; maré; correnteza</td>
+                  <td class="p-2 border-r bg-green-50/50">"A gente pesca no estuário perto do manguezal."</td>
+                  <td class="p-2 bg-red-50/50">"Moro perto do rio mas pesco em alto mar." (Referência residencial, não ao local da pesca)</td>
+                </tr>
+                <tr>
+                  <td class="p-2 border-r font-bold text-teal-800">PESCA</td>
+                  <td class="p-2 border-r">Tipo / Apetrechos (Q1)</td>
+                  <td class="p-2 border-r">Localizar referências ao tipo de pesca e aos meios/petrechos utilizados.</td>
+                  <td class="p-2 border-r font-mono">rede; linha; anzol; tarrafa; espinhel; covo; matapi</td>
+                  <td class="p-2 border-r bg-green-50/50">"A minha pesca principal é com covo e rede de emalhe."</td>
+                  <td class="p-2 bg-red-50/50">"Já vi usarem matapi em outra comunidade." (Menção externa, sem prática própria)</td>
+                </tr>
+                <tr>
+                  <td class="p-2 border-r font-bold text-teal-800">OPER</td>
+                  <td class="p-2 border-r">Operações do Trabalho (Q1)</td>
+                  <td class="p-2 border-r">Localizar ações que compõem o processo físico de trabalho.</td>
+                  <td class="p-2 border-r font-mono">sair; lançar; puxar; recolher; carregar; desembarcar</td>
+                  <td class="p-2 border-r bg-green-50/50">"A parte mais dura é puxar a rede cheia no braço."</td>
+                  <td class="p-2 bg-red-50/50">"Na hora de desembarcar o comprador já está lá." (Foco comercial, não operacional)</td>
+                </tr>
+                <tr>
+                  <td class="p-2 border-r font-bold text-teal-800">PERI</td>
+                  <td class="p-2 border-r">Perigos e Riscos (Q2)</td>
+                  <td class="p-2 border-r">Localizar segmentos com relatos de situações percebidas como perigosas.</td>
+                  <td class="p-2 border-r font-mono">perigo; perigoso; risco; correnteza; temporal; queda</td>
+                  <td class="p-2 border-r bg-green-50/50">"Quando entra vento forte a maré fica muito perigosa."</td>
+                  <td class="p-2 bg-red-50/50">"Não vejo nenhum perigo no meu trabalho." (Relato de ausência de risco)</td>
+                </tr>
+                <tr>
+                  <td class="p-2 border-r font-bold text-teal-800">ACID</td>
+                  <td class="p-2 border-r">Acidente / Ocorrência (Q2)</td>
+                  <td class="p-2 border-r">Localizar relatos de ocorrências de acidentes leves ou graves.</td>
+                  <td class="p-2 border-r font-mono">acidente; corte; queda; afogamento; perfuração; fratura</td>
+                  <td class="p-2 border-r bg-green-50/50">"Furei a mão com o espinho de peixe no mês passado."</td>
+                  <td class="p-2 bg-red-50/50">"Graças a Deus nunca sofri acidente nenhum." (Negativa explícita de ocorrência)</td>
+                </tr>
+                <tr>
+                  <td class="p-2 border-r font-bold text-teal-800">SAUD</td>
+                  <td class="p-2 border-r">Saúde e Agravos (Q2/Q4)</td>
+                  <td class="p-2 border-r">Localizar referências à saúde, queixas físicas e mudanças percebidas.</td>
+                  <td class="p-2 border-r font-mono">saúde; dor; lesão; queimadura; tontura; audição</td>
+                  <td class="p-2 border-r bg-green-50/50">"Sinto muita dor na coluna e nos braços de puxar o peso."</td>
+                  <td class="p-2 bg-red-50/50">"Minha saúde sempre foi boa e não mudou nada." (Ausência de queixa/agravo)</td>
+                </tr>
+                <tr>
+                  <td class="p-2 border-r font-bold text-teal-800">PROT</td>
+                  <td class="p-2 border-r">Proteção e Prevenção (Q3)</td>
+                  <td class="p-2 border-r">Localizar práticas, recursos ou menções ao uso/não uso de proteção.</td>
+                  <td class="p-2 border-r font-mono">proteger; evitar; luva; colete; chapéu; capa</td>
+                  <td class="p-2 border-r bg-green-50/50">"Eu uso chapéu e capa de chuva para me proteger."</td>
+                  <td class="p-2 bg-red-50/50">"Colete atrapalha e não tenho como usar." (Atribuído a #PROT_RecusaEPI)</td>
+                </tr>
+                <tr>
+                  <td class="p-2 border-r font-bold text-teal-800">ENFR</td>
+                  <td class="p-2 border-r">Enfrentamento / Estratégia (Q5)</td>
+                  <td class="p-2 border-r">Localizar respostas a acidentes, problemas de saúde e dificuldades.</td>
+                  <td class="p-2 border-r font-mono">faço; resolvo; procuro; paro; volto; ajuda</td>
+                  <td class="p-2 border-r bg-green-50/50">"Quando sinto dor forte eu tomo remédio por conta própria."</td>
+                  <td class="p-2 bg-red-50/50">"Não sei o que fazer quando a maré vira." (Ausência de estratégia formulada)</td>
+                </tr>
+                <tr>
+                  <td class="p-2 border-r font-bold text-teal-800">APOIO</td>
+                  <td class="p-2 border-r">Rede de Apoio (Q5)</td>
+                  <td class="p-2 border-r">Localizar quem ou o que é mobilizado diante das dificuldades.</td>
+                  <td class="p-2 border-r font-mono">ajuda; família; vizinho; associação; colônia; posto</td>
+                  <td class="p-2 border-r bg-green-50/50">"Os companheiros da colônia chegam junto para ajudar."</td>
+                  <td class="p-2 bg-red-50/50">"O posto de saúde é muito longe da comunidade." (Referência a equipamento, sem suporte efetivo)</td>
+                </tr>
+                <tr>
+                  <td class="p-2 border-r font-bold text-teal-800">PROP</td>
+                  <td class="p-2 border-r">Propostas e Demandas (Q6)</td>
+                  <td class="p-2 border-r">Localizar proposições e necessidades para trabalhar com saúde/segurança.</td>
+                  <td class="p-2 border-r font-mono">precisa; necessário; melhorar; deveria; falta; apoio</td>
+                  <td class="p-2 border-r bg-green-50/50">"Deveria ter colete adequado que não atrapalhe na puxada."</td>
+                  <td class="p-2 bg-red-50/50">"Falta peixe na maré por causa da poluição." (Demanda ambiental, não de saúde/segurança laboral)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
     </section>
 
   </main>
 
-  <!-- MODAL DE AUTENTICAÇÃO ATUALIZADA E PROFISSIONAL (ETAPA 1: DADOS + ETAPA 2: VERIFICAÇÃO E-MAIL) -->
+  <!-- MODAL DE AUTENTICAÇÃO -->
   <div id="modal-auth" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center z-50 p-4">
     <div class="bg-white rounded-lg shadow-xl border border-slate-200 max-w-md w-full p-6 space-y-4 text-xs">
       <div class="flex justify-between items-center border-b pb-2">
@@ -696,32 +898,29 @@
         <button onclick="fecharModalAuth()" class="text-slate-400 hover:text-slate-700 font-bold text-base">&times;</button>
       </div>
 
-      <!-- AVISO DE SIMULAÇÃO VISUAL DA AUTENTICAÇÃO -->
       <div class="bg-slate-100 p-2.5 rounded text-slate-600 text-micro border border-slate-200">
-        <strong>Aviso da Demonstração:</strong> A autenticação é uma simulação de interface visual. O cadastro para a comunidade concede acesso imediato aos Resultados Públicos (Seções 7 e 8).
+        <strong>Aviso da Demonstração:</strong> A autenticação é uma simulação visual. O cadastro público concede acesso aos Resultados Públicos (Seções 7 e 8).
       </div>
 
-      <!-- ETAPA 1: FORMULÁRIO COMPLETO DE REGISTRO / LOGIN -->
       <form id="form-auth-step1" onsubmit="event.preventDefault(); avancarEtapaVerificacao();" class="space-y-3">
-        
         <div id="campo-nome-auth" class="hidden">
           <label class="block font-semibold text-slate-700 mb-1">Nome Completo:</label>
           <input type="text" id="auth-nome" placeholder="Seu nome completo" class="w-full p-2 border border-slate-300 rounded focus:border-teal-600 outline-none">
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="campos-contato-auth">
-          <div>
-            <label class="block font-semibold text-slate-700 mb-1">E-mail <span class="text-micro text-slate-400 font-normal">(verificação)</span>:</label>
+        <div id="container-campos-contato">
+          <div id="campo-email-unico">
+            <label class="block font-semibold text-slate-700 mb-1">E-mail <span class="text-micro text-slate-400 font-normal">(para verificação)</span>:</label>
             <input type="email" id="auth-email" required placeholder="nome@exemplo.com" class="w-full p-2 border border-slate-300 rounded focus:border-teal-600 outline-none">
           </div>
-          <div>
+          <div id="campo-telefone-cadastro" class="hidden mt-3">
             <label class="block font-semibold text-slate-700 mb-1">Telefone / WhatsApp:</label>
             <input type="tel" id="auth-telefone" placeholder="(00) 00000-0000" class="w-full p-2 border border-slate-300 rounded focus:border-teal-600 outline-none">
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div>
+          <div id="box-senha-principal">
             <label class="block font-semibold text-slate-700 mb-1">Senha:</label>
             <input type="password" id="auth-senha" required minlength="6" placeholder="••••••••" class="w-full p-2 border border-slate-300 rounded focus:border-teal-600 outline-none">
           </div>
@@ -731,7 +930,6 @@
           </div>
         </div>
 
-        <!-- CHECKBOX E FLUXO PARA INTEGRANTES DA EQUIPE / INSTITUCIONAIS -->
         <div id="bloco-equipe-checkbox" class="hidden bg-slate-50 p-2.5 rounded border border-slate-200 mt-2">
           <label class="flex items-center space-x-2 text-slate-700 font-semibold cursor-pointer">
             <input type="checkbox" id="check-equipe-interna" onchange="toggleCamposEquipeInterna(this.checked)" class="rounded text-teal-700 focus:ring-teal-600">
@@ -752,16 +950,12 @@
               </select>
             </div>
             <div>
-              <label class="block font-semibold text-slate-700 mb-1">Instituição / Território de Atuação:</label>
-              <input type="text" id="input-instituicao-equipe" placeholder="Ex: Fundacentro / Litoral Sul" class="w-full p-2 border border-slate-300 rounded bg-white">
+              <label class="block font-semibold text-slate-700 mb-1">Instituição / Estado de Atuação:</label>
+              <input type="text" id="input-instituicao-equipe" placeholder="Ex: Fundacentro / Bahia (BA)" class="w-full p-2 border border-slate-300 rounded bg-white">
             </div>
-            <p class="text-micro text-amber-800 bg-amber-50 p-1.5 rounded border border-amber-200">
-              ⚠️ Solicitações de acesso operacional aos dados brutos de entrevistas passarão por análise de autorização da coordenação antes da liberação do perfil restrito.
-            </p>
           </div>
         </div>
 
-        <!-- No formulário de login direto, permite selecionar simulação de perfil -->
         <div id="campo-perfil-auth" class="hidden">
           <label class="block font-semibold text-slate-700 mb-1">Simular Perfil no Login:</label>
           <select id="select-simular-login" class="w-full p-2 border border-slate-300 rounded">
@@ -777,17 +971,16 @@
         </button>
       </form>
 
-      <!-- ETAPA 2: VERIFICAÇÃO SIMULADA DE E-MAIL -->
       <div id="form-auth-step2" class="hidden space-y-3 text-center">
         <div class="p-4 bg-teal-50 border border-teal-200 rounded space-y-2">
           <span class="text-2xl block">✉️</span>
           <h4 class="font-bold text-slate-800">Verifique seu E-mail</h4>
           <p class="text-micro text-slate-600">
-            Enviamos um código demonstrativo de verificação para <strong id="exibir-email-verificacao" class="text-teal-800">seu e-mail</strong>.
+            Enviamos um código de verificação para <strong id="exibir-email-verificacao" class="text-teal-800">seu e-mail</strong>.
           </p>
           <div>
             <input type="text" maxlength="6" value="123456" class="p-2 border border-teal-400 rounded text-center tracking-widest font-mono text-base w-32 mx-auto block bg-white font-bold">
-            <span class="text-micro text-slate-400">Código pré-preenchido para a demonstração</span>
+            <span class="text-micro text-slate-400">Código pré-preenchido para demonstração</span>
           </div>
         </div>
 
@@ -798,44 +991,16 @@
           &larr; Voltar e alterar dados
         </button>
       </div>
-
     </div>
   </div>
 
-  <!-- MODAL DE PRÉVIA DEMONSTRATIVA DE RELATÓRIO -->
-  <div id="modal-relatorio" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center z-50 p-4">
-    <div class="bg-white rounded-lg shadow-xl border border-slate-200 max-w-lg w-full p-6 space-y-4 text-xs">
-      <div class="flex justify-between items-center border-b pb-2">
-        <h3 id="titulo-modal-relatorio" class="font-bold text-sm text-slate-800">Prévia de Relatório</h3>
-        <button onclick="fecharPreviaRelatorio()" class="text-slate-400 hover:text-slate-700 font-bold text-base">&times;</button>
-      </div>
-
-      <div class="space-y-3 text-slate-700">
-        <p class="font-semibold text-teal-800" id="subtitulo-modal-relatorio">Documento Sintético de Exemplo</p>
-        <p class="text-micro text-slate-500 leading-relaxed">
-          Esta é uma janela de simulação visual. Em um ambiente completo com backend, o sistema geraria o arquivo PDF correspondente para download com base nas tabelas ativas do banco de dados.
-        </p>
-        <div class="p-3 bg-slate-50 border rounded text-micro font-mono space-y-1">
-          <p><strong>Status:</strong> Arquivo demonstrativo pronto</p>
-          <p><strong>Tamanho estimado:</strong> 1.2 MB</p>
-          <p><strong>Classificação:</strong> Divulgação Pública Pseudonimizada</p>
-        </div>
-      </div>
-
-      <div class="flex justify-end space-x-2 pt-2 border-t">
-        <button onclick="fecharPreviaRelatorio()" class="px-3 py-1.5 border rounded text-slate-600 hover:bg-slate-100">Fechar</button>
-        <button onclick="simularAviso('Simulação de download do relatório iniciada.'); fecharPreviaRelatorio();" class="px-3 py-1.5 bg-teal-700 text-white font-semibold rounded hover:bg-teal-800">Baixar Exemplo (Simulação)</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- RODAPÉ INSTITUCIONAL E DE CRÉDITOS -->
+  <!-- RODAPÉ INSTITUCIONAL -->
   <footer class="bg-slate-900 text-slate-400 text-xs py-6 border-t border-slate-800 mt-auto">
     <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div>
         <h4 class="text-slate-200 font-bold mb-1">Propriedade e Governança dos Dados</h4>
         <p class="text-slate-400 text-micro leading-relaxed">
-          Propriedade dos dados: <strong>Fundacentro</strong> (Aguardando confirmação formal da redação oficial de menção).
+          Propriedade dos dados: <strong>Fundacentro</strong> (Aguardando confirmação formal de menção).
         </p>
       </div>
       <div>
@@ -855,11 +1020,33 @@
     </div>
   </footer>
 
-  <!-- LÓGICA DE INTERAÇÃO E PERMISSÕES EM JAVASCRIPT -->
+  <!-- ================================================================= -->
+  <!-- MÓDULO JAVASCRIPT: LÓGICA DE NAVEGAÇÃO, PERFIS E INTERAÇÕES (MVP)  -->
+  <!-- ================================================================= -->
   <script>
+
+    /* ----------------------------------------------------------------- */
+    /* CÉLULA A: ESTADO GLOBAL & MAPEAMENTO DE URLs (HASH ROUTING)       */
+    /* ----------------------------------------------------------------- */
     let perfilAtual = 'supervisor';
     let tipoModalAuth = 'cadastro_publico';
+    let audioPlaying = false;
 
+    const mapaHashes = {
+      'entrevistas': 'tab-entrevistas',
+      'cadastro':    'tab-cadastro',
+      'conferencia': 'tab-conferencia',
+      'segmentacao': 'tab-segmentacao',
+      'supervisao':  'tab-supervisao',
+      'analise':     'tab-analise',
+      'resultados':  'tab-resultados',
+      'roteiro':     'tab-roteiro'
+    };
+
+
+    /* ----------------------------------------------------------------- */
+    /* CÉLULA B: GERENCIADOR DE NAVEGAÇÃO ENTRE ABAS & HASH NA URL        */
+    /* ----------------------------------------------------------------- */
     function switchTab(tabId) {
       if (perfilAtual === 'publico') {
         if (tabId !== 'tab-resultados' && tabId !== 'tab-roteiro') {
@@ -889,13 +1076,42 @@
         activeBtn.classList.add('text-teal-700', 'border-b-2', 'border-teal-700');
         activeBtn.classList.remove('text-slate-600');
       }
+
+      const hashName = tabId.replace('tab-', '');
+      if (window.location.hash.replace('#', '') !== hashName) {
+        window.location.hash = hashName;
+      }
     }
 
+    function carregarAbaPorHash() {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && mapaHashes[hash]) {
+        switchTab(mapaHashes[hash]);
+      } else {
+        switchTab('tab-entrevistas');
+      }
+    }
+
+    window.addEventListener('hashchange', carregarAbaPorHash);
+
+
+    /* ----------------------------------------------------------------- */
+    /* CÉLULA C: CONTROLE DE PERMISSÕES E VISIBILIDADE POR PERFIL       */
+    /* ----------------------------------------------------------------- */
     function atualizarPerfil(perfil) {
       perfilAtual = perfil;
       const abasOperacionais = document.querySelectorAll('.tab-operacional');
       const abasRestritas = document.querySelectorAll('.tab-restrita');
       const botoesAcaoRestritos = document.querySelectorAll('.btn-acao-restrita');
+      const painelAtl = document.getElementById('painel-producao-atl');
+
+      if (painelAtl) {
+        if (perfil === 'atl') {
+          painelAtl.classList.remove('hidden');
+        } else {
+          painelAtl.classList.add('hidden');
+        }
+      }
 
       if (perfil === 'publico') {
         abasOperacionais.forEach(el => el.classList.add('hidden'));
@@ -926,28 +1142,61 @@
       }
     }
 
-    // Modal de Autenticação com Validações
+
+    /* ----------------------------------------------------------------- */
+    /* CÉLULA D: TESTE DE MARCADORES LEXICAIS E RELACIONAIS (TELA 6)     */
+    /* ----------------------------------------------------------------- */
+    function executarSimulacaoMarcador() {
+      const semente = document.getElementById('sim-semente').value;
+      const operador = document.getElementById('sim-operador').value;
+      const resPainel = document.getElementById('resultado-simulacao-texto');
+      const textoCorpus = document.getElementById('texto-corpus-analise');
+
+      if (semente === 'PROT' && operador === 'negacao') {
+        resPainel.innerHTML = "<strong>Recuperado por PROT + Negação:</strong> Ocorrência lexical 'não uso luva'. <br><span class='text-amber-400'>Instrução Analítica:</span> Palavra recuperada indicando ausência de proteção. Código: <strong>#PROT_RecusaEPI</strong>.";
+        textoCorpus.innerHTML = '"A parte mais perigosa na maré é o sol forte o dia todo e o peso de puxar a rede na mão. Eu <span class="bg-amber-300 font-bold text-amber-950 px-1 border border-amber-600">NÃO USO LUVA</span> nem chapéu porque atrapalha no movimento. Sinto muita dor na coluna e nos braços."';
+      } else if (semente === 'PERI' && operador === 'quase') {
+        resPainel.innerHTML = "<strong>Recuperado por PERI + Quase:</strong> Ocorrência 'quase virou a canoa'. <br><span class='text-amber-400'>Instrução Analítica:</span> Recupera situação de quase-acidente (risco iminente sem dano consumado).";
+        textoCorpus.innerHTML = '"Na última semana o banzeiro estava tão forte no rio que <span class="bg-amber-300 font-bold text-amber-950 px-1 border border-amber-600">QUASE VIROU A CANOA</span>. Fiquei muito assustado com a força da correnteza."';
+      } else if (semente === 'PROP' && operador === 'necessidade') {
+        resPainel.innerHTML = "<strong>Recuperado por PROP + Necessidade:</strong> Ocorrência 'precisa ter mais apoio'. <br><span class='text-amber-400'>Instrução Analítica:</span> Trecho recuperado referente a propostas de saúde e segurança (Q6).";
+        textoCorpus.innerHTML = '"Para a gente trabalhar com saúde <span class="bg-amber-300 font-bold text-amber-950 px-1 border border-amber-600">PRECISA TER MAIS APOIO</span> do posto de saúde e equipamento adequado que não atrapalhe na puxada."';
+      } else if (semente === 'TRAJ' && operador === 'temporal') {
+        resPainel.innerHTML = "<strong>Recuperado por TRAJ + Temporalidade:</strong> Ocorrência 'desde criança'. <br><span class='text-amber-400'>Instrução Analítica:</span> Recupera narrativas do início da atividade e tempo de trabalho.";
+        textoCorpus.innerHTML = '"Trabalho na pesca <span class="bg-amber-300 font-bold text-amber-950 px-1 border border-amber-600">DESDE CRIANÇA</span> quando acompanhava meu pai nos canais do rio."';
+      } else {
+        resPainel.innerHTML = `<strong>Filtro Combinado Aplicado:</strong> Código-Semente [<strong>${semente}</strong>] + Operador [<strong>${operador.toUpperCase()}</strong>].<br>Trecho candidato recuperado na base para leitura e validação do especialista.`;
+        textoCorpus.innerHTML = '"A gente sai muito cedo para a maré. Quando a água está muito agitada, o trabalho exige esforço dobrado e atenção com os petrechos."';
+      }
+    }
+
+
+    /* ----------------------------------------------------------------- */
+    /* CÉLULA E: MODAL DE AUTENTICAÇÃO E VERIFICAÇÃO SIMULADA           */
+    /* ----------------------------------------------------------------- */
     function abrirModalAuth(tipo) {
       tipoModalAuth = tipo;
       const modal = document.getElementById('modal-auth');
       const titulo = document.getElementById('modal-auth-titulo');
       const campoNome = document.getElementById('campo-nome-auth');
+      const campoTelefone = document.getElementById('campo-telefone-cadastro');
       const campoConfSenha = document.getElementById('campo-confirmar-senha');
       const blocoEquipe = document.getElementById('bloco-equipe-checkbox');
       const campoPerfilLogin = document.getElementById('campo-perfil-auth');
 
-      // Garante que inicia no Step 1
       voltarParaEtapa1();
       
       if (tipo === 'cadastro_publico') {
         titulo.textContent = 'Cadastro de Acesso aos Resultados';
         campoNome.classList.remove('hidden');
+        campoTelefone.classList.remove('hidden');
         campoConfSenha.classList.remove('hidden');
         blocoEquipe.classList.remove('hidden');
         campoPerfilLogin.classList.add('hidden');
       } else {
         titulo.textContent = 'Login na Plataforma';
         campoNome.classList.add('hidden');
+        campoTelefone.classList.add('hidden');
         campoConfSenha.classList.add('hidden');
         blocoEquipe.classList.add('hidden');
         campoPerfilLogin.classList.remove('hidden');
@@ -961,29 +1210,20 @@
 
     function toggleCamposEquipeInterna(marcado) {
       const subsecao = document.getElementById('subsecao-equipe-interna');
-      if (marcado) {
-        subsecao.classList.remove('hidden');
-      } else {
-        subsecao.classList.add('hidden');
-      }
+      if (marcado) subsecao.classList.remove('hidden');
+      else subsecao.classList.add('hidden');
     }
 
     function avancarEtapaVerificacao() {
-      const email = document.getElementById('auth-email').value;
       const senha = document.getElementById('auth-senha').value;
       const confSenha = document.getElementById('auth-confirmar-senha').value;
 
-      if (tipoModalAuth === 'cadastro_publico') {
-        if (senha !== confSenha) {
-          alert("As senhas digitadas não conferem. Por favor, verifique.");
-          return;
-        }
+      if (tipoModalAuth === 'cadastro_publico' && senha !== confSenha) {
+        alert("As senhas digitadas não conferem. Por favor, verifique.");
+        return;
       }
 
-      // Atualiza o e-mail na tela de confirmação
-      document.getElementById('exibir-email-verificacao').textContent = email || "seu e-mail";
-
-      // Esconde Step 1 e exibe Step 2 (Verificação de e-mail)
+      document.getElementById('exibir-email-verificacao').textContent = document.getElementById('auth-email').value || "seu e-mail";
       document.getElementById('form-auth-step1').classList.add('hidden');
       document.getElementById('form-auth-step2').classList.remove('hidden');
     }
@@ -998,7 +1238,7 @@
       
       if (tipoModalAuth === 'cadastro_publico' && isEquipe) {
         const cargo = document.getElementById('select-cargo-equipe').value;
-        simularAviso(`E-mail verificado! Solicitação para o perfil institucional (${cargo.toUpperCase()}) registrada. Enquanto aguarda aprovação da coordenação, seu acesso está liberado para os Resultados Públicos.`);
+        simularAviso(`E-mail verificado! Solicitação para perfil institucional (${cargo.toUpperCase()}) registrada para análise da coordenação.`);
         document.getElementById('select-perfil').value = 'publico';
         atualizarPerfil('publico');
       } else if (tipoModalAuth === 'login') {
@@ -1007,7 +1247,7 @@
         document.getElementById('select-perfil').value = perfilSimulado;
         atualizarPerfil(perfilSimulado);
       } else {
-        simularAviso("E-mail verificado com sucesso! Acesso aos Resultados Públicos liberado.");
+        simularAviso("E-mail verificado com sucesso! Acesso liberado aos Resultados Públicos.");
         document.getElementById('select-perfil').value = 'publico';
         atualizarPerfil('publico');
       }
@@ -1015,18 +1255,10 @@
       fecharModalAuth();
     }
 
-    // Modal de Prévia de Relatórios
-    function abrirPreviaRelatorio(nomeRelatorio) {
-      document.getElementById('titulo-modal-relatorio').textContent = nomeRelatorio;
-      document.getElementById('subtitulo-modal-relatorio').textContent = `Prévia demonstrativa do ${nomeRelatorio}`;
-      document.getElementById('modal-relatorio').classList.remove('hidden');
-    }
 
-    function fecharPreviaRelatorio() {
-      document.getElementById('modal-relatorio').classList.add('hidden');
-    }
-
-    // Interações da Área Pública
+    /* ----------------------------------------------------------------- */
+    /* CÉLULA F: REGRAS E MOCKS DAS TELAS OPERACIONAIS                   */
+    /* ----------------------------------------------------------------- */
     function aplicarFiltrosPublicos() {
       const terr = document.getElementById('filtro-territorio').value;
       const tema = document.getElementById('filtro-tema').value;
@@ -1034,22 +1266,17 @@
       const indErgonomian = document.getElementById('ind-ergonomia-val');
       const indErgonomiapct = document.getElementById('ind-ergonomia-pct');
 
-      let nomeTerritorio = "Todos os Municípios";
-      if (terr === "ilha_comprida") nomeTerritorio = "Ilha Comprida";
-      if (terr === "cananeia") nomeTerritorio = "Cananéia";
-      if (terr === "iguape") nomeTerritorio = "Iguape";
+      rotulo.textContent = `Filtro Ativo: Estado (UF) [${terr.toUpperCase()}] | Eixo: [${tema.toUpperCase()}]`;
 
-      rotulo.textContent = `Filtro Ativo: ${nomeTerritorio} | Eixo: ${tema.toUpperCase()}`;
-
-      if (terr === "ilha_comprida") {
-        indErgonomian.textContent = "10 Entrevistas";
-        indErgonomiapct.textContent = "10 de 12 (83%)";
-      } else if (terr === "cananeia") {
-        indErgonomian.textContent = "5 Entrevistas";
-        indErgonomiapct.textContent = "5 de 8 (62%)";
+      if (terr === "BA") {
+        indErgonomian.textContent = "8 Entrevistas";
+        indErgonomiapct.textContent = "8 de 10 (80%)";
+      } else if (terr === "PA") {
+        indErgonomian.textContent = "7 Entrevistas";
+        indErgonomiapct.textContent = "7 de 9 (77%)";
       } else {
-        indErgonomian.textContent = "18 Entrevistas";
-        indErgonomiapct.textContent = "18 de 24 (75%)";
+        indErgonomian.textContent = "26 Entrevistas";
+        indErgonomiapct.textContent = "26 de 35 (74%)";
       }
     }
 
@@ -1079,7 +1306,7 @@
     }
 
     function concluirConferenciaATL() {
-      simularAviso("Conferência do ATL concluída na demonstração. O estado do caso seria atualizado para REVISÃO SUPERVISÃO.");
+      simularAviso("Conferência do ATL concluída na demonstração. Estado atualizado para REVISÃO SUPERVISÃO.");
       switchTab('tab-supervisao');
     }
 
@@ -1107,7 +1334,6 @@
       simularAviso(`Código ${codigo} e Memo vinculados na demonstração!`);
     }
 
-    let audioPlaying = false;
     function toggleAudio() {
       audioPlaying = !audioPlaying;
       const btn = document.getElementById('btn-audio-player');
@@ -1123,7 +1349,13 @@
       }
     }
 
+
+    /* ----------------------------------------------------------------- */
+    /* CÉLULA G: INICIALIZAÇÃO DA INTERFACE & LEITURA DA URL             */
+    /* ----------------------------------------------------------------- */
     atualizarPerfil('supervisor');
+    carregarAbaPorHash();
+
   </script>
 </body>
 </html>
