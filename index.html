@@ -84,6 +84,51 @@
 
     <!-- TELA 1: FILA DE TRABALHO E TRAMITAÇÃO -->
     <section id="tab-entrevistas" class="tab-content active space-y-4">
+      
+      <!-- PAINEL EXCLUSIVO DO ATL: INDICADOR DE PRODUÇÃO E RECADOS METODOLÓGICOS AUTOMÁTICOS -->
+      <div id="painel-producao-atl" class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+        <!-- Indicador de Produção -->
+        <div class="bg-white p-4 rounded-lg border border-teal-200 shadow-sm space-y-2">
+          <div class="flex justify-between items-center border-b pb-1.5">
+            <span class="font-bold text-teal-800">📊 Sua Produção Territorial</span>
+            <span class="text-micro bg-teal-100 text-teal-800 px-2 py-0.5 rounded font-bold">ATL João Silva</span>
+          </div>
+          <div class="grid grid-cols-3 gap-2 text-center pt-1">
+            <div class="bg-slate-50 p-2 rounded border">
+              <span class="block text-lg font-black text-slate-800">12</span>
+              <span class="text-micro text-slate-500">Cadastradas</span>
+            </div>
+            <div class="bg-amber-50 p-2 rounded border border-amber-200">
+              <span class="block text-lg font-black text-amber-800">3</span>
+              <span class="text-micro text-amber-700">Em Conferência</span>
+            </div>
+            <div class="bg-green-50 p-2 rounded border border-green-200">
+              <span class="block text-lg font-black text-green-800">9</span>
+              <span class="text-micro text-green-700">Validadas</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seção de Recados e Orientações Metodológicas Extraídas Automaticamente -->
+        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm md:col-span-2 space-y-2">
+          <div class="flex justify-between items-center border-b pb-1.5">
+            <span class="font-bold text-slate-800 flex items-center gap-1.5">
+              <span>💡 Recados & Orientações Metodológicas</span>
+              <span class="text-micro font-normal text-slate-500">(Extraídas das transcrições de campo)</span>
+            </span>
+            <span class="text-micro bg-slate-100 text-slate-600 px-2 py-0.5 rounded">Sintese Automática</span>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-micro">
+            <div class="p-2 bg-amber-50 rounded border border-amber-200 text-amber-900">
+              <strong>Aviso de Áudio:</strong> Detectada interferência recorrente de vento/motor em Ilha Comprida. Orientação: posicionar o gravador mais próximo do entrevistado nas próximas saídas de campo.
+            </div>
+            <div class="p-2 bg-teal-50 rounded border border-teal-200 text-teal-900">
+              <strong>Destaque Metodológico:</strong> Ótimo aprofundamento do termo regional "emalhe" no último turno. Lembre-se de sempre perguntar sobre os horários de início das jornadas nas entrevistas seguintes.
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="flex justify-between items-center bg-white p-4 rounded border border-slate-200 shadow-sm">
         <div>
           <h2 class="text-base font-bold text-slate-800">Fila de Trabalho e Tramitação das Entrevistas</h2>
@@ -688,7 +733,7 @@
 
   </main>
 
-  <!-- MODAL DE AUTENTICAÇÃO ATUALIZADA E PROFISSIONAL (ETAPA 1: DADOS + ETAPA 2: VERIFICAÇÃO E-MAIL) -->
+  <!-- MODAL DE AUTENTICAÇÃO (LOGIN APENAS E-MAIL/SENHA | CADASTRO COM TELEFONE E OPÇÃO EQUIPE) -->
   <div id="modal-auth" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center z-50 p-4">
     <div class="bg-white rounded-lg shadow-xl border border-slate-200 max-w-md w-full p-6 space-y-4 text-xs">
       <div class="flex justify-between items-center border-b pb-2">
@@ -701,7 +746,7 @@
         <strong>Aviso da Demonstração:</strong> A autenticação é uma simulação de interface visual. O cadastro para a comunidade concede acesso imediato aos Resultados Públicos (Seções 7 e 8).
       </div>
 
-      <!-- ETAPA 1: FORMULÁRIO COMPLETO DE REGISTRO / LOGIN -->
+      <!-- ETAPA 1: FORMULÁRIO DE REGISTRO / LOGIN -->
       <form id="form-auth-step1" onsubmit="event.preventDefault(); avancarEtapaVerificacao();" class="space-y-3">
         
         <div id="campo-nome-auth" class="hidden">
@@ -709,19 +754,20 @@
           <input type="text" id="auth-nome" placeholder="Seu nome completo" class="w-full p-2 border border-slate-300 rounded focus:border-teal-600 outline-none">
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="campos-contato-auth">
-          <div>
-            <label class="block font-semibold text-slate-700 mb-1">E-mail <span class="text-micro text-slate-400 font-normal">(verificação)</span>:</label>
+        <!-- No Login exibe apenas E-mail completo. No Cadastro exibe E-mail e Telefone -->
+        <div id="container-campos-contato">
+          <div id="campo-email-unico">
+            <label class="block font-semibold text-slate-700 mb-1">E-mail <span class="text-micro text-slate-400 font-normal">(para verificação)</span>:</label>
             <input type="email" id="auth-email" required placeholder="nome@exemplo.com" class="w-full p-2 border border-slate-300 rounded focus:border-teal-600 outline-none">
           </div>
-          <div>
+          <div id="campo-telefone-cadastro" class="hidden mt-3">
             <label class="block font-semibold text-slate-700 mb-1">Telefone / WhatsApp:</label>
             <input type="tel" id="auth-telefone" placeholder="(00) 00000-0000" class="w-full p-2 border border-slate-300 rounded focus:border-teal-600 outline-none">
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div>
+          <div id="box-senha-principal">
             <label class="block font-semibold text-slate-700 mb-1">Senha:</label>
             <input type="password" id="auth-senha" required minlength="6" placeholder="••••••••" class="w-full p-2 border border-slate-300 rounded focus:border-teal-600 outline-none">
           </div>
@@ -896,6 +942,16 @@
       const abasOperacionais = document.querySelectorAll('.tab-operacional');
       const abasRestritas = document.querySelectorAll('.tab-restrita');
       const botoesAcaoRestritos = document.querySelectorAll('.btn-acao-restrita');
+      const painelAtl = document.getElementById('painel-producao-atl');
+
+      // Controla a visibilidade do painel exclusivo de produção do ATL
+      if (painelAtl) {
+        if (perfil === 'atl') {
+          painelAtl.classList.remove('hidden');
+        } else {
+          painelAtl.classList.add('hidden');
+        }
+      }
 
       if (perfil === 'publico') {
         abasOperacionais.forEach(el => el.classList.add('hidden'));
@@ -926,28 +982,30 @@
       }
     }
 
-    // Modal de Autenticação com Validações
+    // Modal de Autenticação com Ajustes de Login vs Cadastro
     function abrirModalAuth(tipo) {
       tipoModalAuth = tipo;
       const modal = document.getElementById('modal-auth');
       const titulo = document.getElementById('modal-auth-titulo');
       const campoNome = document.getElementById('campo-nome-auth');
+      const campoTelefone = document.getElementById('campo-telefone-cadastro');
       const campoConfSenha = document.getElementById('campo-confirmar-senha');
       const blocoEquipe = document.getElementById('bloco-equipe-checkbox');
       const campoPerfilLogin = document.getElementById('campo-perfil-auth');
 
-      // Garante que inicia no Step 1
       voltarParaEtapa1();
       
       if (tipo === 'cadastro_publico') {
         titulo.textContent = 'Cadastro de Acesso aos Resultados';
         campoNome.classList.remove('hidden');
+        campoTelefone.classList.remove('hidden'); // Exibe telefone no cadastro
         campoConfSenha.classList.remove('hidden');
         blocoEquipe.classList.remove('hidden');
         campoPerfilLogin.classList.add('hidden');
       } else {
         titulo.textContent = 'Login na Plataforma';
         campoNome.classList.add('hidden');
+        campoTelefone.classList.add('hidden'); // Esconde telefone no login (só e-mail e senha)
         campoConfSenha.classList.add('hidden');
         blocoEquipe.classList.add('hidden');
         campoPerfilLogin.classList.remove('hidden');
@@ -980,10 +1038,7 @@
         }
       }
 
-      // Atualiza o e-mail na tela de confirmação
       document.getElementById('exibir-email-verificacao').textContent = email || "seu e-mail";
-
-      // Esconde Step 1 e exibe Step 2 (Verificação de e-mail)
       document.getElementById('form-auth-step1').classList.add('hidden');
       document.getElementById('form-auth-step2').classList.remove('hidden');
     }
@@ -1015,7 +1070,6 @@
       fecharModalAuth();
     }
 
-    // Modal de Prévia de Relatórios
     function abrirPreviaRelatorio(nomeRelatorio) {
       document.getElementById('titulo-modal-relatorio').textContent = nomeRelatorio;
       document.getElementById('subtitulo-modal-relatorio').textContent = `Prévia demonstrativa do ${nomeRelatorio}`;
@@ -1026,7 +1080,6 @@
       document.getElementById('modal-relatorio').classList.add('hidden');
     }
 
-    // Interações da Área Pública
     function aplicarFiltrosPublicos() {
       const terr = document.getElementById('filtro-territorio').value;
       const tema = document.getElementById('filtro-tema').value;
