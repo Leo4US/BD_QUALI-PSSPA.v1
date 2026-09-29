@@ -1,2 +1,2 @@
-# BD_QUALI.QUANTI-PSSPA.v1
-banco de dados quali/quanti PSSPA
+# BD_QUALI-PSSPA.v1
+banco de dados quali PSSPA
